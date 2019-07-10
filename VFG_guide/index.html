@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>VFG - Planimation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "VFG";
+    var mkdocs_page_input_path = "VFG_guide.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Planimation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Deployment_guide/">Deployment</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">VFG</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#1-purpose">1 Purpose</a></li>
+    
+
+    <li class="toctree-l2"><a href="#2-getting-started">2 Getting Started</a></li>
+    
+
+    <li class="toctree-l2"><a href="#3-overview">3 Overview</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#input-files">Input files:</a></li>
+        
+            <li><a class="toctree-l3" href="#output-file">Output file:</a></li>
+        
+            <li><a class="toctree-l3" href="#overall-architecture">Overall Architecture:</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#4-components">4 Components</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#41-parser">4.1 Parser</a></li>
+        
+            <li><a class="toctree-l3" href="#output-of-parser-predicate-list-of-all-stages">Output of Parser: Predicate List of all stages</a></li>
+        
+            <li><a class="toctree-l3" href="#42-solver">4.2 Solver</a></li>
+        
+            <li><a class="toctree-l3" href="#43-adaptor">4.3 Adaptor</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Visualiser_guide/">Visualiser</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ap_guide/">Animation Profile</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ug1/">User Guide</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Planimation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>VFG</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="1-purpose">1 Purpose</h1>
+<p>This document explains the functioning of the Visualisation File Generator (VFG) for the purposes of development. For deployment and the user guide, see README.md.</p>
+<p>The VFG decides where objects are on the screen and what they look like.</p>
+<p>Most domain-related modifications to the system should be made to the VFG. For example, a new domain might require objects to be laid out in a manner which is not captured in the existing Animation Profile language.
+Extending the Visualisation File Generator requires only building the project in Django (see section 2.2 of README.md).
+Modifications or extensions of the VFG need only be carried out only on the Django server (not Unity).</p>
+<h1 id="2-getting-started">2 Getting Started</h1>
+<p>To build the VFG, see README.md</p>
+<h1 id="3-overview">3 Overview</h1>
+<h3 id="input-files">Input files:</h3>
+<ul>
+<li>Domain PDDL file</li>
+<li>Problem PDDL file</li>
+<li>Animation Profile</li>
+</ul>
+<h3 id="output-file">Output file:</h3>
+<ul>
+<li>Visualisation file</li>
+</ul>
+<h3 id="overall-architecture">Overall Architecture:</h3>
+<p><img alt="" src="https://raw.githubusercontent.com/Planning-Visualisation/planning-visualisation/master/Docs/images/vfg/vfg_overview.png" /></p>
+<h1 id="4-components">4 Components</h1>
+<h2 id="41-parser">4.1 Parser</h2>
+<p><img alt="" src="https://raw.githubusercontent.com/Planning-Visualisation/planning-visualisation/master/Docs/images/vfg/parser.png" /></p>
+<p>Here is the code structure of parser. The <strong>Parser component</strong> gets domain PDDL file, problem PDDL file, animation PDDL file and plan PDDL file and parsers these files into<strong>predicates list</strong> and <strong>animation profile json</strong> to feed <strong>Solver component</strong>.</p>
+<h3 id="411-plan_generatorpy">4.1.1 Plan_generator.py</h3>
+<p>Send domain file and problem file to planning.domain API and gets the solution file.</p>
+<pre><code class="python">def get_plan(domain_file, problem_file):  
+</code></pre>
+
+<ul>
+<li>This function will send the domain and problem pddl file to the planning.domain  API to get the plan</li>
+</ul>
+<h3 id="412-domain_parserpy">4.1.2 Domain_parser.py</h3>
+<p>Transfer domain file into a list of predicates and record all possible predicates in this domain.</p>
+<pre><code class="python">def get_domain_json(file_name): 
+</code></pre>
+
+<ul>
+<li>This function transfers domain file to a list of predicates.</li>
+<li>Regular expression is used to get the result.</li>
+</ul>
+<p>Here is an example of the <strong>output</strong>:</p>
+<pre><code>{
+    &quot;on&quot;: 2,
+    &quot;on-table&quot;: 1,
+    &quot;clear&quot;: 1,
+    &quot;arm-free&quot;: 0,
+    &quot;holding&quot;: 1
+}
+</code></pre>
+
+<h3 id="413-problem_parserpy">4.1.3 Problem_parser.py</h3>
+<p>Interprete problem file and get all predicates for INIT and GOAL stages</p>
+<pre><code class="python">def get_object_list(predicates_lists,str_init):  
+</code></pre>
+
+<ul>
+<li>This function gets object list of the domain from predicate list</li>
+</ul>
+<pre><code class="python">def get_regex_list(predicates_lists):  
+</code></pre>
+
+<ul>
+<li>This function changes the format of predicate list</li>
+</ul>
+<pre><code class="python">def get_problem_json(file_name, predicates_lists):
+</code></pre>
+
+<ul>
+<li>This function parse the problem PDDL file and get the initial predicates and goal predicates.</li>
+</ul>
+<p>Here is an example of the <strong>output</strong>:</p>
+<pre><code>[{
+    &quot;init&quot;: [{
+        &quot;name&quot;: &quot;on&quot;,
+        &quot;objectNames&quot;: [&quot;c&quot;, &quot;b&quot;]
+    }, {
+        &quot;name&quot;: &quot;on-table&quot;,
+        &quot;objectNames&quot;: [&quot;a&quot;]
+    }, {
+        &quot;name&quot;: &quot;on-table&quot;,
+        &quot;objectNames&quot;: [&quot;b&quot;]
+    }, {
+        &quot;name&quot;: &quot;on-table&quot;,
+        &quot;objectNames&quot;: [&quot;d&quot;]
+    }, {
+        &quot;name&quot;: &quot;clear&quot;,
+        &quot;objectNames&quot;: [&quot;a&quot;]
+    }, {
+        &quot;name&quot;: &quot;clear&quot;,
+        &quot;objectNames&quot;: [&quot;c&quot;]
+    }, {
+        &quot;name&quot;: &quot;clear&quot;,
+        &quot;objectNames&quot;: [&quot;d&quot;]
+    }, {
+        &quot;name&quot;: &quot;arm-free&quot;,
+        &quot;objectNames&quot;: [&quot;No objects&quot;]
+    }]
+}, {
+    &quot;goal&quot;: [{
+        &quot;name&quot;: &quot;on&quot;,
+        &quot;objectNames&quot;: [&quot;a&quot;, &quot;b&quot;]
+    }, {
+        &quot;name&quot;: &quot;on&quot;,
+        &quot;objectNames&quot;: [&quot;b&quot;, &quot;c&quot;]
+    }, {
+        &quot;name&quot;: &quot;on&quot;,
+        &quot;objectNames&quot;: [&quot;c&quot;, &quot;d&quot;]
+    }],
+    &quot;goal-condition&quot;: [&quot;and&quot;]
+}]
+</code></pre>
+
+<h3 id="414-predicates_generatorpy">4.1.4 Predicates_generator.py</h3>
+<p>Interpret solution file and get all predicates for every stage in solution file.</p>
+<pre><code class="python">def remove_unused_char(action_list):  
+</code></pre>
+
+<ul>
+<li>This function removes all the useless characters from solution file.</li>
+</ul>
+<pre><code class="python">def get_action_name(current_step):  
+</code></pre>
+
+<ul>
+<li>This function returns the action name of the current step.</li>
+</ul>
+<pre><code class="python">def get_stages(plan, problem_dic, problem_file, predicates_list):
+</code></pre>
+
+<ul>
+<li>This function gets the predicates for each stage.</li>
+</ul>
+<h2 id="output-of-parser-predicate-list-of-all-stages">Output of Parser: Predicate List of all stages</h2>
+<h3 id="1-description">1. Description</h3>
+<p>The predicate list is generated by <strong>Parser Component</strong> and feeds <strong>Solver Component</strong>. It includes all the <strong>predicates for each stage</strong> and the <strong>object list</strong> for the problem. Using the result of predicate list and animation profile, the solver can apply the one-way constraint solver to calculate the visualisation result. The object list can be used in the initialisation of the solver.</p>
+<h3 id="2-format">2. Format</h3>
+<p>The format for predicate list and object list is:</p>
+<pre><code class="json">{
+&quot;stages&quot;: [{ --stage list
+&quot;items&quot;: [{ -- predicate list in each stage
+&quot;name&quot;: , -- predicate rule
+&quot;objectNames&quot;: -- objects to be referenced
+}],
+&quot;add&quot;: , -- compared to previous stage, what predicates are added
+&quot;remove&quot;: , -- compared to previous stage, what predicates are removed
+&quot;stageName&quot;: , -- name of the stage
+&quot;stageInfo&quot;: -- stage information
+} ],
+&quot;objects&quot;: -- object list in the problem
+}
+</code></pre>
+
+<h3 id="3-example">3. Example</h3>
+<p>Here is an example of the predicate list for Blocks domain.</p>
+<pre><code class="json">{
+&quot;stages&quot;: [{
+&quot;items&quot;: [{
+&quot;name&quot;: &quot;on&quot;,
+&quot;objectNames&quot;: [&quot;c&quot;, &quot;b&quot;]
+}, {
+&quot;name&quot;: &quot;on-table&quot;,
+&quot;objectNames&quot;: [&quot;a&quot;]
+}, {
+&quot;name&quot;: &quot;on-table&quot;,
+&quot;objectNames&quot;: [&quot;b&quot;]
+}, {
+&quot;name&quot;: &quot;on-table&quot;,
+&quot;objectNames&quot;: [&quot;d&quot;]
+}, {
+&quot;name&quot;: &quot;clear&quot;,
+&quot;objectNames&quot;: [&quot;a&quot;]
+}, {
+&quot;name&quot;: &quot;clear&quot;,
+&quot;objectNames&quot;: [&quot;c&quot;]
+}, {
+&quot;name&quot;: &quot;clear&quot;,
+&quot;objectNames&quot;: [&quot;d&quot;]
+}, {
+&quot;name&quot;: &quot;arm-free&quot;,
+&quot;objectNames&quot;: [&quot;No objects&quot;]
+}],
+&quot;add&quot;: &quot;&quot;,
+&quot;remove&quot;: &quot;&quot;,
+&quot;stageName&quot;: &quot;Initial Stage&quot;,
+&quot;stageInfo&quot;: &quot;No Step Information&quot;
+}, {
+&quot;items&quot;: [{
+&quot;name&quot;: &quot;on-table&quot;,
+&quot;objectNames&quot;: [&quot;a&quot;]
+}, {
+&quot;name&quot;: &quot;on-table&quot;,
+&quot;objectNames&quot;: [&quot;b&quot;]
+}, {
+&quot;name&quot;: &quot;on-table&quot;,
+&quot;objectNames&quot;: [&quot;d&quot;]
+}, {
+&quot;name&quot;: &quot;clear&quot;,
+&quot;objectNames&quot;: [&quot;a&quot;]
+}, {
+&quot;name&quot;: &quot;clear&quot;,
+&quot;objectNames&quot;: [&quot;d&quot;]
+}, {
+&quot;name&quot;: &quot;clear&quot;,
+&quot;objectNames&quot;: [&quot;b&quot;]
+}, {
+&quot;name&quot;: &quot;holding&quot;,
+&quot;objectNames&quot;: [&quot;c&quot;]
+}],
+&quot;add&quot;: [{
+&quot;name&quot;: &quot;clear&quot;,
+&quot;objectNames&quot;: [&quot;b&quot;]
+}, {
+&quot;name&quot;: &quot;holding&quot;,
+&quot;objectNames&quot;: [&quot;c&quot;]
+}],
+&quot;remove&quot;: [{
+&quot;name&quot;: &quot;on&quot;,
+&quot;objectNames&quot;: [&quot;c&quot;, &quot;b&quot;]
+}, {
+&quot;name&quot;: &quot;clear&quot;,
+&quot;objectNames&quot;: [&quot;c&quot;]
+}, {
+&quot;name&quot;: &quot;arm-free&quot;,
+&quot;objectNames&quot;: [&quot;No objects&quot;]
+}],
+&quot;stageName&quot;: &quot;unstack (c b)&quot;,
+&quot;stageInfo&quot;: &quot;(:action unstack\r\n :parameters (c b)\r\n :precondition\r\n (and\r\n (on c b)\r\n (clear c)\r\n (arm-free)\r\n )\r\n :effect\r\n (and\r\n (holding c)\r\n (clear b)\r\n (not\r\n (clear c)\r\n )\r\n (not\r\n (arm-free)\r\n )\r\n (not\r\n (on c b)\r\n )\r\n )\r\n )&quot;
+}],
+&quot;objects&quot;: [&quot;b&quot;, &quot;d&quot;, &quot;c&quot;, &quot;a&quot;]
+}
+</code></pre>
+
+<h2 id="42-solver">4.2 Solver</h2>
+<h3 id="421-overview">4.2.1 Overview</h3>
+<p><img alt="" src="https://raw.githubusercontent.com/Planning-Visualisation/planning-visualisation/master/Docs/images/vfg/predicate_solver.png" /></p>
+<p>Here is the code structure of solver. This module will generate the visualisation file by using the predicates of all stages and animation profile.</p>
+<ul>
+<li>custom_function.py:<ul>
+<li>This module contain all the customer function we designed to help position the objects.</li>
+</ul>
+</li>
+<li>initialise.py:<ul>
+<li>This component is used to initialise the environment and objects for Predicate Solver.</li>
+</ul>
+</li>
+<li>random_color.py:<ul>
+<li>This function will provide a randomly selected colour for Initialise to use.</li>
+</ul>
+</li>
+<li>solver.py:<ul>
+<li>This module will compute the visualisation file by using the stages predicates and animation.</li>
+</ul>
+</li>
+</ul>
+<p>This module will generate the visualisation file by using the predicates of all stages and animation profile.</p>
+<p>Here is the algorithm diagram of our constraint solver:</p>
+<p><img alt="" src="https://raw.githubusercontent.com/Planning-Visualisation/planning-visualisation/master/Docs/images/vfg/constraint_solver.png" /></p>
+<p>Here is the link for this diagram: <a href="https://www.draw.io/#G12sCLukE55c_9VOKCJZqUiMh7OWFeaAXJ">https://www.draw.io/#G12sCLukE55c_9VOKCJZqUiMh7OWFeaAXJ</a></p>
+<p>For instance, here are the predicates that need to be solved:</p>
+<pre><code>(On-table a)
+(On b a)
+(On c b)
+</code></pre>
+
+<p>In the predicates, the object ahead is the object to be solved and the object behind is the predefined object. To calculate the position of "c", we must know the position of "b". Similarly, to calculate the position of "b", we must know the position of "a". From (on-table a), we can know the position of a, so "b" is solved and then "c" is solved. The diagram below shows how the objects are referenced.</p>
+<p><img alt="" src="https://raw.githubusercontent.com/Planning-Visualisation/planning-visualisation/master/Docs/images/vfg/reference.png" /></p>
+<h3 id="421-steps">4.2.1 Steps</h3>
+<p>There are 5 main steps in the algorithm of constraint solver:</p>
+<h5 id="4211-create-an-object-table-initialisepy-random_colorpy">4.2.1.1 Create an Object Table (initialise.py , random_color.py)</h5>
+<pre><code class="python">def initialise_objects(object_list, animation_profile):  
+</code></pre>
+
+<p>This function will initialise objects in the animation profile and use a dictionary to store all the objects and their attributes.</p>
+<p>In the dictionary, it will store all objects and their attributes, as shown in the table below:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center">prefab</th>
+<th align="right">name</th>
+<th align="center">color</th>
+<th align="center">height</th>
+<th align="right">width</th>
+<th align="right">y</th>
+<th>x</th>
+<th align="center">showName</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a</td>
+<td align="center">Block</td>
+<td align="right">a</td>
+<td align="center">"a": 1, "r": 0.41, "b": 0.41, "g": 0.55</td>
+<td align="center">40</td>
+<td align="right">80</td>
+<td align="right">false</td>
+<td>false</td>
+<td align="center">true</td>
+</tr>
+</tbody>
+</table>
+<p>Here is a simple example of object dict:</p>
+<pre><code>&quot;a&quot;: {
+        &quot;prefab&quot;: &quot;Block&quot;, 
+        &quot;name&quot;: &quot;a&quot;, 
+        &quot;color&quot;: {
+            &quot;a&quot;: 1, 
+            &quot;r&quot;: 0.41, 
+            &quot;b&quot;: 0.41, 
+            &quot;g&quot;: 0.55
+        }, 
+        &quot;height&quot;: 40, 
+        &quot;width&quot;: 80, 
+        &quot;y&quot;: false, 
+        &quot;x&quot;: false, 
+        &quot;showName&quot;: true
+    }
+</code></pre>
+
+<h5 id="4212-separate-each-stage-customer_functionspy-solverpy">4.2.1.2 Separate Each Stage (customer_functions.py, solver.py)</h5>
+<pre><code class="python">def solve_all_stages(stages, objects_dic, predicates_rules, space):  
+</code></pre>
+
+<p>This function will seperate each stage in stages list and run through each stage which contains a list of predicates and solve all the predicates.</p>
+<p>The stages list is like:</p>
+<p>Stage1: Predicate1, Predicate2, Predicate3,....
+Stage2: Predicate1, Predicate3, Predicate3,...
+...</p>
+<p>Here is a simple example of one stage:</p>
+<pre><code>{
+    &quot;items&quot;: [
+        {
+            &quot;objectNames&quot;: [
+                &quot;c&quot;
+            ], 
+            &quot;name&quot;: &quot;on-table&quot;
+        }, 
+        {
+            &quot;objectNames&quot;: [
+                &quot;a&quot;
+            ], 
+            &quot;name&quot;: &quot;clear&quot;
+        }, 
+        {
+            &quot;objectNames&quot;: [
+                &quot;b&quot;
+            ], 
+            &quot;name&quot;: &quot;on-table&quot;
+        }, 
+        {
+            &quot;objectNames&quot;: [
+                &quot;c&quot;, 
+                &quot;a&quot;
+            ], 
+            &quot;name&quot;: &quot;on&quot;
+        }
+    ]
+}
+</code></pre>
+
+<h5 id="4213-create-predicate-query-customer_functionspy-solverpy">4.2.1.3 Create Predicate Query (customer_functions.py, solver.py)</h5>
+<pre><code class="python">def solvepredicates(predicates, objects_dic, predicates_rules, space):  
+</code></pre>
+
+<p>This function will store all predicates in a query and pop a predicate from predicates list, and try to solve it by calling check_rule_complete and applypredicates function. If it can be solved, then it will be removed from the query, if it can not be solved yet, it will be put back to the predicate list. The function will return true until all predicates are solved.</p>
+<p>The predicate lists will be separated like:</p>
+<pre><code>Predicate1, Predicate2, Predicate3,....
+</code></pre>
+
+<p>If predicate1 is solved then the predicate list will remove predicate1 and start to solve predicate 2:</p>
+<pre><code>Predicate2, Predicate3,....
+</code></pre>
+
+<p>If predicate 1 can't be solved, then it will be put back to the query:</p>
+<pre><code>Predicate2, Predicate3,....Predicate1
+</code></pre>
+
+<h5 id="4214-check-whether-predicate-can-be-solved-customer_functionspy-solverpy">4.2.1.4 Check whether predicate can be solved (customer_functions.py, solver.py)</h5>
+<pre><code class="python">def check_rule_complete(predicate, objects_dic, predicates_rules):  
+</code></pre>
+
+<p>This function will check whether this predicate can be solved. </p>
+<p>For example, here is a predicate for object a and c:</p>
+<pre><code> {
+            &quot;objectNames&quot;: [
+                &quot;c&quot;, 
+                &quot;a&quot;
+            ], 
+            &quot;name&quot;: &quot;on&quot;
+        }
+</code></pre>
+
+<p>The predicate rule is "on" and the objects are "a" and "c". In this predicate, "a" is the referenced object, so to define the position of "c", we must know the position of "a". If a's value has not be defined, the function will return false because this predicate can't be solved for now.</p>
+<h5 id="4214-apply-animation-rule-customer_functionspy-solverpy">4.2.1.4 Apply Animation Rule (customer_functions.py, solver.py)</h5>
+<pre><code class="python">def applypredicates(predicate,objects_dic,predicates_rules,space):
+</code></pre>
+
+<p>This object will update the value of related object in the object list by applying the animation rule.  </p>
+<p>For example:</p>
+<pre><code>(on-table a)
+</code></pre>
+
+<p>Using distributex function in the extensions, a's y value is set to 0.</p>
+<pre><code>a.y = 0
+</code></pre>
+
+<h2 id="43-adaptor">4.3 Adaptor</h2>
+<p><img alt="" src="https://raw.githubusercontent.com/Planning-Visualisation/planning-visualisation/master/Docs/images/vfg/adapter.png" /></p>
+<p>Here is the code structure of adapter. This component transfers the result generated by Predicate Solver into the final visualisation file.</p>
+<pre><code class="python">def transfer(one_stage, initialobjects, panel_size,shiftx,shifty, padding=20):
+</code></pre>
+
+<p>This function converts the dictionary into the info needed in visualisation file.</p>
+<pre><code class="python">def get_panel_size(result, padding=20):
+</code></pre>
+
+<p>This function will for loop all the objects in the visualisaiton dictionary, and try to find the max_x and max_y of the panel.</p>
+<p>For example, </p>
+<pre><code>.........max_y
+.        .
+.        .
+.        .
+........max_x
+</code></pre>
+
+<pre><code class="python">def generate_visualisation_file(result, object_list,animation_profile):  
+</code></pre>
+
+<pre><code class="python">def get_visualisation_json(predicates, animation_profile):
+</code></pre>
+
+<p>These functions are the main functions of this module,they will call the other functions to manipulate the visualisation file for the unity visualiser.</p>
+<pre><code>&quot;shape&quot;: {
+  &quot;Block&quot;: {
+    &quot;prefab&quot;: &quot;Block&quot;,
+    &quot;showName&quot;: true,
+    &quot;x&quot;: false,
+    &quot;y&quot;: false,
+    &quot;color&quot;: &quot;randomcolor&quot;,
+    &quot;width&quot;: 80,
+    &quot;height&quot;: 40
+ },
+  &quot;Claw&quot;: {
+    &quot;prefab&quot;: &quot;Claw&quot;,
+    &quot;color&quot;: {
+      &quot;r&quot;: 0,
+      &quot;g&quot;: 0,
+      &quot;b&quot;: 0,
+      &quot;a&quot;: 1
+ },
+    &quot;showName&quot;: false,
+    &quot;x&quot;: 230,
+    &quot;y&quot;: 500,
+    &quot;width&quot;: 80,
+    &quot;height&quot;: 40
+ },
+</code></pre>
+
+<h3 id="visualisation-file-structure">Visualisation File Structure</h3>
+<p>Visualisation Files are in JSON. </p>
+<p>They contain
+* a list of visual stages, containing
+    * a list of visual sprites. 
+        * Each Visual sprite has a number of properties, outlined below
+    * Stages also contain a name and a list of predicates true at that stage
+* A table of images (base64) for visualisation
+* Subgoal map and pool, for displaying data about subgoals</p>
+<p>An example Visualisation file is shown below. It is for the Blocks domain, and it has only 2 stages.</p>
+<pre><code class="json">{
+    &quot;visualStages&quot;: [{
+        &quot;visualSprites&quot;: [{
+            &quot;prefabImage&quot;: &quot;Block&quot;,
+            &quot;showName&quot;: true,
+            &quot;x&quot;: 100,
+            &quot;y&quot;: 0,
+            &quot;color&quot;: {
+                &quot;r&quot;: 0.8,
+                &quot;g&quot;: 0.52,
+                &quot;b&quot;: 0.25,
+                &quot;a&quot;: 1.0
+            },
+            &quot;width&quot;: 80,
+            &quot;height&quot;: 80,
+            &quot;name&quot;: &quot;b&quot;,
+            &quot;minX&quot;: 0.207,
+            &quot;maxX&quot;: 0.345,
+            &quot;minY&quot;: 0.034,
+            &quot;maxY&quot;: 0.172
+        }, {
+            &quot;prefabImage&quot;: &quot;Block&quot;,
+            &quot;showName&quot;: true,
+            &quot;x&quot;: 200,
+            &quot;y&quot;: 0,
+            &quot;color&quot;: {
+                &quot;r&quot;: 0.5,
+                &quot;g&quot;: 1.0,
+                &quot;b&quot;: 0.83,
+                &quot;a&quot;: 1.0
+            },
+            &quot;width&quot;: 80,
+            &quot;height&quot;: 80,
+            &quot;name&quot;: &quot;d&quot;,
+            &quot;minX&quot;: 0.379,
+            &quot;maxX&quot;: 0.517,
+            &quot;minY&quot;: 0.034,
+            &quot;maxY&quot;: 0.172
+        }, {
+            &quot;prefabImage&quot;: &quot;Block&quot;,
+            &quot;showName&quot;: true,
+            &quot;x&quot;: 100,
+            &quot;y&quot;: 82,
+            &quot;color&quot;: {
+                &quot;r&quot;: 1.0,
+                &quot;g&quot;: 0.76,
+                &quot;b&quot;: 0.76,
+                &quot;a&quot;: 1.0
+            },
+            &quot;width&quot;: 80,
+            &quot;height&quot;: 80,
+            &quot;name&quot;: &quot;c&quot;,
+            &quot;minX&quot;: 0.207,
+            &quot;maxX&quot;: 0.345,
+            &quot;minY&quot;: 0.176,
+            &quot;maxY&quot;: 0.314
+        }, {
+            &quot;prefabImage&quot;: &quot;Block&quot;,
+            &quot;showName&quot;: true,
+            &quot;x&quot;: 0,
+            &quot;y&quot;: 0,
+            &quot;color&quot;: {
+                &quot;r&quot;: 1.0,
+                &quot;g&quot;: 0.76,
+                &quot;b&quot;: 0.76,
+                &quot;a&quot;: 1.0
+            },
+            &quot;width&quot;: 80,
+            &quot;height&quot;: 80,
+            &quot;name&quot;: &quot;a&quot;,
+            &quot;minX&quot;: 0.034,
+            &quot;maxX&quot;: 0.172,
+            &quot;minY&quot;: 0.034,
+            &quot;maxY&quot;: 0.172
+        }, {
+            &quot;prefabImage&quot;: &quot;Claw&quot;,
+            &quot;color&quot;: {
+                &quot;r&quot;: 0,
+                &quot;g&quot;: 0,
+                &quot;b&quot;: 0,
+                &quot;a&quot;: 1
+            },
+            &quot;showName&quot;: false,
+            &quot;x&quot;: 230,
+            &quot;y&quot;: 500,
+            &quot;width&quot;: 80,
+            &quot;height&quot;: 40,
+            &quot;name&quot;: &quot;Claw&quot;,
+            &quot;minX&quot;: 0.431,
+            &quot;maxX&quot;: 0.569,
+            &quot;minY&quot;: 0.897,
+            &quot;maxY&quot;: 0.966
+        }, {
+            &quot;prefabImage&quot;: &quot;Board&quot;,
+            &quot;color&quot;: {
+                &quot;r&quot;: 0,
+                &quot;g&quot;: 0,
+                &quot;b&quot;: 0,
+                &quot;a&quot;: 1
+            },
+            &quot;showName&quot;: false,
+            &quot;x&quot;: 0,
+            &quot;y&quot;: 0,
+            &quot;width&quot;: &quot;panel_size&quot;,
+            &quot;height&quot;: 5,
+            &quot;name&quot;: &quot;Board&quot;,
+            &quot;minX&quot;: 0.034,
+            &quot;maxX&quot;: 0.966,
+            &quot;minY&quot;: 0.034,
+            &quot;maxY&quot;: 0.043
+        }],
+        &quot;stageName&quot;: &quot;Initial Stage&quot;,
+        &quot;stageInfo&quot;: &quot;No Step Information&quot;
+    }, {
+        &quot;visualSprites&quot;: [{
+            &quot;prefabImage&quot;: &quot;Block&quot;,
+            &quot;showName&quot;: true,
+            &quot;x&quot;: 100,
+            &quot;y&quot;: 0,
+            &quot;color&quot;: {
+                &quot;r&quot;: 0.8,
+                &quot;g&quot;: 0.52,
+                &quot;b&quot;: 0.25,
+                &quot;a&quot;: 1.0
+            },
+            &quot;width&quot;: 80,
+            &quot;height&quot;: 80,
+            &quot;name&quot;: &quot;b&quot;,
+            &quot;minX&quot;: 0.207,
+            &quot;maxX&quot;: 0.345,
+            &quot;minY&quot;: 0.034,
+            &quot;maxY&quot;: 0.172
+        }, {
+            &quot;prefabImage&quot;: &quot;Block&quot;,
+            &quot;showName&quot;: true,
+            &quot;x&quot;: 200,
+            &quot;y&quot;: 0,
+            &quot;color&quot;: {
+                &quot;r&quot;: 0.5,
+                &quot;g&quot;: 1.0,
+                &quot;b&quot;: 0.83,
+                &quot;a&quot;: 1.0
+            },
+            &quot;width&quot;: 80,
+            &quot;height&quot;: 80,
+            &quot;name&quot;: &quot;d&quot;,
+            &quot;minX&quot;: 0.379,
+            &quot;maxX&quot;: 0.517,
+            &quot;minY&quot;: 0.034,
+            &quot;maxY&quot;: 0.172
+        }, {
+            &quot;prefabImage&quot;: &quot;Block&quot;,
+            &quot;showName&quot;: true,
+            &quot;x&quot;: 230,
+            &quot;y&quot;: 440,
+            &quot;color&quot;: {
+                &quot;r&quot;: 1.0,
+                &quot;g&quot;: 0.76,
+                &quot;b&quot;: 0.76,
+                &quot;a&quot;: 1.0
+            },
+            &quot;width&quot;: 80,
+            &quot;height&quot;: 80,
+            &quot;name&quot;: &quot;c&quot;,
+            &quot;minX&quot;: 0.431,
+            &quot;maxX&quot;: 0.569,
+            &quot;minY&quot;: 0.793,
+            &quot;maxY&quot;: 0.931
+        }, {
+            &quot;prefabImage&quot;: &quot;Block&quot;,
+            &quot;showName&quot;: true,
+            &quot;x&quot;: 0,
+            &quot;y&quot;: 0,
+            &quot;color&quot;: {
+                &quot;r&quot;: 1.0,
+                &quot;g&quot;: 0.76,
+                &quot;b&quot;: 0.76,
+                &quot;a&quot;: 1.0
+            },
+            &quot;width&quot;: 80,
+            &quot;height&quot;: 80,
+            &quot;name&quot;: &quot;a&quot;,
+            &quot;minX&quot;: 0.034,
+            &quot;maxX&quot;: 0.172,
+            &quot;minY&quot;: 0.034,
+            &quot;maxY&quot;: 0.172
+        }, {
+            &quot;prefabImage&quot;: &quot;Claw&quot;,
+            &quot;color&quot;: {
+                &quot;r&quot;: 0,
+                &quot;g&quot;: 0,
+                &quot;b&quot;: 0,
+                &quot;a&quot;: 1
+            },
+            &quot;showName&quot;: false,
+            &quot;x&quot;: 230,
+            &quot;y&quot;: 500,
+            &quot;width&quot;: 80,
+            &quot;height&quot;: 40,
+            &quot;name&quot;: &quot;Claw&quot;,
+            &quot;minX&quot;: 0.431,
+            &quot;maxX&quot;: 0.569,
+            &quot;minY&quot;: 0.897,
+            &quot;maxY&quot;: 0.966
+        }, {
+            &quot;prefabImage&quot;: &quot;Board&quot;,
+            &quot;color&quot;: {
+                &quot;r&quot;: 0,
+                &quot;g&quot;: 0,
+                &quot;b&quot;: 0,
+                &quot;a&quot;: 1
+            },
+            &quot;showName&quot;: false,
+            &quot;x&quot;: 0,
+            &quot;y&quot;: 0,
+            &quot;width&quot;: &quot;panel_size&quot;,
+            &quot;height&quot;: 5,
+            &quot;name&quot;: &quot;Board&quot;,
+            &quot;minX&quot;: 0.034,
+            &quot;maxX&quot;: 0.966,
+            &quot;minY&quot;: 0.034,
+            &quot;maxY&quot;: 0.043
+        }],
+        &quot;stageName&quot;: &quot;unstack  (c b)&quot;,
+        &quot;stageInfo&quot;: &quot;(:action unstack\r\n    :parameters (c b)\r\n    :precondition\r\n      (and\r\n        (on c b)\r\n        (clear c)\r\n        (arm-free)\r\n      )\r\n    :effect\r\n      (and\r\n        (holding c)\r\n        (clear b)\r\n        (not\r\n          (clear c)\r\n        )\r\n        (not\r\n          (arm-free)\r\n        )\r\n        (not\r\n          (on c b)\r\n        )\r\n      )\r\n  )&quot;
+    }],
+    &quot;subgoalPool&quot;: {
+            &quot;m_keys&quot;: [&quot;(on c d )&quot;, &quot;(on b c )&quot;, &quot;(on a b )&quot;],
+            &quot;m_values&quot;: [
+                [&quot;c&quot;, &quot;d&quot;],
+                [&quot;b&quot;, &quot;c&quot;],
+                [&quot;a&quot;, &quot;b&quot;]
+            ]
+    },
+    &quot;subgoalMap&quot;: {
+            &quot;m_keys&quot;: [2, 3, 4, 5, 6],
+            &quot;m_values&quot;: [
+                [&quot;(on c d )&quot;],
+                [&quot;(on c d )&quot;],
+                [&quot;(on c d )&quot;, &quot;(on b c )&quot;],
+                [&quot;(on c d )&quot;, &quot;(on b c )&quot;],
+                [&quot;(on c d )&quot;, &quot;(on b c )&quot;, &quot;(on a b )&quot;]
+            ]
+    },
+    &quot;transferType&quot;: 1,
+    &quot;imageTable&quot;: {
+        &quot;m_keys&quot;: [&quot;Block&quot;, &quot;Board&quot;, &quot;Claw&quot;],
+        &quot;m_values&quot;: [&quot;iVB...QmCC&quot;, &quot;iVBORw0...QmCC&quot;, &quot;iVB...CYII=&quot;]
+    }
+}
+
+</code></pre>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../Visualiser_guide/" class="btn btn-neutral float-right" title="Visualiser">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Deployment_guide/" class="btn btn-neutral" title="Deployment"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../Deployment_guide/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../Visualiser_guide/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Visualiser - Planimation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Visualiser";
+    var mkdocs_page_input_path = "Visualiser_guide.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Planimation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Deployment_guide/">Deployment</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../VFG_guide/">VFG</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Visualiser</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#1-purpose">1 Purpose</a></li>
+    
+
+    <li class="toctree-l2"><a href="#2-getting-started">2 Getting started</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#21-installation">2.1 Installation</a></li>
+        
+            <li><a class="toctree-l3" href="#22-usage">2.2 Usage</a></li>
+        
+            <li><a class="toctree-l3" href="#23-development">2.3 Development</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#3-architecture-overview">3 Architecture Overview</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#architectural-design">Architectural design:</a></li>
+        
+            <li><a class="toctree-l3" href="#directory-structure">Directory Structure</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#4-components">4 Components</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#animations">Animations</a></li>
+        
+            <li><a class="toctree-l3" href="#fonts">Fonts</a></li>
+        
+            <li><a class="toctree-l3" href="#images">Images</a></li>
+        
+            <li><a class="toctree-l3" href="#scenes">Scenes</a></li>
+        
+            <li><a class="toctree-l3" href="#sprites">Sprites</a></li>
+        
+            <li><a class="toctree-l3" href="#resources">Resources</a></li>
+        
+            <li><a class="toctree-l3" href="#scripts">Scripts</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#5-extensions">5 Extensions</a></li>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ap_guide/">Animation Profile</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ug1/">User Guide</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Planimation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Visualiser</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="1-purpose">1 Purpose</h1>
+<p>The Visualiser takes a Visualisation File and displays an animation to the user. It is a Unity architecture.</p>
+<p>Modifying the visualiser is only required when the current visualiser cannot adequately render the domain on-screen. It does not concern the logic of object layout. For example, a user might want to extend the Visualiser to support animated sprites.</p>
+<p>Extending the Visualiser requires building the project in Unity and Django (see section 2.2 of README.md). Modifications or extensions of the Visualiser need only be carried out on Unity (not Django). For information on the Visualiser, see the file 'Visualiser Documentation'.</p>
+<h1 id="2-getting-started">2 Getting started</h1>
+<h2 id="21-installation">2.1 Installation</h2>
+<p>Install Unity (See README.md)</p>
+<h2 id="22-usage">2.2 Usage</h2>
+<p>See the User Manual, which is accessible from within the application, or with the file <code>User Manual.html</code>.</p>
+<h2 id="23-development">2.3 Development</h2>
+<p>The visualizer will takes the visualization file generated by the visualization file generator. The visualizer will automatically analyze the visualization file and transfer the JSON data into a few Unity prefabs and display them on the screen.</p>
+<h3 id="231-editing-scenes">2.3.1 Editing Scenes</h3>
+<p>Open Planning Visualisation folder as an Unity workspace. Drag scenes file to the Hierarchy to start editing the GameObjects in the scene, Scene files are under the Scene folders
+in the AnimationProfile and Visualier folders.</p>
+<h3 id="232-editing-scripts">2.3.2 Editing Scripts</h3>
+<p>Script can be created directly in the Assets directories, simply right click Create -&gt; C# Script. If scripts are going to be attached to a game object, the class should be extending
+MonoBehaviour. Unity would recommend using their monoDeveloper to code for the guideword when using Unity.Engine.</p>
+<h3 id="233-how-to-run">2.3.3 How to Run</h3>
+<p>Put only the scene you want to test in the Hierarchy and press the play button at the top.</p>
+<h3 id="234-building-webgl">2.3.4 Building WebGL</h3>
+<p>After Selecting all the scene with the starting Scene being the first one clicked
+There is a WebGL module that need to be installed, open the installer again and tick only the WebGL module to be installed.
+After the module is loaded, in Files -&gt; Build Setting, select WebGL and click Player Setting, the inspector on your right will show the setting of the web player, select the NewTemplate
+as our template, and click Build and Run in the Build Setting window and select the Built file location. This may take a while, after it is finished, the Browser will open the First Scene
+of the project. Later, unless we have a new built, we can go to the directory of the built and open the index.html. Notice that Chrome will not allowed to open html file locally, so better
+to set up a server or using other Browser to open the index.html.</p>
+<h1 id="3-architecture-overview">3 Architecture Overview</h1>
+<p>Input: a visualisation file. The visualisation file is a generic JSON file generated by the VFG, demonstrating how shapes are to be drawn on the screen in stages. The structure of the Visualisation File is outlined in the VFG Documentation file.
+Output: a visualisation of the visualisation file</p>
+<h3 id="architectural-design">Architectural design:</h3>
+<p><img alt="Architecture overview" src="https://raw.githubusercontent.com/Planning-Visualisation/planning-visualisation/master/Docs/images/visualiser/VisualiserArchitecture.png" /></p>
+<h3 id="directory-structure">Directory Structure</h3>
+<pre><code class="bash">
+
++---Visualiser
+|   +---Animations
+|   +---Fonts
+|   +---Images
+|   +---Resources
+|   +---Scenes
+|   +---Scripts
+|   |   +---FileUpload
+|   |   \---Visualisation
+|   |       +---AnimationControl
+|   |       +---TransferPack
+|   |       \---VisualisationModels
+|   \---Sprites
+\---WebGLTemplates
+    \---NewTemplate
+
+</code></pre>
+
+<p>The input of the visualizer is the visualization file.</p>
+<p>The visualization file is parsed into a local object with the following structure:</p>
+<pre><code class="java">// Solution - Wraps all stages as a whole solution
+public class VisualSolutionObject
+{
+public VisualStageObject[] visualStages;
+public int transferType;
+public Dictionary&lt;string, string&gt; imageTable;
+public int numberOfStages;
+public Color highlightColor;
+}
+
+// Stage - Contains all sprites in this stage
+public class VisualStageObject
+{
+public VisualSpriteObject[] visualSprites;
+public string stageName;
+public string stageInfo;
+}
+
+// Sprite - Presents any visual object drawn on the screen
+public class VisualSpriteObject
+{
+public string name;
+public string prefabImage;
+public Color color;
+public bool isShowName;
+public float minX;
+public float maxX;
+public float minY;
+public float maxY;
+public int rotation;
+public int depth;
+public bool isHighlighted;
+}
+</code></pre>
+
+<h1 id="4-components">4 Components</h1>
+<p>Components are structure via a number of subdirectories to the Visualiser folder</p>
+<h3 id="animations">Animations</h3>
+<p>Keeps the files for Unity animations. These files are used to define how prefabs fade-in or fade-out.
+These files will only be used by the Unity Engine.</p>
+<h3 id="fonts">Fonts</h3>
+<p>Keep the files for Unity fonts. These files are used by the Unity engine to correctly display text.
+These files will only be used by the Unity Engine.</p>
+<h3 id="images">Images</h3>
+<p>Keep the file for UI elements of the visualizer. These files are used to display the "play" button or "pause" button.
+Images of the animations are not kept here.</p>
+<h3 id="scenes">Scenes</h3>
+<p>Keep the files of Unity scenes.</p>
+<h3 id="sprites">Sprites</h3>
+<p>Defines the basic prefabs (or sprites) of Unity.</p>
+<h3 id="resources">Resources</h3>
+<p>Other resources used by the Unity Engine.</p>
+<h3 id="scripts">Scripts</h3>
+<p>C# scripts are kept in this folder. This is what to edit when new features are added to the visualizer.</p>
+<h4 id="important-scripts">Important Scripts</h4>
+<p><strong>SpriteController.cs</strong></p>
+<p>SpriteController is the script controls how a visible object is rendered on the screen.
+This script will generate prefab according to the data in the visualization file. It will also change the size of the prefab to fit the size of the screen. The liner-movement logic is implemented in this script too.</p>
+<p><strong>VisualiserController.cs</strong></p>
+<p>SpriteController is the script manages the solution file and all visual objects in each stage.
+This script keeps all the GameObject as an objects pool. It is also responsible for rendering each step in the solution.</p>
+<h1 id="5-extensions">5 Extensions</h1>
+<p>The visualizer is designed as a component that only displays data in the visualization file.</p>
+<p>Most extensions to Planning Visualiser can be made through the VFG.
+If new types of animiations need to be supported which cannot be represented in the existing Visualsiation File format:
+* Define a new object property in the visualization file
+* Modify the scripts SpriteController.cs and VisualiserController.cs to implement the new object properties</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../ap_guide/" class="btn btn-neutral float-right" title="Animation Profile">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../VFG_guide/" class="btn btn-neutral" title="VFG"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../VFG_guide/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../ap_guide/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

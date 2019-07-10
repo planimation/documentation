@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>User Guide - Planimation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "User Guide";
+    var mkdocs_page_input_path = "ug1.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Planimation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Deployment_guide/">Deployment</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../VFG_guide/">VFG</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Visualiser_guide/">Visualiser</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ap_guide/">Animation Profile</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">User Guide</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#planning-visualisation-user-guide">Planning Visualisation - User Guide</a></li>
+    
+
+    <li class="toctree-l2"><a href="#1-overview">1. Overview</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#11-planning-problems">1.1 Planning Problems</a></li>
+        
+            <li><a class="toctree-l3" href="#12-scope">1.2 Scope</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#2-using-the-system">2. Using the system</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#21-visualise-built-in-domains">2.1 Visualise Built-in Domains</a></li>
+        
+            <li><a class="toctree-l3" href="#22-visualise-a-new-domain">2.2 Visualise a new Domain</a></li>
+        
+            <li><a class="toctree-l3" href="#23-video-record-a-visualisation">2.3 Video Record a Visualisation</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#3-extending-the-system">3. Extending the system</a></li>
+    
+
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Planimation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>User Guide</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="planning-visualisation-user-guide">Planning Visualisation - User Guide</h1>
+<h1 id="1-overview"><span id="1_Overview_0"></span>1. Overview</h1>
+<p>This document contains the User Guide for Planning Visualiser.</p>
+<p>The Planning Visualiser is an open-source program which visualises
+solutions to Planning Problems. It is an executable Unity architecture
+in a browser.</p>
+<h2 id="11-planning-problems"><span id="11_Planning_Problems_7"></span>1.1 Planning Problems</h2>
+<p>For information about Planning Problems, see <a href="http://planning.domains/">http://planning.domains/</a></p>
+<p>Our application uses one ‘Animation Profile’ per problem domain. An
+Animation Profile is a user-written PDDL file which tells the Visualiser
+how a Domain is to be visualised. See the developer docs for more
+information.</p>
+<h2 id="12-scope"><span id="12_Scope_15"></span>1.2 Scope</h2>
+<p>Planning Visualiser currently has Animation Profiles for four problem
+domains; Blocks, Grid, Towers of Hanoi, and Logistics. Other simple
+problem domains may be added by writing an Animation Profile (see
+section 3.2).</p>
+<p>Planning visualiser can generate a solution using the solver on
+<a href="http://planning.domains/">http://planning.domains/</a> . Alternatively, the user can provide their
+own solution from any solver, provided it conforms to the correct
+format.</p>
+<h1 id="2-using-the-system"><span id="2_Using_the_system_23"></span>2. Using the system</h1>
+<h2 id="21-visualise-built-in-domains"><span id="21_Visualise_Builtin_Domains_26"></span>2.1 Visualise Built-in Domains</h2>
+<h3 id="211-select-files"><span id="211_Select_Files_28"></span>2.1.1 Select Files</h3>
+<p>From the home screen, two options are available:</p>
+<p><em>Build visualisation from Problem</em></p>
+<ul>
+<li>Choose this option to generate a visualisation for a given problem</li>
+<li>Requires the following files: Domain PDDL, Problem PDDL, Animation
+    Profile PPDL. <strong>Files for existing domains are located in the
+    bitbucket repository under Test/Sample Files.</strong></li>
+<li>A custom URL can be chosen to connect to any solver. The default is
+    solver.planning.domains</li>
+</ul>
+<p><em>Build visualisation from Solution VFG</em></p>
+<ul>
+<li>Choose this option to view the visualisation for an existing
+    Visalisation file</li>
+<li>Reuqires the following file: Visualisation File</li>
+<li>This allows the user to generate a visualisation file once, and
+    watch it multile times or share it with others</li>
+</ul>
+<p>Once the correct files are uplodaded, the user will be taken to the
+Visualiser screen.</p>
+<h3 id="212-visualise-solution"><span id="212_Visualise_Solution_33"></span>2.1.2 Visualise Solution</h3>
+<p>The visualisation page has several parts.</p>
+<ol>
+<li><strong>Steps Panel:</strong> Shows all the steps in the solution. Steps can be
+    clicked to navigate the animation to that step.</li>
+<li><strong>Step Information Panel:</strong> shows detailed information for each
+    step, including actions.</li>
+<li><strong>Animation Panel:</strong> displays the animation. Objects in the domain
+    are darkened when they are part of a satisfied subgoal.</li>
+<li><strong>Control Panel:</strong> buttons to control the animation. These include
+    changing the speed of the animation, Play/Pause, Step
+    Forward/Backwards, Replay</li>
+<li><strong>Subgoal panel:</strong> Shows all subgoals (predicates which comprise the
+    goal state). Subgoals change colour when they are satisfied.
+    Clicking on the subgoal opens a dropdown list to all of the steps in
+    which the subgoal is satisfied.</li>
+<li><strong>Header Bar:</strong> Contains Home button, Help button, and a button to
+    download the Visualisation file. This downloaded visualisation file
+    can be shared with others or re-watched.</li>
+</ol>
+<h2 id="22-visualise-a-new-domain"><span id="22_Visualise_a_new_Domain_42"></span>2.2 Visualise a new Domain</h2>
+<p>This can be done, for many simple domains, with no modification to the
+system.</p>
+<p>To add a new domain:</p>
+<ol>
+<li>Write or obtain a Domain PDDL file for the problem domain. Many
+    domains can be found at
+    <a href="https://bitbucket.org/planning-researchers/classical-domains/src/208a850d2ff2a27068329ad578ad99af9ec7e5c5/classical/?at=master">https://bitbucket.org/planning-researchers/classical-domains/src/208a850d2ff2a27068329ad578ad99af9ec7e5c5/classical/?at=master</a></li>
+<li>Write an Animation Profile which corresponds to the domain file. For
+    documentation on the Animation Profile Language, see the file
+    ‘Animation Profile Language’</li>
+<li>Follow the steps in 2.1 to view a visualisation with the new
+    Animation Profile.</li>
+</ol>
+<h2 id="23-video-record-a-visualisation"><span id="23_Video_Record_a_Visualisation_52"></span>2.3 Video Record a Visualisation</h2>
+<p>A video recording of the visualisation can be created so that the final
+animation can be easily shared or re-reviewed independently of the
+system. The below recommendations are one way of recording the
+animation, however many other methods and tools exist to achieve this.</p>
+<h3 id="231-macos-users"><span id="231_MacOS_Users_57"></span>2.3.1 MacOS Users</h3>
+<p>To video record the visualisation, have the animation you wish to record
+on your screen, then complete the following steps:</p>
+<ol>
+<li>Launch the pre-installed QuickTime Player application</li>
+<li>Select “File” and choose “New Screen Recording”</li>
+<li>To decide whether mouse clicks and sounds appear in your recording
+    or not, click the small, white arrow and select the appropriate
+    options from the drop-down menu.</li>
+<li>When ready, click the red record button.</li>
+<li>You will need to select what you want to record. To record the
+    entire screen, click once anywhere. To record only a portion of it,
+    click and drag a box and then click “Start Recording.”</li>
+<li>When finished, navigate to the menu bar and click the stop recording
+    button designated by the square symbol.</li>
+<li>To save your recording, click “File” and then"Save", and choose an
+    appropriate save location and name for the recording.</li>
+<li>
+<p>View and share file as you would with any other media file.</p>
+</li>
+<li>
+<p>Instructions adapted from
+    <a href="https://www.digitaltrends.com/computing/how-to-record-your-computer-screen/">https://www.digitaltrends.com/computing/how-to-record-your-computer-screen/</a></p>
+</li>
+</ol>
+<h3 id="232-windows-users"><span id="232_Windows_Users_74"></span>2.3.2 Windows Users</h3>
+<p>To video record the visualisation, have the animation you wish to record
+on your screen, then complete the following steps:</p>
+<ol>
+<li>Press the Windows key and the letter G at the same time to open the
+    Game Bar dialog (this will pop up on your screen).</li>
+<li>Check the “Yes, this is a game” checkbox to load the Game Bar. This
+    is the procedure regardless of what you are recording.</li>
+<li>Click on the Start Recording button, or press Win + Alt + R to start
+    screen recording.</li>
+<li>Stop the recording by clicking on the red recording button on the
+    pop-up.</li>
+<li>The video can be accessed via your Videos folder, inside the
+    Captures folder.</li>
+</ol>
+<p>Instructions adapted from
+<a href="https://www.laptopmag.com/articles/how-to-video-screen-capture-windows-10">https://www.laptopmag.com/articles/how-to-video-screen-capture-windows-10</a></p>
+<h1 id="3-extending-the-system"><span id="3_Extending_the_system_89"></span>3. Extending the system</h1>
+<p>Planning Visualiser is modular and can be extended in multiple ways.</p>
+<p>Many simple domains can be captured in the existing Animation Profile
+language. For more complex domains, modifications may need to be made to
+the application.</p>
+<p>Detailed developer documentation is available at the project's
+repository (under /Docs) .</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../ap_guide/" class="btn btn-neutral" title="Animation Profile"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../ap_guide/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

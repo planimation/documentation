@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Animation Profile - Planimation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Animation Profile";
+    var mkdocs_page_input_path = "ap_guide.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Planimation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Deployment_guide/">Deployment</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../VFG_guide/">VFG</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Visualiser_guide/">Visualiser</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Animation Profile</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#1-introduction">1 Introduction</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#11-purpose">1.1 Purpose</a></li>
+        
+            <li><a class="toctree-l3" href="#12-scope">1.2 Scope</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#2-using-the-language">2 Using the Language</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#21-key-components">2.1 Key Components</a></li>
+        
+            <li><a class="toctree-l3" href="#22-syntax">2.2 Syntax</a></li>
+        
+            <li><a class="toctree-l3" href="#23-types">2.3 Types</a></li>
+        
+            <li><a class="toctree-l3" href="#24-object-properties">2.4 Object Properties</a></li>
+        
+            <li><a class="toctree-l3" href="#25-functions">2.5 Functions</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#3-worked-example">3 Worked Example</a></li>
+    
+
+    <li class="toctree-l2"><a href="#4-extending-the-language">4 Extending the Language</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#41-extension-areas">4.1 Extension Areas</a></li>
+        
+            <li><a class="toctree-l3" href="#42-extension-steps">4.2 Extension Steps</a></li>
+        
+        </ul>
+    
+
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ug1/">User Guide</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Planimation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Animation Profile</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="1-introduction">1 Introduction</h1>
+<h2 id="11-purpose">1.1 Purpose</h2>
+<p>An Animation Profile (AP) is a user-written PDDL file which tells the Visualiser how a Domain is to be visualised. Each Animation Profile corresponds to one Domain. </p>
+<p>Essentially, the AP provides a set of visual objects ("shapes") within the domain, along with a set of mappings from Predicates to animation behaviours.</p>
+<h2 id="12-scope">1.2 Scope</h2>
+<p>The AP Language is designed to be flexible enough to allow for the animation of many simple PDDL domains, such as those found at https://bitbucket.org/planning-researchers/classical-domains/src/208a850d2ff2a27068329ad578ad99af9ec7e5c5/classical/?at=master. </p>
+<p>Currently, APs have been written for four domains from this repository: Blocks, Towers of Hanoi, Logistics, and Grid.</p>
+<p>Other simple domains can be visualised in the language. For more complicated domains, additional functions or object properties may be added (See section 4).</p>
+<h1 id="2-using-the-language">2 Using the Language</h1>
+<p>This section contains complete documentation for the syntax and semantics of the AP language. For a quick starting point to writing your own AP, see section 3.</p>
+<h2 id="21-key-components">2.1 Key Components</h2>
+<h3 id="211-predicates">2.1.1 Predicates</h3>
+<p>The first content of the AP should be the Predicate blocks. Here is an example of a Predicate block.</p>
+<pre><code>(:predicate holding
+
+                 :parameters (?x claw)
+                 :effect (
+                 (equal (?x x y) (claw x y))
+                 )
+
+  )
+</code></pre>
+
+<p>There should be one or zero Predicate blocks for each Predicate in the Domain. If there is no Predicate block for a Predicate in the domain, the Predicate is ignored by the solver.</p>
+<p>Predicate Blocks contain:
+* The name of the Predicate, for example <code>holding</code>.
+* The parameters of the Predicate. Parameters are objects to which the Predicate applies. For example, <code>holding(?x)</code> means that the predicate on-table is true for the object ?x.
+* The effect of the Predicate. This is a logical statement concerning object properties which holds true when the predicate holds true. For example, <code>(equal (?x x y) (claw x y))</code> means that the object <code>?x</code> is at the object <code>claw</code>.
+* (Optionally) A Priority:
+    *   Specifies a priority in which predicates are solved
+    *   Example:
+    *   <code>:priority 0</code>
+    *   Higher priority predicates are applied first
+    *   This is required to ensure a limited number of domains (eg Towers of Hanoi) can be solved. Typically it is required when multiple predicates affect the same variables.</p>
+<h3 id="212-shapes">2.1.2 Shapes</h3>
+<p>Shapes are visual objects represented on the screen.</p>
+<p>An example of a Shape block is:</p>
+<pre><code>(:shape block
+              :type default
+              :properties(
+                (showname false)
+                (x NULL)
+                (y NULL)
+                (color (function randomcolor)) 
+                (width 80)
+                (height 80)
+                (base64image iVBORw0KGg...oAA)
+              )
+  )
+</code></pre>
+
+<p>Shape blocks contain:
+* The name of the shape, for example <code>block</code>
+* The type of the object. Types can either be <code>default</code>, <code>custom</code>, or <code>predefine</code>. 
+  * <code>default</code> objects apply to any objects mentioned in the problem file. A 'block' in the problem file is an example of a default object. 
+  * <code>custom</code> objects are additional to the problem file, and are created by the user for visual effect. The 'claw' is an example of a custom object - it mainly serves a visual purpose and is not specified in the problem or domain file. The robot in the Grid domain is another example of a custom object - it is not explicitly mentioned in the domain objects, but its behaviour is still fairly dynamic (moving around etc)
+  * <code>predefine</code> These objects are assigned only to domain objects whose name matches any of the names in the :object field. This is used to apply properties to domain objects with specific naming conventions, for example, <code>key1</code>, <code>key2</code>, ... in the Grid domain.
+* Object properties. These properties govern the position and appearance of the object. See section 2.4 for a detailed list of object properties.</p>
+<h2 id="22-syntax">2.2 Syntax</h2>
+<h3 id="221-description">2.2.1 Description</h3>
+<p>The syntax of the language is based on PDDL syntax, which is itself based on Lisp. See Section 2.2.2 for detailed resources on these languages.</p>
+<h3 id="222-resources">2.2.2 Resources</h3>
+<ul>
+<li>PDDL information: https://en.wikipedia.org/wiki/Planning_Domain_Definition_Language</li>
+<li>PDDL examples, solver: http://planning.domains/</li>
+<li>Lisp information: https://en.wikipedia.org/wiki/Lisp_(programming_language)</li>
+<li>Lisp Tutorial: https://www.tutorialspoint.com/lisp/</li>
+</ul>
+<h2 id="23-types">2.3 Types</h2>
+<p>A type is a class of variable to which a property can be assigned. The use of the word 'type' is therefore fairly loose.</p>
+<p>AP supports a number of 'types':
+* Integer
+* Boolean - <code>true</code> or <code>false</code>
+* Function - Allocates a property based on some function, for example, <code>distribute_horizontal</code>
+* Color - either a colour constant, eg <code>BLACK</code>, (see below), the <code>RANDOMCOLOR</code> function (see section 2.5), or an rgb value, for example <code>#FAA2B5</code>
+* Constant - A number of pre-defined constants exist. These should by convention be written in CAPITALS.
+  * Colours: BLACK, RED, BLUE, GREEN, YELLOW
+  * Integer Constants: PANEL_SIZE
+  * <code>NULL</code> - A <code>NULL</code> value means the user is not specifying the property. <code>NULL</code> properties are typically be set by Predicate rules.</p>
+<p>A list of the types to which each property can be assigned is in section 2.4.</p>
+<h2 id="24-object-properties">2.4 Object Properties</h2>
+<p>A number of Object Properties can be assigned for each Shape.
+* showname (Boolean): whether to display the shape's name on screen
+* x (Integer): x position of the shape on screen
+* y (Integer): y position of the shape on screen
+* colour (Colour): Colour of the shape. Can be a constant (eg <code>BLACK</code>), an RGB value (eg <code>#FAA2B5</code>), or the custom value <code>RANDOMCOLOR</code> which picks a random RGB value.
+* width (Integer): Width of the object on screen
+* height: Height of the object on screen
+* base64image: A Base64 string representing the shape's image. Base64 images can be generated at https://www.base64decode.org/
+* depth: Depth of the object on screen. Higher depth objects are drawn behind lower depths.
+* label: Optional attribute specifying a string label to be drawn on the object.</p>
+<h2 id="25-functions">2.5 Functions</h2>
+<p>Functions have two uses:
+* In Predicate blocks: here they are 'declarative' in nature and when specified, are true for their parameters
+* In object properties: Here they return a value (eg random_colour).</p>
+<p>List of functions:</p>
+<p><strong>Distribution</strong>
+Distribution functions 'distribute' objects in a certain manner. They are used to lay objects out on the screen. All objects for which the same parameters of 'distribute' are called will be included in the distribution. Distribution works such that objects will be placed in a certain area without overlapping. Between animation frames, objects will not move (unless their positions are reset).</p>
+<ul>
+<li><strong>distributex</strong></li>
+<li>This function distributes objects along a horizontal plane. </li>
+<li>Parameter <code>spacebtwn</code> governs the space between objects</li>
+<li>Example of use:</li>
+<li><code>(assign (?x x) (function distributex (objects ?x) (settings (spacebtwn 40))))</code></li>
+<li><strong>distributey</strong></li>
+<li>This function distributes objects along a vertical plane. </li>
+<li>Parameter <code>spacebtwn</code> governs the space between objects</li>
+<li>Example of use:</li>
+<li><code>(assign (?city y) (function distributey (objects ?city)))</code></li>
+<li><strong>distribute_grid_around_point</strong></li>
+<li>This function distributes objects within a grid-like structure </li>
+<li>Parameter <code>spacebtwn</code> governs the space between objects</li>
+<li>Example of use:</li>
+<li><code>(assign (?p x y) (function distribute_grid_around_point (objects ?p)))</code></li>
+<li><strong>distribute_within_objects_vertical</strong></li>
+<li>This function distributes objects vertically within the bounds of another object. For example, cars can be distributed within a city.</li>
+<li>Parameter <code>spacebtwn</code> governs the space between objects</li>
+<li>Example of use:</li>
+<li><code>(assign (?r x y) (function distribute_within_objects_vertical (objects ?r ?x)(settings (spacebtw 20))))</code></li>
+<li><strong>distribute_within_objects_horizontal</strong></li>
+<li>This function distributes objects horizontally within the bounds of another object. For example, cars can be distributed within a city.</li>
+<li>Example of use:</li>
+<li><code>(assign (?obj x) (function distribute_within_objects_horizontal (objects ?obj ?loc)))</code></li>
+</ul>
+<p><strong>Other Functions</strong>
+* <strong>calculate_label</strong>
+    * <code>calculate_label (objects ?obj1 ?obj2))</code> displays a numeric label for obj1, based on the number of obj2 objects with this function applied to them. For example, if there are 3 instances of calculate label for <code>(a b) (a c) (a d)</code>, then object <code>a</code> will have a label of "3". Useful for displaying how many objects are inside another object
+    * Example of use:
+    * <code>(assign (?obj2 label) (function calculate_label (objects ?obj1 ?obj2)))</code>
+* <strong>align_middle</strong>
+    * <code>align_middle (objects ?x ?y)</code> aligns objects x to the middle of  object y
+    * Example of use:
+    * <code>(assign (?x x) (function align_middle (objects ?x ?y)))</code>
+* <strong>apply_smaller</strong>
+    * apply_smaller (objects ?x ?y) sets ?y to be displayed smaller than ?x. 
+    * the parameter <code>increase_width</code> specifies the extend to which an object is wider
+    * Example of us:
+    * <code>(assign (?x width) (function apply_smaller (objects ?x ?y) (settings (increase_width 6))))</code></p>
+<ul>
+<li><strong>draw_line</strong></li>
+<li>Draws a line between two objects</li>
+<li>Example of use:</li>
+<li><code>(action (function draw_line (objects ?x ?y)))</code></li>
+</ul>
+<h1 id="3-worked-example">3 Worked Example</h1>
+<p>The following example is for the Blocks domain.
+To see the final result for this AP, see the link in section 1.2 for the associated domain and problem files. These can be visualised with this animation profile.</p>
+<p>The following is an example problem visualised with this animation profile:</p>
+<p><img alt="" src="https://raw.githubusercontent.com/Planning-Visualisation/planning-visualisation/master/Docs/images/ap/blocks_example.png" /></p>
+<p>The animation profile is as follows (comments  added with a # symbol):</p>
+<pre><code>(define (animation blocksworld)
+
+  # the 'on' predicate takes two parameters (objects) ?x and ?y
+  (:predicate on
+                 :parameters (?x ?y)
+                 :effect( 
+
+
+        # the effect of the `on` predicate is that ?x's x value is equal to ?y's x value, and that ?x's y value is equal to ?y's ?y value plus its height.
+        # that is, object ?x is on top of object ?y
+                 (equal (?x x y) (?y x (sum y height)) 
+                 )
+  )
+
+  (:predicate on-table
+
+                 :parameters (?x)
+                 :effect(
+
+
+        # the predicate on-table specifies that the object should be distributed horizontally, with a y value of 0
+        # and a margin of 5
+                 (equal (?x x y) (function distribute_horizontal (margin 5)(y 0))
+                 )
+
+  (:predicate holding
+
+                 :parameters (?x claw)
+                 :effect ( 
+                 (equal (?x x y) (claw x y))
+                 )
+
+  )
+
+
+
+  # Below are the list of shapes
+
+
+  (:shape block
+        #block shape is the default shape type. All domain objects have this type by default
+        :type default
+
+
+        # all 'shape' objects have the following properties
+              :properties(
+                (showname false)
+                (x false)
+                (y false)
+
+
+        # randomcolor assigns a random color to the object
+                (color (function randomcolor))
+                (width 80)
+                (height 80)
+
+
+        # this is a base64 string representing the image of the object
+                (base64image iVBORw0KGg...oAA)
+              )
+  )
+
+  (:shape claw
+        #custom object types do not appear in the domain
+        #they are mainly cosmetic. This object represents the claw (the claw does not move)
+              :type custom
+              :properties(
+                (showname false)
+                (x 230)
+                (y 500)
+                (color black)
+                (width 80)
+                (height 40)
+                (base64image iVBORw0KGg...oAA)
+               )
+  )
+  (:shape board
+              :type custom
+              :properties(
+                (showname false)
+                (x 0)
+                (y 0)
+                (color black)
+                (width panel_size)
+                (height 5)
+                (base64image iVBORw0KGg...oAA)
+              )
+  )
+
+)
+</code></pre>
+
+<p>Three other Animation Profiles are provided in the source code under Test/Sample Files. Each of these is commented for readability.</p>
+<h1 id="4-extending-the-language">4 Extending the Language</h1>
+<h2 id="41-extension-areas">4.1 Extension Areas</h2>
+<p>There are two primary methods of extending the AP language: 
+1. Object properties (section 2.4)
+  * This is for simple ways of extending the appearance of objects, eg adding rotation or the font of 'showname'
+2. Adding functions (section 2.5)
+  * This is for more complex ways of describing object behaviours and interactions, eg adding new object layout options</p>
+<h2 id="42-extension-steps">4.2 Extension Steps</h2>
+<ol>
+<li>Modify the extensions.py file in the directory to add any functions or properties. See the document 'VFG Documentation.md' for more information.</li>
+<li>In limited advanced cases, exta functions may need to be written for Visualiser (Unity)</li>
+<li>Add the necessary documentation in this .md file.</li>
+</ol>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../ug1/" class="btn btn-neutral float-right" title="User Guide">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../Visualiser_guide/" class="btn btn-neutral" title="Visualiser"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../Visualiser_guide/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../ug1/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>

@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Deployment - Planimation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Deployment";
+    var mkdocs_page_input_path = "Deployment_guide.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Planimation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="..">Home</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">Deployment</a>
+    <ul class="subnav">
+            
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../VFG_guide/">VFG</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Visualiser_guide/">Visualiser</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ap_guide/">Animation Profile</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ug1/">User Guide</a>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Planimation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+    
+    <li>Deployment</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <p><strong>Software Build and Deployment Document</strong>
+| Version        | Author           | Date  | Comment|
+| ------------- |:-------------:| -----:|-----:|
+|0.1     | Gang Chen | 18/09/2018 |Deployment process for Ubuntu server. Ubuntu is one major OS that unimelb uses. |
+| 0.2      | Gang Chen      |   24/09/2018 |The next release of this document will cover Heroku server. |
+| 0.3 | Hugh Edwards     |    7/10/2018 | Convert to Markdown, editing |</p>
+<p><strong>Purpose</strong></p>
+<p>This document describes how to build and deploy the Planning Visualisation standalone software.</p>
+<p><strong>Document Overview</strong></p>
+<p>This document is organised in the following sections:
+0. Requirements: Requirements for deployment
+1.  Project Repository: Contains  information on how the repository is organised.
+2.  Pre-deployment Process: Details how to build the software from the source code and how to build the other project artefacts. Additional information on the various steps of the build process is also provided as well as a list of all required libraries.
+3.  Deployment: How to install and run the software, and the system requirements.
+4.  Post-deployment: Details how to display the final product.  </p>
+<p><strong>0. Requirements</strong></p>
+<p><strong>Build Agent Requirement</strong></p>
+<p>Your build agent will need to meeting the following minimum requirements. GPU is a must as you will need a valid graphic card and graphic card drive to activate Unity:</p>
+<table>
+<thead>
+<tr>
+<th>Components</th>
+<th align="center">Minimum Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Operating System</td>
+<td align="center">OS: Windows 7 SP1+, 8, 10, 64-bit versions only; macOS 10.11+. Server versions of Windows &amp; OS X are not tested.</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td align="center">CPU: SSE2 instruction set support.</td>
+</tr>
+<tr>
+<td>GPU</td>
+<td align="center">GPU: Graphics card with DX10 (shader model 4.0) capabilities.</td>
+</tr>
+<tr>
+<td>Aditional Platform Development Requirements</td>
+<td align="center"><strong>iOS:</strong> Mac computer running minimum macOS 10.12.6 and Xcode 9.0 or higher. <strong>Android:</strong> Android SDK and Java Development Kit (JDK); IL2CPP scripting backend requires Android NDK. <strong>Universal Windows Platform:</strong> Windows 10 (64-bit), Visual Studio 2015 with C++ Tools component or later and Windows 10 SDK</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Deployment Server Requirement</strong></p>
+<p>The deployment server used in developnet is a Linux OS family member - Ubuntu. This section covers the minimum hardware requirements for these deployment servers.</p>
+<p><strong>Ubuntu Desktop Edition</strong>
+Processor: 2 GHz dual core processor
+RAM: 2 GiB RAM (system memory)
+Storage: 25 GB of hard-drive space (or USB stick, memory card or external drive but see LiveCD for an alternative approach)
+Display: VGA capable of 1024x768 screen resolution (Optional)
+Accessories: <a href="https://help.ubuntu.com/community/Synaptic/PackageDownloadScript">Internet access</a>
+Port Selection: 
+* 22/tcp  open ssh
+* 80/tcp  open http
+* 631/tcp open ipp
+* 3306/tcp open mysql
+* 8000/tcp open http-alt</p>
+<p><strong>Ubuntu Server Edition</strong>
+Processor: 300 MHz x86 processor
+RAM: 256 MiB of system memory (RAM)
+Storage: 1.5 GB of disk space
+Display: Graphics card and monitor capable of 640x480 (Optional)
+Accessories: <a href="https://help.ubuntu.com/community/Synaptic/PackageDownloadScript">Internet access</a>
+Port Selection: 
+* 22/tcp  open ssh
+* 80/tcp  open http
+* 631/tcp open ipp
+* 3306/tcp open mysql
+* 8000/tcp open http-alt</p>
+<p><strong>1.Project Repository</strong></p>
+<p>The source code and related artefacts are hosted at Bitbucket server, the entire repository can be cloned through the following command:</p>
+<pre><code>sudo git clone [https://bitbucket.cis.unimelb.edu.au:8445/scm/swen90013/swen90013-2018-pl](https://bitbucket.cis.unimelb.edu.au:8445/scm/swen90013/swen90013-2018-pl)
+</code></pre>
+
+<p>After having successfully cloned the project, move to the current master branch to verify our latest released version with:</p>
+<pre><code>sudo git checkout master
+</code></pre>
+
+<p>This is equivalent to our latest release branch:</p>
+<pre><code>sudo git checkout release-sprint3
+</code></pre>
+
+<p><strong>2.Pre-deployment Process</strong></p>
+<p>Planning Visualisation’s presentation layer is based on WebGL and Unity, the contents of which can be generated from the Unity part of the repository. This section covers how and what to generate:</p>
+<p><strong>2.1 Install Unity Dependencies</strong></p>
+<p>Install the Version 2018.2.1f1 from <a href="https://unity3d.com/">https://unity3d.com/</a>, when installing, select "Include WebGL”.</p>
+<p>Additionally, download the followings for building Unity files (This requires roughly 50MB storage space).</p>
+<pre><code>sudo apt-get install -y libgconf-2-4
+</code></pre>
+
+<pre><code>sudo apt install libcanberrra-gtk\*
+</code></pre>
+
+<p><strong>2.2 Build Unity Project</strong></p>
+<p>The build process is designed to be cross-platform and self-contained. What all this means is that you can run the various build tasks on any machine where a validated Unity is available, without having to worry about resolving other library dependencies.</p>
+<p>The Unity project can either be built from the Unity command line, or from the Unity GUI.</p>
+<p><strong>2.2.1 Building from command line</strong></p>
+<p>To build from the command line, enter the following command. We illustrate the idea with Ubuntu build agent. However, the idea can apply to any OS.</p>
+<p>Move to the <strong><em>/PlanningVisualise</em></strong>  directory in the repository that you’ve just checked out from Section 1 and from there type, at the command prompt:</p>
+<pre><code>/home/$USER/Editor/Unity -batchmode -quit -projectPath “ProjectPath” -executeMethod buildscript.build -logFile stdout.log
+</code></pre>
+
+<ul>
+<li><em>You will need to replace the “ProjectPath” with the absolute path of your cloned copy of the repository. E.g. “/home/$USER/swen90013-2018-pl</em><strong><em>/PlanningVisualise</em></strong><em>”</em></li>
+<li><em>You will need to replace “/home/$USER/Editor/Unity” with the absolute path of Unity executable on your build agent.</em></li>
+<li><em>Compilation progress can be found in “stdout.log”.</em></li>
+</ul>
+<p>For more information on each of the components in the command, please visit
+<a href="https://docs.unity3d.com/Manual/CommandLineArguments.html">https://docs.unity3d.com/Manual/CommandLineArguments.html</a></p>
+<p>Should you wish to update the User Interface of this application, you need to include all your customised Unity scenes in the buildscript prior to compilation, buildscript can be found:</p>
+<pre><code>../swen90013-2018-pl/PlanningVisualise/Assets/Editor/buildscript.cs
+</code></pre>
+
+<p>With having the command executed, a folder called “buildweb” should appear under the <strong><em>/PlanningVisualise</em></strong>  directory and this will be the final animation contents for the deployment process in Section 3.<strong>2.1 Install Python3 Dependencies</strong></p>
+<p>Should you wish to change the server side of the repository, you will need to install the following libraries in order to compile the python files with Python3 Interpreter, Python3 Interpreter can be downloaded with :</p>
+<pre><code>sudo apt-get update
+sudo apt-get install python3.6
+</code></pre>
+
+<p>Addition libraries include:</p>
+<pre><code>sudo apt-get install python-pip 
+sudo pip install numpy scipy**3\.
+</code></pre>
+
+<p><strong>2.2.1 Building from Unity GUI</strong></p>
+<ul>
+<li>Open Unity</li>
+<li>Click File -&gt; Build Settings</li>
+<li>Choose 'WebGL'</li>
+<li>Make sure all the selected scenes are those under the 'Visualisation' folder</li>
+<li>Click 'Player Settings'</li>
+<li>Click 'Publishing Settings'</li>
+<li>Enter 512 for 'WebGL Memory Size'</li>
+<li>Tick 'WebAssembly'</li>
+<li>Click 'Build'</li>
+</ul>
+<p><strong>Ubuntu Deployment Process</strong></p>
+<p>Installing and running Planning Visualisation is very easy: drop the distribution directory somewhere on your filesystem and run your servers! This section details all this more precisely. An obvious set of pre-requisites is Apache server and Django Server.</p>
+<p><strong>3.1 Apache Web Server Installation</strong></p>
+<p>For Ubuntu server, run the following commands to install Apache server:</p>
+<p>```
+sudo apt-get update &amp;&amp; sudo apt-get upgrade<br />
+sudo apt-get install apache2 apache2-doc apache2-utils</p>
+<pre><code>
+After having successfully installed the Apache server, you can run the server with the following command:
+</code></pre>
+
+<p>sudo service apache2 start</p>
+<pre><code>
+**3.1 Apache Web Server Deployment**
+
+With the command provided in section 2, you should be able to get a folder called “buildweb” under “../swen90013-2018-pl/PlanningVisualise/”. The remaining is easy: drop the distribution directory to the designated Apache source folder and restart your apache server:
+
+*   Move all the files and subdirectories under “buildweb” to “/var/www/html/“
+*   Restart the apache server with 
+    ```“sudo service apache2 restart”```
+
+
+**3.2 Django Server Installation**
+
+For Ubuntu server, run the following commands to install Django server:
+</code></pre>
+
+<p>sudo apt install python3-pip
+pip3 install djangorestframework
+sudo apt-get install python3-django
+sudo apt-get install gunicorn3</p>
+<pre><code>
+
+**3.2 Django Server Deployment**
+
+
+Once the installation is done and the Django server is ready, move to the **_/server_**  directory and from there type, at the command prompt:
+</code></pre>
+
+<p>sudo gunicorn3 -b 0.0.0.0:8000 server.wsgi —reload</p>
+<pre><code>
+After all, the server should be reachable from external network and your project should be ready.
+
+
+**4. Post-deployment**
+
+Planning Visualisation can then be accessed within any web browser that is compatible with WebGL by typing the IP address of you deployment server.
+
+**5. Heroku Deployment**
+
+**5.1 Pre-deployment Process**
+
+Please make sure your setup has met the following conditions:
+
+*   a free [Heroku account](https://signup.heroku.com/signup/dc).
+*   Python version 3.6 installed locally - see the installation guides for [OS X](http://docs.python-guide.org/en/latest/starting/install3/osx/), [Windows](http://docs.python-guide.org/en/latest/starting/install3/win/), and [Linux](http://docs.python-guide.org/en/latest/starting/install3/linux/).
+*   [Pipenv installed](http://docs.python-guide.org/en/latest/dev/virtualenvs/) locally. Accomplish this by running pip install pipenv.
+*   [Postgres installed](https://devcenter.heroku.com/articles/heroku-postgresql#local-setup) locally, if running the app locally.
+
+
+
+**5.2 Deployment Process**
+
+Heroku Command Line Interface (CLI) - Once installed, you can use the HEROKU command from your command shell. To log in with your Heroku account:
+
+
+</code></pre>
+
+<p>heroku login</p>
+<pre><code>Enter your Heroku credentials.
+</code></pre>
+
+<p>//Email: <a href="mailto:user@example.com">user@example.com</a>
+//Password:</p>
+<pre><code>
+
+To clone your project with:
+</code></pre>
+
+<p>git clone <a href="https://github.com/heroku/python-getting-started.git">https://github.com/heroku/python-getting-started.git</a>
+cd python-getting-started</p>
+<pre><code>
+Next, create an app on Heroku, which prepares Heroku to receive your source code:
+</code></pre>
+
+<p>heroku create</p>
+<pre><code>
+
+When you create an app, a git remote (called heroku) is also created and associated with your local git repository. Heroku generates a random name (in this case lit-bastion-5032) for your app, or you can pass a parameter to specify your own app name. Now deploy your code:
+</code></pre>
+
+<p>git push heroku master</p>
+<pre><code>
+
+Use a [Procfile](https://devcenter.heroku.com/articles/procfile) to explicitly declare what command should be executed to start your app.
+
+The Procfile in the example app you deployed looks like this:
+</code></pre>
+
+<p>web: gunicorn gettingstarted.wsgi --log-file -
+```
+This declares a single process type, web, and the command needed to run it. The name web is important here. It declares that this process type will be attached to the <a href="https://devcenter.heroku.com/articles/http-routing">HTTP routing</a> stack of Heroku, and receive web traffic when deployed. Procfiles can contain additional process types. For example, you might declare one for a background worker process that processes items off of a queue.</p>
+<p><strong>5.3 Unity with Heroku Deployment</strong></p>
+<p>When deploying the Django server with Heroku, you will also need to make sure to redirect the traffic for your local server to Heroku within Unity, this can be done by simply enabling and changing the settings in <strong><em>ScenesCoordinator.cs:</em></strong></p>
+<p><img alt="" src="https://raw.githubusercontent.com/Planning-Visualisation/planning-visualisation/master/Docs/images/deployment/build_screenshot.png" /></p>
+<p>As shown above in the picture, the current setting is pointing to local machine. Enabling the line below will redirect the data stream to your Heroku server. You should replace “<a href="https://immense-bastion-42146.herokuapp.com/upload/pddl">https://immense-bastion-42146.herokuapp.com/upload/pddl</a>” with your Heroku application.</p>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../VFG_guide/" class="btn btn-neutral float-right" title="VFG">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../VFG_guide/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>
