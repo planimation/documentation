@@ -1,9 +1,15 @@
 site_name: Planimation
 nav:
-    - Home: README.md
-    - Deployment: Deployment_guide.md
-    - VFG: VFG_guide.md
-    - Visualiser: Visualiser_guide.md
-    - Animation Profile: ap_guide.md
-    - User Guide: ug1.md
+    - User Information:
+        - Home: README.md
+        - User Guide: ug1.md
+    - Developer Information:
+        - Deployment: Deployment_guide.md
+        - VFG: VFG_guide.md
+        - Visualiser: Visualiser_guide.md
+        - Animation Profile: ap_guide.md
+    - Resources:
+          - GitHub :
+          - Other Resources:
+
 theme: readthedocs

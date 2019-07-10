@@ -14,6 +14,10 @@ For developer documentation, see
 	* Contains a guide to the Visualisation File Generator Component
 * `/Docs/Visualiser Guide.md`
 	* Contains a guide to the VisualiserComponent 
+	
+
+[![Everything Is AWESOME](https://img.youtube.com/vi/StTqXEQ2l-Y/0.jpg)](https://youtu.be/Cj2rWdt1YQU)
+
 
 
 ## 1.1 Planning Problems
