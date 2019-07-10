@@ -8,6 +8,13 @@ nav:
         - VFG: VFG_guide.md
         - Visualiser: Visualiser_guide.md
         - Animation Profile: ap_guide.md
+    - Component Information:
+          - Backend: backend.md
+          - Frontend: frontend.md
+
+    - Resources:
+          - GitHub: git.md
+          - Other: other.md
 
 
 theme: readthedocs
