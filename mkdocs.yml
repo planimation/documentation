@@ -8,8 +8,6 @@ nav:
         - VFG: VFG_guide.md
         - Visualiser: Visualiser_guide.md
         - Animation Profile: ap_guide.md
-    - Resources:
-          - GitHub :
-          - Other Resources:
+
 
 theme: readthedocs
