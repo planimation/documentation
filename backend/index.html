@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  
+  <link rel="shortcut icon" href="../img/favicon.ico">
+  <title>Backend - Planimation</title>
+  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+
+  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
+  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  
+  <script>
+    // Current page data
+    var mkdocs_page_name = "Backend";
+    var mkdocs_page_input_path = "backend.md";
+    var mkdocs_page_url = null;
+  </script>
+  
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
+  
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+      <div class="wy-side-nav-search">
+        <a href=".." class="icon icon-home"> Planimation</a>
+        <div role="search">
+  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+  </form>
+</div>
+      </div>
+
+      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+	<ul class="current">
+	  
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">User Information</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="..">Home</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ug1/">User Guide</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Developer Information</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../Deployment_guide/">Deployment</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../VFG_guide/">VFG</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../Visualiser_guide/">Visualiser</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../ap_guide/">Animation Profile</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Component Information</span>
+    <ul class="subnav">
+                <li class=" current">
+                    
+    <a class="current" href="./">Backend</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l3"><a href="#planimation-backend">Planimation Backend</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l4" href="#local-dev">Local Dev</a></li>
+        
+            <li><a class="toctree-l4" href="#docker-build">Docker Build</a></li>
+        
+            <li><a class="toctree-l4" href="#contribution">Contribution</a></li>
+        
+        </ul>
+    
+
+    </ul>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../frontend/">Frontend</a>
+                </li>
+    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <span class="caption-text">Resources</span>
+    <ul class="subnav">
+                <li class="">
+                    
+    <a class="" href="../git/">GitHub</a>
+                </li>
+                <li class="">
+                    
+    <a class="" href="../other/">Other</a>
+                </li>
+    </ul>
+	    </li>
+          
+        </ul>
+      </div>
+      &nbsp;
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="..">Planimation</a>
+      </nav>
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="..">Docs</a> &raquo;</li>
+    
+      
+        
+          <li>Component Information &raquo;</li>
+        
+      
+    
+    <li>Backend</li>
+    <li class="wy-breadcrumbs-aside">
+      
+    </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main">
+            <div class="section">
+              
+                <h1 id="planimation-backend">Planimation Backend</h1>
+<p>Latest Development Build Status</p>
+<p><a href="https://travis-ci.org/planimation/backend"><img alt="Build Status" src="https://travis-ci.org/planimation/backend.svg?branch=develop" /></a></p>
+<h2 id="local-dev">Local Dev</h2>
+<ul>
+<li>
+<p>Required Python version 3.6</p>
+<p><code>cd backend/server
+pip install -r requirements.txt
+python manage.py runserver</code></p>
+</li>
+</ul>
+<h2 id="docker-build">Docker Build</h2>
+<ul>
+<li>
+<p>Install Docker</p>
+<p><code>export IMAGE_TAG=planimation-backend:latest
+docker build -t IMAGE_TAG -f /backend/docker/release/Dockerfile server
+docker run -d -p 8000:8000 IMAGE_TAG
+docker ps</code></p>
+</li>
+<li>
+<p>Test the web server is running by visiting <code>localhost:8000</code> in the browser.</p>
+</li>
+</ul>
+<h2 id="contribution">Contribution</h2>
+<p>When contributing to this repository, please adhere to the below guidelines.</p>
+<h3 id="create-an-issue">Create an issue</h3>
+<ul>
+<li>Before pushing code to the repo, it is required to <a href="https://github.com/planimation/backend/issues">create an issue</a> along with a brief description so that peer developers can review, provide suggestions and feedback.</li>
+<li>Create a new issue to obtain <code>ISSUE_NO</code>.</li>
+</ul>
+<h3 id="pre-push-changes">Pre-push changes</h3>
+<p>Before pushing the code to repo please make sure to:</p>
+<ol>
+<li>Update the <code>README.md</code> with details of changes to the interface, this includes the new environment 
+   variables, exposed ports, useful file locations and container parameters, if any.</li>
+<li>Increase the version numbers in any examples files and the README.md to the new version if any. </li>
+<li>The version number scheme, we follow <a href="http://semver.org/">SemVer</a>.</li>
+</ol>
+<h3 id="commit-message-format">Commit message format</h3>
+<ul>
+<li>Set the commit template as follows:
+    <code>git config user.name "Your Full Name"
+    git config user.name "Your GitHut email"
+    git config commit.template .gitmessage</code></li>
+<li>
+<p>Commit message should be of the following format <code>[ISSUE_NO] COMMIT_MESSAGE</code>. Refer <a href=".gitmessage"><code>.gitmessage</code></a>. Example:
+    ```
+    [10] Fix security issue related with form</p>
+<ul>
+<li>Updated lib dependency version</li>
+<li>Fixed something</li>
+<li>Fixed other thing</li>
+</ul>
+<p>Resolves #10
+```</p>
+</li>
+</ul>
+<h3 id="pull-request-and-peer-code-review-process">Pull Request and peer code review process</h3>
+<p><strong>Please note that you cannot push directly to <code>develop</code> nor <code>master</code> branches.</strong></p>
+<ul>
+<li>Create a new branch and push the changes to this branch.</li>
+<li>Create a PR and add at least one peer reviewer.</li>
+<li>You may merge your branch to <code>develop</code> once your PR is approved by your peer reviewer.</li>
+<li>If you do not have permission to merge the PR, please contact the reviewer to merge it for you.</li>
+</ul>
+              
+            </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="../frontend/" class="btn btn-neutral float-right" title="Frontend">Next <span class="icon icon-circle-arrow-right"></span></a>
+      
+      
+        <a href="../ap_guide/" class="btn btn-neutral" title="Animation Profile"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <!-- Copyright etc -->
+    
+  </div>
+
+  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+</footer>
+      
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+
+  <div class="rst-versions" role="note" style="cursor: pointer">
+    <span class="rst-current-version" data-toggle="rst-current-version">
+      
+      
+        <span><a href="../ap_guide/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+      
+      
+        <span style="margin-left: 15px"><a href="../frontend/" style="color: #fcfcfc">Next &raquo;</a></span>
+      
+    </span>
+</div>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+
+</body>
+</html>
