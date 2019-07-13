@@ -61,16 +61,16 @@ Predicate Blocks contain:
     *   This is required to ensure a limited number of domains (eg Towers of Hanoi) can be solved. Typically it is required when multiple predicates affect the same variables.
 
 
-### 2.1.2 Shapes
+### 2.1.2 Visual
 
-Shapes are visual objects represented on the screen.
+visual defines the objects represented on the screen.
 
 
-An example of a Shape block is:
+An example of a visual block is:
 
 
 ```
-(:shape block
+(:visual block
               :type default
               :properties(
                 (showname false)
@@ -85,12 +85,12 @@ An example of a Shape block is:
 ```
 
 
-Shape blocks contain:
+visual blocks contain:
 * The name of the shape, for example ```block```
 * The type of the object. Types can either be ```default```, ```custom```, or ```predefine```. 
   * ```default``` objects apply to any objects mentioned in the problem file. A 'block' in the problem file is an example of a default object. 
   * ```custom``` objects are additional to the problem file, and are created by the user for visual effect. The 'claw' is an example of a custom object - it mainly serves a visual purpose and is not specified in the problem or domain file. The robot in the Grid domain is another example of a custom object - it is not explicitly mentioned in the domain objects, but its behaviour is still fairly dynamic (moving around etc)
-  * ```predefine``` These objects are assigned only to domain objects whose name matches any of the names in the :object field. This is used to apply properties to domain objects with specific naming conventions, for example, `key1`, `key2`, ... in the Grid domain.
+  * ```predefine``` These objects are assigned only to domain objects whose name matches any of the names in the :object field. This is used to apply properties to domain objects with specific naming conventions, for example, `key1`, `key2`, ... in the Grid domain. Alternatives, you can use ```%key``` shortcut to represent all the objects start with "key".
 * Object properties. These properties govern the position and appearance of the object. See section 2.4 for a detailed list of object properties.
 
 ## 2.2 Syntax
@@ -100,9 +100,6 @@ Shape blocks contain:
 
 
 The syntax of the language is based on PDDL syntax, which is itself based on Lisp. See Section 2.2.2 for detailed resources on these languages.
-
-
-
 
 
 
