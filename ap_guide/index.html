@@ -231,10 +231,10 @@
     *   <code>:priority 0</code>
     *   Higher priority predicates are applied first
     *   This is required to ensure a limited number of domains (eg Towers of Hanoi) can be solved. Typically it is required when multiple predicates affect the same variables.</p>
-<h3 id="212-shapes">2.1.2 Shapes</h3>
-<p>Shapes are visual objects represented on the screen.</p>
-<p>An example of a Shape block is:</p>
-<pre><code>(:shape block
+<h3 id="212-visual">2.1.2 Visual</h3>
+<p>visual defines the objects represented on the screen.</p>
+<p>An example of a visual block is:</p>
+<pre><code>(:visual block
               :type default
               :properties(
                 (showname false)
@@ -248,12 +248,12 @@
   )
 </code></pre>
 
-<p>Shape blocks contain:
+<p>visual blocks contain:
 * The name of the shape, for example <code>block</code>
 * The type of the object. Types can either be <code>default</code>, <code>custom</code>, or <code>predefine</code>. 
   * <code>default</code> objects apply to any objects mentioned in the problem file. A 'block' in the problem file is an example of a default object. 
   * <code>custom</code> objects are additional to the problem file, and are created by the user for visual effect. The 'claw' is an example of a custom object - it mainly serves a visual purpose and is not specified in the problem or domain file. The robot in the Grid domain is another example of a custom object - it is not explicitly mentioned in the domain objects, but its behaviour is still fairly dynamic (moving around etc)
-  * <code>predefine</code> These objects are assigned only to domain objects whose name matches any of the names in the :object field. This is used to apply properties to domain objects with specific naming conventions, for example, <code>key1</code>, <code>key2</code>, ... in the Grid domain.
+  * <code>predefine</code> These objects are assigned only to domain objects whose name matches any of the names in the :object field. This is used to apply properties to domain objects with specific naming conventions, for example, <code>key1</code>, <code>key2</code>, ... in the Grid domain. Alternatives, you can use <code>%key</code> shortcut to represent all the objects start with "key".
 * Object properties. These properties govern the position and appearance of the object. See section 2.4 for a detailed list of object properties.</p>
 <h2 id="22-syntax">2.2 Syntax</h2>
 <h3 id="221-description">2.2.1 Description</h3>
