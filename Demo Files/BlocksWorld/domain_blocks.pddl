@@ -4,7 +4,7 @@
 
   (:predicates (on ?x ?y)
 
-                   (on-table ?x)
+                   (ontable ?x)
 
                    (clear ?x)
 
@@ -20,11 +20,11 @@
 
                  :parameters (?x)
 
-                 :precondition (and (clear ?x) (on-table ?x) (arm-free))
+                 :precondition (and (clear ?x) (ontable ?x) (arm-free))
 
                  :effect
 
-                 (and (not (on-table ?x))
+                 (and (not (ontable ?x))
 
                            (not (clear ?x))
 
@@ -48,7 +48,7 @@
 
                            (arm-free)
 
-                           (on-table ?x)))
+                           (ontable ?x)))
 
   (:action stack
 

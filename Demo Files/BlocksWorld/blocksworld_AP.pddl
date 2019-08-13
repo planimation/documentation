@@ -18,7 +18,7 @@
  
 
 ; Specifies an object is on the table
-  (:predicate on-table
+  (:predicate ontable
                  :parameters (?x)
                  :effect(
                  (assign (?x x) (function distributex (objects ?x) (settings (spacebtwn 40))))
