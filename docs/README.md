@@ -4,17 +4,18 @@ This document contains an overview of Planimation.
 
 The Planimation is an open-source program which visualises solutions to Planning Problems. It is an executable Unity architecture in a browser.
 
-## Here is shot video about Planimation
+## Here is short video about Planimation
 [![Youtube](images/readme/youtube.png)](https://youtu.be/Cj2rWdt1YQU)
 
 
 For developer documentation, see
-* [Animation Profile Guide](https://planimation.github.io/documentation/ap_guide/)
-	* Contains a guide to Animation Profiles and the Animation Profile Language
-* [VFG Guide](https://planimation.github.io/documentation/VFG_guide/)
-	* Contains a guide to the Visualisation File Generator Component
-* [Visualiser Guide](https://planimation.github.io/documentation/Visualiser_guide/)
-	* Contains a guide to the VisualiserComponent 
+
+1. [Animation Profile Guide](https://planimation.github.io/documentation/ap_guide/)
+    * Contains a guide to Animation Profiles and the Animation Profile Language
+2. [VFG Guide](https://planimation.github.io/documentation/VFG_guide/)
+    * Contains a guide to the Visualisation File Generator Component
+3. [Visualiser Guide](https://planimation.github.io/documentation/Visualiser_guide/)
+    * Contains a guide to the VisualiserComponent 
 	
 
 ## 1.1 Planning Problems
