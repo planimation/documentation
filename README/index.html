@@ -8,7 +8,7 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Git - Planimation</title>
+  <title>README - Planimation</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
@@ -17,9 +17,9 @@
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Git";
-    var mkdocs_page_input_path = "git.md";
-    var mkdocs_page_url = "/git/";
+    var mkdocs_page_name = "README";
+    var mkdocs_page_input_path = "README.md";
+    var mkdocs_page_url = "/README/";
   </script>
   
   <script src="../js/jquery-2.1.1.min.js"></script>
@@ -52,9 +52,28 @@
     <a class="" href="../Deployment_guide/">Deployment guide</a>
 	    </li>
           
-            <li class="toctree-l1">
+            <li class="toctree-l1 current">
 		
-    <a class="" href="../README/">README</a>
+    <a class="current" href="./">README</a>
+    <ul class="subnav">
+            
+    <li class="toctree-l2"><a href="#1-overview">1. Overview</a></li>
+    
+        <ul>
+        
+            <li><a class="toctree-l3" href="#here-is-shot-video-about-planimation">Here is shot video about Planimation</a></li>
+        
+            <li><a class="toctree-l3" href="#11-planning-problems">1.1 Planning Problems</a></li>
+        
+            <li><a class="toctree-l3" href="#12-scope">1.2 Scope</a></li>
+        
+        </ul>
+    
+
+    <li class="toctree-l2"><a href="#2-getting-started">2. Getting Started</a></li>
+    
+
+    </ul>
 	    </li>
           
             <li class="toctree-l1">
@@ -82,12 +101,9 @@
     <a class="" href="../frontend/">Frontend</a>
 	    </li>
           
-            <li class="toctree-l1 current">
+            <li class="toctree-l1">
 		
-    <a class="current" href="./">Git</a>
-    <ul class="subnav">
-            
-    </ul>
+    <a class="" href="../git/">Git</a>
 	    </li>
           
             <li class="toctree-l1">
@@ -122,7 +138,7 @@
     
       
     
-    <li>Git</li>
+    <li>README</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -132,7 +148,29 @@
           <div role="main">
             <div class="section">
               
-                
+                <h1 id="1-overview">1. Overview</h1>
+<p>This document contains an overview of Planimation.</p>
+<p>The Planimation is an open-source program which visualises solutions to Planning Problems. It is an executable Unity architecture in a browser.</p>
+<h2 id="here-is-shot-video-about-planimation">Here is shot video about Planimation</h2>
+<p><a href="https://youtu.be/Cj2rWdt1YQU"><img alt="" src="../images/readme/youtube_screenshot.png" /></a></p>
+<p>For developer documentation, see
+* <a href="https://planimation.github.io/documentation/ap_guide/">Animation Profile Guide</a>
+    * Contains a guide to Animation Profiles and the Animation Profile Language
+* <a href="https://planimation.github.io/documentation/VFG_guide/">VFG Guide</a>
+    * Contains a guide to the Visualisation File Generator Component
+* <a href="https://planimation.github.io/documentation/Visualiser_guide/">Visualiser Guide</a>
+    * Contains a guide to the VisualiserComponent </p>
+<h2 id="11-planning-problems">1.1 Planning Problems</h2>
+<p>For information about Planning Problems, see http://planning.domains/</p>
+<p>Our application uses one 'Animation Profile' per problem domain. An Animation Profile is a user-written PDDL file which tells the Visualiser how a Domain is to be visualised. See section 3.2 for more information on Animation Profiles.</p>
+<h2 id="12-scope">1.2 Scope</h2>
+<p>Planning Visualiser currently has Animation Profiles for four problem domains; Blocks, Grid, Towers of Hanoi, and Logistics. Other simple problem domains may be added by writing an Animation Profile (see section 3.2).</p>
+<p>Planning visualiser can generate a solution using the solver on http://planning.domains/ . Alternatively, the user can provide their own solution from any solver, provided it conforms to the correct format.</p>
+<h1 id="2-getting-started">2. Getting Started</h1>
+<ol>
+<li>Try planimation at http://editor.planning.domains. Install planimation from the plugin menu.</li>
+<li>or Visit our stand alone application at http://planimation.planning.domains</li>
+</ol>
               
             </div>
           </div>
@@ -140,10 +178,10 @@
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../other/" class="btn btn-neutral float-right" title="Other">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../VFG_guide/" class="btn btn-neutral float-right" title="VFG guide">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../frontend/" class="btn btn-neutral" title="Frontend"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../Deployment_guide/" class="btn btn-neutral" title="Deployment guide"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -169,10 +207,10 @@
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../frontend/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../Deployment_guide/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
-        <span style="margin-left: 15px"><a href="../other/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../VFG_guide/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>

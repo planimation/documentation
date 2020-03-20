@@ -1,53 +1,84 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2019-07-14</lastmod>
+     <loc>/Deployment_guide/</loc>
+     <lastmod>2020-03-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2019-07-14</lastmod>
+     <loc>/README/</loc>
+     <lastmod>2020-03-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2019-07-14</lastmod>
+     <loc>/VFG_guide/</loc>
+     <lastmod>2020-03-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2019-07-14</lastmod>
+     <loc>/Visualiser_guide/</loc>
+     <lastmod>2020-03-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2019-07-14</lastmod>
+     <loc>/ap_guide/</loc>
+     <lastmod>2020-03-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2019-07-14</lastmod>
+     <loc>/backend/</loc>
+     <lastmod>2020-03-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2019-07-14</lastmod>
+     <loc>/frontend/</loc>
+     <lastmod>2020-03-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2019-07-14</lastmod>
+     <loc>/git/</loc>
+     <lastmod>2020-03-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2019-07-14</lastmod>
+     <loc>/other/</loc>
+     <lastmod>2020-03-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
+    
     <url>
-     <loc>None</loc>
-     <lastmod>2019-07-14</lastmod>
+     <loc>/ug1/</loc>
+     <lastmod>2020-03-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
+    
+
 </urlset>

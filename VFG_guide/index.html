@@ -8,24 +8,23 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>VFG - Planimation</title>
+  <title>VFG guide - Planimation</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link rel="stylesheet" href="../css/highlight.css">
   
   <script>
     // Current page data
-    var mkdocs_page_name = "VFG";
+    var mkdocs_page_name = "VFG guide";
     var mkdocs_page_input_path = "VFG_guide.md";
-    var mkdocs_page_url = null;
+    var mkdocs_page_url = "/VFG_guide/";
   </script>
   
-  <script src="../js/jquery-2.1.1.min.js" defer></script>
-  <script src="../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script> 
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
   
 </head>
 
@@ -36,10 +35,10 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> Planimation</a>
+        <a href="../Deployment_guide/" class="icon icon-home"> Planimation</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+    <input type="text" name="q" placeholder="Search docs" />
   </form>
 </div>
       </div>
@@ -50,107 +49,89 @@
           
             <li class="toctree-l1">
 		
-    <span class="caption-text">User Information</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="..">Home</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../ug1/">User Guide</a>
-                </li>
-    </ul>
+    <a class="" href="../Deployment_guide/">Deployment guide</a>
 	    </li>
           
             <li class="toctree-l1">
 		
-    <span class="caption-text">Developer Information</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../Deployment_guide/">Deployment</a>
-                </li>
-                <li class=" current">
-                    
-    <a class="current" href="./">VFG</a>
+    <a class="" href="../README/">README</a>
+	    </li>
+          
+            <li class="toctree-l1 current">
+		
+    <a class="current" href="./">VFG guide</a>
     <ul class="subnav">
             
-    <li class="toctree-l3"><a href="#1-purpose">1 Purpose</a></li>
+    <li class="toctree-l2"><a href="#1-purpose">1 Purpose</a></li>
     
 
-    <li class="toctree-l3"><a href="#2-getting-started">2 Getting Started</a></li>
+    <li class="toctree-l2"><a href="#2-getting-started">2 Getting Started</a></li>
     
 
-    <li class="toctree-l3"><a href="#3-overview">3 Overview</a></li>
+    <li class="toctree-l2"><a href="#3-overview">3 Overview</a></li>
     
         <ul>
         
-            <li><a class="toctree-l4" href="#input-files">Input files:</a></li>
+            <li><a class="toctree-l3" href="#input-files">Input files:</a></li>
         
-            <li><a class="toctree-l4" href="#output-file">Output file:</a></li>
+            <li><a class="toctree-l3" href="#output-file">Output file:</a></li>
         
-            <li><a class="toctree-l4" href="#overall-architecture">Overall Architecture:</a></li>
+            <li><a class="toctree-l3" href="#overall-architecture">Overall Architecture:</a></li>
         
         </ul>
     
 
-    <li class="toctree-l3"><a href="#4-components">4 Components</a></li>
+    <li class="toctree-l2"><a href="#4-components">4 Components</a></li>
     
         <ul>
         
-            <li><a class="toctree-l4" href="#41-parser">4.1 Parser</a></li>
+            <li><a class="toctree-l3" href="#41-parser">4.1 Parser</a></li>
         
-            <li><a class="toctree-l4" href="#output-of-parser-predicate-list-of-all-stages">Output of Parser: Predicate List of all stages</a></li>
+            <li><a class="toctree-l3" href="#output-of-parser-predicate-list-of-all-stages">Output of Parser: Predicate List of all stages</a></li>
         
-            <li><a class="toctree-l4" href="#42-solver">4.2 Solver</a></li>
+            <li><a class="toctree-l3" href="#42-solver">4.2 Solver</a></li>
         
-            <li><a class="toctree-l4" href="#43-adaptor">4.3 Adaptor</a></li>
+            <li><a class="toctree-l3" href="#43-adaptor">4.3 Adaptor</a></li>
         
         </ul>
     
 
-    </ul>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../Visualiser_guide/">Visualiser</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../ap_guide/">Animation Profile</a>
-                </li>
     </ul>
 	    </li>
           
             <li class="toctree-l1">
 		
-    <span class="caption-text">Component Information</span>
-    <ul class="subnav">
-                <li class="">
-                    
+    <a class="" href="../Visualiser_guide/">Visualiser guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ap_guide/">Ap guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <a class="" href="../backend/">Backend</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../frontend/">Frontend</a>
-                </li>
-    </ul>
 	    </li>
           
             <li class="toctree-l1">
 		
-    <span class="caption-text">Resources</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../git/">GitHub</a>
-                </li>
-                <li class="">
-                    
+    <a class="" href="../frontend/">Frontend</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../git/">Git</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <a class="" href="../other/">Other</a>
-                </li>
-    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ug1/">Ug1</a>
 	    </li>
           
         </ul>
@@ -163,7 +144,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">Planimation</a>
+        <a href="../Deployment_guide/">Planimation</a>
       </nav>
 
       
@@ -171,15 +152,11 @@
         <div class="rst-content">
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="..">Docs</a> &raquo;</li>
+    <li><a href="../Deployment_guide/">Docs</a> &raquo;</li>
     
       
-        
-          <li>Developer Information &raquo;</li>
-        
-      
     
-    <li>VFG</li>
+    <li>VFG guide</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -209,10 +186,10 @@ Modifications or extensions of the VFG need only be carried out only on the Djan
 <li>Visualisation file</li>
 </ul>
 <h3 id="overall-architecture">Overall Architecture:</h3>
-<p><img alt="" src="https://raw.githubusercontent.com/Planning-Visualisation/planning-visualisation/master/Docs/images/vfg/vfg_overview.png" /></p>
+<p><img alt="" src="../images/vfg/vfg_overview.png" /></p>
 <h1 id="4-components">4 Components</h1>
 <h2 id="41-parser">4.1 Parser</h2>
-<p><img alt="" src="https://raw.githubusercontent.com/Planning-Visualisation/planning-visualisation/master/Docs/images/vfg/parser.png" /></p>
+<p><img alt="" src="../images/vfg/parser.png" /></p>
 <p>Here is the code structure of parser. The <strong>Parser component</strong> gets domain PDDL file, problem PDDL file, animation PDDL file and plan PDDL file and parsers these files into<strong>predicates list</strong> and <strong>animation profile json</strong> to feed <strong>Solver component</strong>.</p>
 <h3 id="411-plan_generatorpy">4.1.1 Plan_generator.py</h3>
 <p>Send domain file and problem file to planning.domain API and gets the solution file.</p>
@@ -425,7 +402,7 @@ Modifications or extensions of the VFG need only be carried out only on the Djan
 
 <h2 id="42-solver">4.2 Solver</h2>
 <h3 id="421-overview">4.2.1 Overview</h3>
-<p><img alt="" src="https://raw.githubusercontent.com/Planning-Visualisation/planning-visualisation/master/Docs/images/vfg/predicate_solver.png" /></p>
+<p><img alt="" src="../images/vfg/predicate_solver.png" /></p>
 <p>Here is the code structure of solver. This module will generate the visualisation file by using the predicates of all stages and animation profile.</p>
 <ul>
 <li>custom_function.py:<ul>
@@ -447,7 +424,7 @@ Modifications or extensions of the VFG need only be carried out only on the Djan
 </ul>
 <p>This module will generate the visualisation file by using the predicates of all stages and animation profile.</p>
 <p>Here is the algorithm diagram of our constraint solver:</p>
-<p><img alt="" src="https://raw.githubusercontent.com/Planning-Visualisation/planning-visualisation/master/Docs/images/vfg/constraint_solver.png" /></p>
+<p><img alt="" src="../images/vfg/constraint_solver.jpg" /></p>
 <p>Here is the link for this diagram: <a href="https://www.draw.io/#G12sCLukE55c_9VOKCJZqUiMh7OWFeaAXJ">https://www.draw.io/#G12sCLukE55c_9VOKCJZqUiMh7OWFeaAXJ</a></p>
 <p>For instance, here are the predicates that need to be solved:</p>
 <pre><code>(On-table a)
@@ -456,7 +433,7 @@ Modifications or extensions of the VFG need only be carried out only on the Djan
 </code></pre>
 
 <p>In the predicates, the object ahead is the object to be solved and the object behind is the predefined object. To calculate the position of "c", we must know the position of "b". Similarly, to calculate the position of "b", we must know the position of "a". From (on-table a), we can know the position of a, so "b" is solved and then "c" is solved. The diagram below shows how the objects are referenced.</p>
-<p><img alt="" src="https://raw.githubusercontent.com/Planning-Visualisation/planning-visualisation/master/Docs/images/vfg/reference.png" /></p>
+<p><img alt="" src="../images/vfg/reference.png" /></p>
 <h3 id="421-steps">4.2.1 Steps</h3>
 <p>There are 5 main steps in the algorithm of constraint solver:</p>
 <h5 id="4211-create-an-object-table-initialisepy-random_colorpy">4.2.1.1 Create an Object Table (initialise.py , random_color.py)</h5>
@@ -599,7 +576,7 @@ Stage2: Predicate1, Predicate3, Predicate3,...
 </code></pre>
 
 <h2 id="43-adaptor">4.3 Adaptor</h2>
-<p><img alt="" src="https://raw.githubusercontent.com/Planning-Visualisation/planning-visualisation/master/Docs/images/vfg/adapter.png" /></p>
+<p><img alt="" src="../images/vfg/adapter.png" /></p>
 <p>Here is the code structure of adapter. This component transfers the result generated by Predicate Solver into the final visualisation file.</p>
 <pre><code class="python">def transfer(one_stage, initialobjects, panel_size,shiftx,shifty, padding=20):
 </code></pre>
@@ -919,10 +896,10 @@ Stage2: Predicate1, Predicate3, Predicate3,...
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../Visualiser_guide/" class="btn btn-neutral float-right" title="Visualiser">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../Visualiser_guide/" class="btn btn-neutral float-right" title="Visualiser guide">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../Deployment_guide/" class="btn btn-neutral" title="Deployment"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../README/" class="btn btn-neutral" title="README"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -936,28 +913,26 @@ Stage2: Predicate1, Predicate3, Predicate3,...
 
   Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-      
+	  
         </div>
       </div>
 
     </section>
-
+    
   </div>
 
   <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../Deployment_guide/" style="color: #fcfcfc;">&laquo; Previous</a></span>
+        <span><a href="../README/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
       
         <span style="margin-left: 15px"><a href="../Visualiser_guide/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
-    <script>var base_url = '..';</script>
-    <script src="../js/theme.js" defer></script>
-      <script src="../search/main.js" defer></script>
+    <script src="../js/theme.js"></script>
 
 </body>
 </html>

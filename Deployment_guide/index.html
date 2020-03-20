@@ -8,24 +8,23 @@
   
   
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Deployment - Planimation</title>
+  <title>Deployment guide - Planimation</title>
   <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="../css/theme.css" type="text/css" />
   <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css">
+  <link rel="stylesheet" href="../css/highlight.css">
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Deployment";
+    var mkdocs_page_name = "Deployment guide";
     var mkdocs_page_input_path = "Deployment_guide.md";
-    var mkdocs_page_url = null;
+    var mkdocs_page_url = "/Deployment_guide/";
   </script>
   
-  <script src="../js/jquery-2.1.1.min.js" defer></script>
-  <script src="../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script> 
+  <script src="../js/jquery-2.1.1.min.js"></script>
+  <script src="../js/modernizr-2.8.3.min.js"></script>
+  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
   
 </head>
 
@@ -36,10 +35,10 @@
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
       <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> Planimation</a>
+        <a href="./" class="icon icon-home"> Planimation</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
+    <input type="text" name="q" placeholder="Search docs" />
   </form>
 </div>
       </div>
@@ -48,75 +47,57 @@
 	<ul class="current">
 	  
           
-            <li class="toctree-l1">
+            <li class="toctree-l1 current">
 		
-    <span class="caption-text">User Information</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="..">Home</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../ug1/">User Guide</a>
-                </li>
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <span class="caption-text">Developer Information</span>
-    <ul class="subnav">
-                <li class=" current">
-                    
-    <a class="current" href="./">Deployment</a>
+    <a class="current" href="./">Deployment guide</a>
     <ul class="subnav">
             
     </ul>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../VFG_guide/">VFG</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../Visualiser_guide/">Visualiser</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../ap_guide/">Animation Profile</a>
-                </li>
-    </ul>
 	    </li>
           
             <li class="toctree-l1">
 		
-    <span class="caption-text">Component Information</span>
-    <ul class="subnav">
-                <li class="">
-                    
+    <a class="" href="../README/">README</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../VFG_guide/">VFG guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../Visualiser_guide/">Visualiser guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ap_guide/">Ap guide</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <a class="" href="../backend/">Backend</a>
-                </li>
-                <li class="">
-                    
-    <a class="" href="../frontend/">Frontend</a>
-                </li>
-    </ul>
 	    </li>
           
             <li class="toctree-l1">
 		
-    <span class="caption-text">Resources</span>
-    <ul class="subnav">
-                <li class="">
-                    
-    <a class="" href="../git/">GitHub</a>
-                </li>
-                <li class="">
-                    
+    <a class="" href="../frontend/">Frontend</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../git/">Git</a>
+	    </li>
+          
+            <li class="toctree-l1">
+		
     <a class="" href="../other/">Other</a>
-                </li>
-    </ul>
+	    </li>
+          
+            <li class="toctree-l1">
+		
+    <a class="" href="../ug1/">Ug1</a>
 	    </li>
           
         </ul>
@@ -129,7 +110,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">Planimation</a>
+        <a href="./">Planimation</a>
       </nav>
 
       
@@ -137,15 +118,11 @@
         <div class="rst-content">
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="..">Docs</a> &raquo;</li>
+    <li><a href="./">Docs</a> &raquo;</li>
     
       
-        
-          <li>Developer Information &raquo;</li>
-        
-      
     
-    <li>Deployment</li>
+    <li>Deployment guide</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
@@ -396,7 +373,7 @@ The Procfile in the example app you deployed looks like this:
 This declares a single process type, web, and the command needed to run it. The name web is important here. It declares that this process type will be attached to the <a href="https://devcenter.heroku.com/articles/http-routing">HTTP routing</a> stack of Heroku, and receive web traffic when deployed. Procfiles can contain additional process types. For example, you might declare one for a background worker process that processes items off of a queue.</p>
 <p><strong>5.3 Unity with Heroku Deployment</strong></p>
 <p>When deploying the Django server with Heroku, you will also need to make sure to redirect the traffic for your local server to Heroku within Unity, this can be done by simply enabling and changing the settings in <strong><em>ScenesCoordinator.cs:</em></strong></p>
-<p><img alt="" src="https://raw.githubusercontent.com/Planning-Visualisation/planning-visualisation/master/Docs/images/deployment/build_screenshot.png" /></p>
+<p><img alt="" src="../images/deployment/build_screenshot.png" /></p>
 <p>As shown above in the picture, the current setting is pointing to local machine. Enabling the line below will redirect the data stream to your Heroku server. You should replace “<a href="https://immense-bastion-42146.herokuapp.com/upload/pddl">https://immense-bastion-42146.herokuapp.com/upload/pddl</a>” with your Heroku application.</p>
               
             </div>
@@ -405,10 +382,8 @@ This declares a single process type, web, and the command needed to run it. The 
   
     <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
       
-        <a href="../VFG_guide/" class="btn btn-neutral float-right" title="VFG">Next <span class="icon icon-circle-arrow-right"></span></a>
+        <a href="../README/" class="btn btn-neutral float-right" title="README">Next <span class="icon icon-circle-arrow-right"></span></a>
       
-      
-        <a href="../ug1/" class="btn btn-neutral" title="User Guide"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -422,28 +397,24 @@ This declares a single process type, web, and the command needed to run it. The 
 
   Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-      
+	  
         </div>
       </div>
 
     </section>
-
+    
   </div>
 
   <div class="rst-versions" role="note" style="cursor: pointer">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
-        <span><a href="../ug1/" style="color: #fcfcfc;">&laquo; Previous</a></span>
       
-      
-        <span style="margin-left: 15px"><a href="../VFG_guide/" style="color: #fcfcfc">Next &raquo;</a></span>
+        <span style="margin-left: 15px"><a href="../README/" style="color: #fcfcfc">Next &raquo;</a></span>
       
     </span>
 </div>
-    <script>var base_url = '..';</script>
-    <script src="../js/theme.js" defer></script>
-      <script src="../search/main.js" defer></script>
+    <script src="../js/theme.js"></script>
 
 </body>
 </html>
