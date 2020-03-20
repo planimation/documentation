@@ -5,7 +5,7 @@ This document contains an overview of Planimation.
 The Planimation is an open-source program which visualises solutions to Planning Problems. It is an executable Unity architecture in a browser.
 
 ## Here is shot video about Planimation
-[![](images/readme/youtube_screenshot.png)](https://youtu.be/Cj2rWdt1YQU)
+[![Youtube](images/readme/youtube.png)](https://youtu.be/Cj2rWdt1YQU)
 
 
 For developer documentation, see
