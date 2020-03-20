@@ -218,7 +218,7 @@ To see the final result for this AP, see the link in section 1.2 for the associa
 The following is an example problem visualised with this animation profile:
 
 
-![](https://raw.githubusercontent.com/Planning-Visualisation/planning-visualisation/master/Docs/images/ap/blocks_example.png)
+![](images/ap/blocks_example.png)
 
 
 The animation profile is as follows (comments  added with a # symbol):
