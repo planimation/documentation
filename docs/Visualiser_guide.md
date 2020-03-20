@@ -63,7 +63,7 @@ Output: a visualisation of the visualisation file
 ### Architectural design:
 
 
-![Architecture overview](https://raw.githubusercontent.com/Planning-Visualisation/planning-visualisation/master/Docs/images/visualiser/VisualiserArchitecture.png)
+![Architecture overview](images/visualiser/VisualiserArchitecture.png)
 
 
 
