@@ -7,24 +7,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
+  
   <link rel="shortcut icon" href="../img/favicon.ico">
   <title>Backend - Planimation</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
-  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../css/highlight.css">
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
   
   <script>
     // Current page data
     var mkdocs_page_name = "Backend";
     var mkdocs_page_input_path = "backend.md";
-    var mkdocs_page_url = "/backend/";
+    var mkdocs_page_url = null;
   </script>
   
-  <script src="../js/jquery-2.1.1.min.js"></script>
-  <script src="../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
 
@@ -34,88 +36,69 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-        <a href="../Deployment_guide/" class="icon icon-home"> Planimation</a>
+        <a href=".." class="icon icon-home"> Planimation</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-	<ul class="current">
-	  
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../Deployment_guide/">Deployment guide</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../README/">README</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../VFG_guide/">VFG guide</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../Visualiser_guide/">Visualiser guide</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../ap_guide/">Ap guide</a>
-	    </li>
-          
-            <li class="toctree-l1 current">
-		
-    <a class="current" href="./">Backend</a>
-    <ul class="subnav">
-            
-    <li class="toctree-l2"><a href="#planimation-backend">Planimation Backend</a></li>
-    
+                <p class="caption"><span class="caption-text">User Information</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../ug1/">User Guide</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Developer Information</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Deployment_guide/">Deployment</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../VFG_guide/">VFG</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Visualiser_guide/">Visualiser</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../ap_guide/">Animation Profile</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Component Information</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Backend</a>
+    <ul class="current">
+    <li class="toctree-l2"><a class="reference internal" href="#local-dev">Local Dev</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#docker-build">Docker Build</a>
+    </li>
+    <li class="toctree-l2"><a class="reference internal" href="#contribution">Contribution</a>
         <ul>
-        
-            <li><a class="toctree-l3" href="#local-dev">Local Dev</a></li>
-        
-            <li><a class="toctree-l3" href="#docker-build">Docker Build</a></li>
-        
-            <li><a class="toctree-l3" href="#contribution">Contribution</a></li>
-        
+    <li class="toctree-l3"><a class="reference internal" href="#create-an-issue">Create an issue</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pre-push-changes">Pre-push changes</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#commit-message-format">Commit message format</a>
+    </li>
+    <li class="toctree-l3"><a class="reference internal" href="#pull-request-and-peer-code-review-process">Pull Request and peer code review process</a>
+    </li>
         </ul>
-    
-
+    </li>
     </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../frontend/">Frontend</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../git/">Git</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../other/">Other</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../ug1/">Ug1</a>
-	    </li>
-          
-        </ul>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../frontend/">Frontend</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Resources</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../git/">GitHub</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../other/">Other</a>
+                    </li>
+                </ul>
       </div>
-      &nbsp;
+    </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -123,7 +106,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../Deployment_guide/">Planimation</a>
+        <a href="..">Planimation</a>
       </nav>
 
       
@@ -131,8 +114,12 @@
         <div class="rst-content">
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../Deployment_guide/">Docs</a> &raquo;</li>
+    <li><a href="..">Docs</a> &raquo;</li>
     
+      
+        
+          <li>Component Information &raquo;</li>
+        
       
     
     <li>Backend</li>
@@ -140,6 +127,7 @@
       
     </li>
   </ul>
+  
   <hr/>
 </div>
           <div role="main">
@@ -192,7 +180,7 @@ docker ps</code></p>
     git config user.name "Your GitHut email"
     git config commit.template .gitmessage</code></li>
 <li>
-<p>Commit message should be of the following format <code>[ISSUE_NO] COMMIT_MESSAGE</code>. Refer <a href="../.gitmessage"><code>.gitmessage</code></a>. Example:
+<p>Commit message should be of the following format <code>[ISSUE_NO] COMMIT_MESSAGE</code>. Refer <a href=".gitmessage"><code>.gitmessage</code></a>. Example:
     ```
     [10] Fix security issue related with form</p>
 <ul>
@@ -222,7 +210,7 @@ docker ps</code></p>
         <a href="../frontend/" class="btn btn-neutral float-right" title="Frontend">Next <span class="icon icon-circle-arrow-right"></span></a>
       
       
-        <a href="../ap_guide/" class="btn btn-neutral" title="Ap guide"><span class="icon icon-circle-arrow-left"></span> Previous</a>
+        <a href="../ap_guide/" class="btn btn-neutral" title="Animation Profile"><span class="icon icon-circle-arrow-left"></span> Previous</a>
       
     </div>
   
@@ -234,17 +222,17 @@ docker ps</code></p>
     
   </div>
 
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-	  
+      
         </div>
       </div>
 
     </section>
-    
+
   </div>
 
-  <div class="rst-versions" role="note" style="cursor: pointer">
+  <div class="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
@@ -255,7 +243,14 @@ docker ps</code></p>
       
     </span>
 </div>
-    <script src="../js/theme.js"></script>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
 
 </body>
 </html>

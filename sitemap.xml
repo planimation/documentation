@@ -1,84 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-
-    
-    <url>
-     <loc>/Deployment_guide/</loc>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
+     <loc>None</loc>
+     <lastmod>2020-03-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>None</loc>
+     <lastmod>2020-03-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>None</loc>
+     <lastmod>2020-03-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>None</loc>
+     <lastmod>2020-03-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>None</loc>
+     <lastmod>2020-03-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>None</loc>
+     <lastmod>2020-03-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>None</loc>
+     <lastmod>2020-03-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>None</loc>
+     <lastmod>2020-03-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>None</loc>
+     <lastmod>2020-03-20</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>None</loc>
      <lastmod>2020-03-20</lastmod>
      <changefreq>daily</changefreq>
     </url>
-    
-
-    
-    <url>
-     <loc>/README/</loc>
-     <lastmod>2020-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>/VFG_guide/</loc>
-     <lastmod>2020-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>/Visualiser_guide/</loc>
-     <lastmod>2020-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>/ap_guide/</loc>
-     <lastmod>2020-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>/backend/</loc>
-     <lastmod>2020-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>/frontend/</loc>
-     <lastmod>2020-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>/git/</loc>
-     <lastmod>2020-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>/other/</loc>
-     <lastmod>2020-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
-    
-    <url>
-     <loc>/ug1/</loc>
-     <lastmod>2020-03-20</lastmod>
-     <changefreq>daily</changefreq>
-    </url>
-    
-
 </urlset>

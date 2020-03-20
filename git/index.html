@@ -7,24 +7,26 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   
+  
   <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Git - Planimation</title>
-  <link href='https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700' rel='stylesheet' type='text/css'>
+  <title>GitHub - Planimation</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
-  <link rel="stylesheet" href="../css/theme.css" type="text/css" />
-  <link rel="stylesheet" href="../css/theme_extra.css" type="text/css" />
-  <link rel="stylesheet" href="../css/highlight.css">
+  <link rel="stylesheet" href="../css/theme.css" />
+  <link rel="stylesheet" href="../css/theme_extra.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
   
   <script>
     // Current page data
-    var mkdocs_page_name = "Git";
+    var mkdocs_page_name = "GitHub";
     var mkdocs_page_input_path = "git.md";
-    var mkdocs_page_url = "/git/";
+    var mkdocs_page_url = null;
   </script>
   
-  <script src="../js/jquery-2.1.1.min.js"></script>
-  <script src="../js/modernizr-2.8.3.min.js"></script>
-  <script type="text/javascript" src="../js/highlight.pack.js"></script> 
+  <script src="../js/jquery-2.1.1.min.js" defer></script>
+  <script src="../js/modernizr-2.8.3.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script> 
   
 </head>
 
@@ -34,75 +36,51 @@
 
     
     <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
+    <div class="wy-side-scroll">
       <div class="wy-side-nav-search">
-        <a href="../Deployment_guide/" class="icon icon-home"> Planimation</a>
+        <a href=".." class="icon icon-home"> Planimation</a>
         <div role="search">
   <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" />
+    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
   </form>
 </div>
       </div>
 
       <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-	<ul class="current">
-	  
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../Deployment_guide/">Deployment guide</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../README/">README</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../VFG_guide/">VFG guide</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../Visualiser_guide/">Visualiser guide</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../ap_guide/">Ap guide</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../backend/">Backend</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../frontend/">Frontend</a>
-	    </li>
-          
-            <li class="toctree-l1 current">
-		
-    <a class="current" href="./">Git</a>
-    <ul class="subnav">
-            
-    </ul>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../other/">Other</a>
-	    </li>
-          
-            <li class="toctree-l1">
-		
-    <a class="" href="../ug1/">Ug1</a>
-	    </li>
-          
-        </ul>
+                <p class="caption"><span class="caption-text">User Information</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../ug1/">User Guide</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Developer Information</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../Deployment_guide/">Deployment</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../VFG_guide/">VFG</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../Visualiser_guide/">Visualiser</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../ap_guide/">Animation Profile</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Component Information</span></p>
+                <ul>
+                    <li class="toctree-l1"><a class="reference internal" href="../backend/">Backend</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../frontend/">Frontend</a>
+                    </li>
+                </ul>
+                <p class="caption"><span class="caption-text">Resources</span></p>
+                <ul class="current">
+                    <li class="toctree-l1 current"><a class="reference internal current" href="./">GitHub</a>
+                    </li>
+                    <li class="toctree-l1"><a class="reference internal" href="../other/">Other</a>
+                    </li>
+                </ul>
       </div>
-      &nbsp;
+    </div>
     </nav>
 
     <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
@@ -110,7 +88,7 @@
       
       <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
         <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="../Deployment_guide/">Planimation</a>
+        <a href="..">Planimation</a>
       </nav>
 
       
@@ -118,15 +96,20 @@
         <div class="rst-content">
           <div role="navigation" aria-label="breadcrumbs navigation">
   <ul class="wy-breadcrumbs">
-    <li><a href="../Deployment_guide/">Docs</a> &raquo;</li>
+    <li><a href="..">Docs</a> &raquo;</li>
     
       
+        
+          <li>Resources &raquo;</li>
+        
+      
     
-    <li>Git</li>
+    <li>GitHub</li>
     <li class="wy-breadcrumbs-aside">
       
     </li>
   </ul>
+  
   <hr/>
 </div>
           <div role="main">
@@ -155,17 +138,17 @@
     
   </div>
 
-  Built with <a href="http://www.mkdocs.org">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
+  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
-	  
+      
         </div>
       </div>
 
     </section>
-    
+
   </div>
 
-  <div class="rst-versions" role="note" style="cursor: pointer">
+  <div class="rst-versions" role="note" aria-label="versions">
     <span class="rst-current-version" data-toggle="rst-current-version">
       
       
@@ -176,7 +159,14 @@
       
     </span>
 </div>
-    <script src="../js/theme.js"></script>
+    <script>var base_url = '..';</script>
+    <script src="../js/theme.js" defer></script>
+      <script src="../search/main.js" defer></script>
+    <script defer>
+        window.onload = function () {
+            SphinxRtdTheme.Navigation.enable(true);
+        };
+    </script>
 
 </body>
 </html>
