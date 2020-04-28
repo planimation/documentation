@@ -1,0 +1,1737 @@
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.3">
+    
+    
+      
+        <title>Backend - Planimation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.62d34fff.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#backend-visualisation-file-generator-vfg" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Planimation" class="md-header-nav__button md-logo" aria-label="Planimation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Planimation
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Backend
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Planimation" class="md-nav__button md-logo" aria-label="Planimation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    Planimation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      User Information
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="User Information" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        User Information
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ug1/" title="User Guide" class="md-nav__link">
+      User Guide
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Developer Information
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Developer Information" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Developer Information
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../deployment_guide/" title="Deployment" class="md-nav__link">
+      Deployment
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Backend
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Backend" class="md-nav__link md-nav__link--active">
+      Backend
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-getting-started" class="md-nav__link">
+    1 Getting Started
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-overview" class="md-nav__link">
+    2 Overview
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-overall-architecture" class="md-nav__link">
+    2.1 Overall Architecture:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-components" class="md-nav__link">
+    3 Components
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-parser" class="md-nav__link">
+    3.1 Parser
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 Parser">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plan_generatorpy" class="md-nav__link">
+    Plan_generator.py
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#domain_parserpy" class="md-nav__link">
+    Domain_parser.py
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_parserpy" class="md-nav__link">
+    Problem_parser.py
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#predicates_generatorpy" class="md-nav__link">
+    Predicates_generator.py
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parser-output-predicate-list-of-all-stages" class="md-nav__link">
+    Parser Output: Predicate List of all stages
+  </a>
+  
+    <nav class="md-nav" aria-label="Parser Output: Predicate List of all stages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#format" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-solver" class="md-nav__link">
+    3.2 Solver
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 Solver">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steps" class="md-nav__link">
+    Steps
+  </a>
+  
+    <nav class="md-nav" aria-label="Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-an-object-table-initialisepy-random_colorpy" class="md-nav__link">
+    Create an Object Table (initialise.py , random_color.py)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#separate-each-stage-customer_functionspy-solverpy" class="md-nav__link">
+    Separate Each Stage (customer_functions.py, solver.py)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-predicate-query-customer_functionspy-solverpy" class="md-nav__link">
+    Create Predicate Query (customer_functions.py, solver.py)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-whether-predicate-can-be-solved-customer_functionspy-solverpy" class="md-nav__link">
+    Check whether predicate can be solved (customer_functions.py, solver.py)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apply-animation-rule-customer_functionspy-solverpy" class="md-nav__link">
+    Apply Animation Rule (customer_functions.py, solver.py)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-adaptor" class="md-nav__link">
+    3.3 Adaptor
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 Adaptor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visualisation-file-structure" class="md-nav__link">
+    Visualisation File Structure
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../frontend_dev_guide/" title="Frontend" class="md-nav__link">
+      Frontend
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ap_guide/" title="Animation Profile" class="md-nav__link">
+      Animation Profile
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Component Information
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Component Information" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Component Information
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../backend/" title="Backend" class="md-nav__link">
+      Backend
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../frontend/" title="Frontend" class="md-nav__link">
+      Frontend
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../plugins/" title="Plugins" class="md-nav__link">
+      Plugins
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Resources
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Resources" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Resources
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://github.com/planimation" title="GitHub" class="md-nav__link">
+      GitHub
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../other/" title="Other" class="md-nav__link">
+      Other
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-getting-started" class="md-nav__link">
+    1 Getting Started
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-overview" class="md-nav__link">
+    2 Overview
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Overview">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-overall-architecture" class="md-nav__link">
+    2.1 Overall Architecture:
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-components" class="md-nav__link">
+    3 Components
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-parser" class="md-nav__link">
+    3.1 Parser
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 Parser">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#plan_generatorpy" class="md-nav__link">
+    Plan_generator.py
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#domain_parserpy" class="md-nav__link">
+    Domain_parser.py
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#problem_parserpy" class="md-nav__link">
+    Problem_parser.py
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#predicates_generatorpy" class="md-nav__link">
+    Predicates_generator.py
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#parser-output-predicate-list-of-all-stages" class="md-nav__link">
+    Parser Output: Predicate List of all stages
+  </a>
+  
+    <nav class="md-nav" aria-label="Parser Output: Predicate List of all stages">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#format" class="md-nav__link">
+    Format
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-solver" class="md-nav__link">
+    3.2 Solver
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 Solver">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#overview" class="md-nav__link">
+    Overview
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steps" class="md-nav__link">
+    Steps
+  </a>
+  
+    <nav class="md-nav" aria-label="Steps">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#create-an-object-table-initialisepy-random_colorpy" class="md-nav__link">
+    Create an Object Table (initialise.py , random_color.py)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#separate-each-stage-customer_functionspy-solverpy" class="md-nav__link">
+    Separate Each Stage (customer_functions.py, solver.py)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#create-predicate-query-customer_functionspy-solverpy" class="md-nav__link">
+    Create Predicate Query (customer_functions.py, solver.py)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#check-whether-predicate-can-be-solved-customer_functionspy-solverpy" class="md-nav__link">
+    Check whether predicate can be solved (customer_functions.py, solver.py)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apply-animation-rule-customer_functionspy-solverpy" class="md-nav__link">
+    Apply Animation Rule (customer_functions.py, solver.py)
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-adaptor" class="md-nav__link">
+    3.3 Adaptor
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 Adaptor">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#visualisation-file-structure" class="md-nav__link">
+    Visualisation File Structure
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                  
+                
+                
+                <h1 id="backend-visualisation-file-generator-vfg">Backend - Visualisation File Generator (VFG)<a class="headerlink" href="#backend-visualisation-file-generator-vfg" title="Permanent link">Link</a></h1>
+<p>This document explains the functioning of the Visualisation File Generator (VFG) for the purposes of development. For deployment and the user guide, see README.md.</p>
+<p>The VFG decides where objects are on the screen and what they look like.</p>
+<p>Most domain-related modifications to the system should be made to the VFG. For example, a new domain might require objects to be laid out in a manner which is not captured in the existing Animation Profile language.
+Extending the Visualisation File Generator requires only building the project in Django (see section 2.2 of README.md).
+Modifications or extensions of the VFG need only be carried out only on the Django server (not Unity).</p>
+<h2 id="1-getting-started">1 Getting Started<a class="headerlink" href="#1-getting-started" title="Permanent link">Link</a></h2>
+<p>To build the VFG, see (See <a href="../deployment_guide/">Deployment</a>)</p>
+<h2 id="2-overview">2 Overview<a class="headerlink" href="#2-overview" title="Permanent link">Link</a></h2>
+<ul>
+<li>
+<p>Input files:</p>
+<ul>
+<li>Domain PDDL file</li>
+<li>Problem PDDL file</li>
+<li>Animation Profile</li>
+</ul>
+</li>
+<li>
+<p>Output file:</p>
+<ul>
+<li>Visualisation file</li>
+</ul>
+</li>
+</ul>
+<h3 id="21-overall-architecture">2.1 Overall Architecture:<a class="headerlink" href="#21-overall-architecture" title="Permanent link">Link</a></h3>
+<p><img alt="" src="../images/vfg/vfg_overview.png" /></p>
+<h2 id="3-components">3 Components<a class="headerlink" href="#3-components" title="Permanent link">Link</a></h2>
+<h3 id="31-parser">3.1 Parser<a class="headerlink" href="#31-parser" title="Permanent link">Link</a></h3>
+<p><img alt="" src="../images/vfg/parser.png" /></p>
+<p>Here is the code structure of parser. The <strong>Parser component</strong> gets domain PDDL file, problem PDDL file, animation PDDL file and plan PDDL file and parsers these files into<strong>predicates list</strong> and <strong>animation profile json</strong> to feed <strong>Solver component</strong>.</p>
+<h4 id="plan_generatorpy">Plan_generator.py<a class="headerlink" href="#plan_generatorpy" title="Permanent link">Link</a></h4>
+<p>Send domain file and problem file to planning.domain API and gets the solution file.</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">get_plan</span><span class="p">(</span><span class="n">domain_file</span><span class="p">,</span> <span class="n">problem_file</span><span class="p">):</span>  
+</code></pre></div>
+
+
+<ul>
+<li>This function will send the domain and problem pddl file to the planning.domain  API to get the plan</li>
+</ul>
+<h4 id="domain_parserpy">Domain_parser.py<a class="headerlink" href="#domain_parserpy" title="Permanent link">Link</a></h4>
+<p>Transfer domain file into a list of predicates and record all possible predicates in this domain.</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">get_domain_json</span><span class="p">(</span><span class="n">file_name</span><span class="p">):</span> 
+</code></pre></div>
+
+
+<ul>
+<li>This function transfers domain file to a list of predicates.</li>
+<li>Regular expression is used to get the result.</li>
+</ul>
+<p>Here is an example of the <strong>output</strong>:</p>
+<div class="codehilite"><pre><span></span><code><span class="err">{</span>
+    <span class="ss">&quot;on&quot;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+    <span class="ss">&quot;on-table&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="ss">&quot;clear&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="ss">&quot;arm-free&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+    <span class="ss">&quot;holding&quot;</span><span class="p">:</span> <span class="mi">1</span>
+<span class="err">}</span>
+</code></pre></div>
+
+
+<h4 id="problem_parserpy">Problem_parser.py<a class="headerlink" href="#problem_parserpy" title="Permanent link">Link</a></h4>
+<p>Interprete problem file and get all predicates for INIT and GOAL stages</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">get_object_list</span><span class="p">(</span><span class="n">predicates_lists</span><span class="p">,</span><span class="n">str_init</span><span class="p">):</span>  
+</code></pre></div>
+
+
+<ul>
+<li>This function gets object list of the domain from predicate list</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">get_regex_list</span><span class="p">(</span><span class="n">predicates_lists</span><span class="p">):</span>  
+</code></pre></div>
+
+
+<ul>
+<li>This function changes the format of predicate list</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">get_problem_json</span><span class="p">(</span><span class="n">file_name</span><span class="p">,</span> <span class="n">predicates_lists</span><span class="p">):</span>
+</code></pre></div>
+
+
+<ul>
+<li>This function parse the problem PDDL file and get the initial predicates and goal predicates.</li>
+</ul>
+<p>Here is an example of the <strong>output</strong>:</p>
+<div class="codehilite"><pre><span></span><code><span class="p">[</span><span class="err">{</span>
+    <span class="ss">&quot;init&quot;</span><span class="p">:</span> <span class="p">[</span><span class="err">{</span>
+        <span class="ss">&quot;name&quot;</span><span class="p">:</span> <span class="ss">&quot;on&quot;</span><span class="p">,</span>
+        <span class="ss">&quot;objectNames&quot;</span><span class="p">:</span> <span class="p">[</span><span class="ss">&quot;c&quot;</span><span class="p">,</span> <span class="ss">&quot;b&quot;</span><span class="p">]</span>
+    <span class="err">}</span><span class="p">,</span> <span class="err">{</span>
+        <span class="ss">&quot;name&quot;</span><span class="p">:</span> <span class="ss">&quot;on-table&quot;</span><span class="p">,</span>
+        <span class="ss">&quot;objectNames&quot;</span><span class="p">:</span> <span class="p">[</span><span class="ss">&quot;a&quot;</span><span class="p">]</span>
+    <span class="err">}</span><span class="p">,</span> <span class="err">{</span>
+        <span class="ss">&quot;name&quot;</span><span class="p">:</span> <span class="ss">&quot;on-table&quot;</span><span class="p">,</span>
+        <span class="ss">&quot;objectNames&quot;</span><span class="p">:</span> <span class="p">[</span><span class="ss">&quot;b&quot;</span><span class="p">]</span>
+    <span class="err">}</span><span class="p">,</span> <span class="err">{</span>
+        <span class="ss">&quot;name&quot;</span><span class="p">:</span> <span class="ss">&quot;on-table&quot;</span><span class="p">,</span>
+        <span class="ss">&quot;objectNames&quot;</span><span class="p">:</span> <span class="p">[</span><span class="ss">&quot;d&quot;</span><span class="p">]</span>
+    <span class="err">}</span><span class="p">,</span> <span class="err">{</span>
+        <span class="ss">&quot;name&quot;</span><span class="p">:</span> <span class="ss">&quot;clear&quot;</span><span class="p">,</span>
+        <span class="ss">&quot;objectNames&quot;</span><span class="p">:</span> <span class="p">[</span><span class="ss">&quot;a&quot;</span><span class="p">]</span>
+    <span class="err">}</span><span class="p">,</span> <span class="err">{</span>
+        <span class="ss">&quot;name&quot;</span><span class="p">:</span> <span class="ss">&quot;clear&quot;</span><span class="p">,</span>
+        <span class="ss">&quot;objectNames&quot;</span><span class="p">:</span> <span class="p">[</span><span class="ss">&quot;c&quot;</span><span class="p">]</span>
+    <span class="err">}</span><span class="p">,</span> <span class="err">{</span>
+        <span class="ss">&quot;name&quot;</span><span class="p">:</span> <span class="ss">&quot;clear&quot;</span><span class="p">,</span>
+        <span class="ss">&quot;objectNames&quot;</span><span class="p">:</span> <span class="p">[</span><span class="ss">&quot;d&quot;</span><span class="p">]</span>
+    <span class="err">}</span><span class="p">,</span> <span class="err">{</span>
+        <span class="ss">&quot;name&quot;</span><span class="p">:</span> <span class="ss">&quot;arm-free&quot;</span><span class="p">,</span>
+        <span class="ss">&quot;objectNames&quot;</span><span class="p">:</span> <span class="p">[</span><span class="ss">&quot;No objects&quot;</span><span class="p">]</span>
+    <span class="err">}</span><span class="p">]</span>
+<span class="err">}</span><span class="p">,</span> <span class="err">{</span>
+    <span class="ss">&quot;goal&quot;</span><span class="p">:</span> <span class="p">[</span><span class="err">{</span>
+        <span class="ss">&quot;name&quot;</span><span class="p">:</span> <span class="ss">&quot;on&quot;</span><span class="p">,</span>
+        <span class="ss">&quot;objectNames&quot;</span><span class="p">:</span> <span class="p">[</span><span class="ss">&quot;a&quot;</span><span class="p">,</span> <span class="ss">&quot;b&quot;</span><span class="p">]</span>
+    <span class="err">}</span><span class="p">,</span> <span class="err">{</span>
+        <span class="ss">&quot;name&quot;</span><span class="p">:</span> <span class="ss">&quot;on&quot;</span><span class="p">,</span>
+        <span class="ss">&quot;objectNames&quot;</span><span class="p">:</span> <span class="p">[</span><span class="ss">&quot;b&quot;</span><span class="p">,</span> <span class="ss">&quot;c&quot;</span><span class="p">]</span>
+    <span class="err">}</span><span class="p">,</span> <span class="err">{</span>
+        <span class="ss">&quot;name&quot;</span><span class="p">:</span> <span class="ss">&quot;on&quot;</span><span class="p">,</span>
+        <span class="ss">&quot;objectNames&quot;</span><span class="p">:</span> <span class="p">[</span><span class="ss">&quot;c&quot;</span><span class="p">,</span> <span class="ss">&quot;d&quot;</span><span class="p">]</span>
+    <span class="err">}</span><span class="p">],</span>
+    <span class="ss">&quot;goal-condition&quot;</span><span class="p">:</span> <span class="p">[</span><span class="ss">&quot;and&quot;</span><span class="p">]</span>
+<span class="err">}</span><span class="p">]</span>
+</code></pre></div>
+
+
+<h4 id="predicates_generatorpy">Predicates_generator.py<a class="headerlink" href="#predicates_generatorpy" title="Permanent link">Link</a></h4>
+<p>Interpret solution file and get all predicates for every stage in solution file.</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">remove_unused_char</span><span class="p">(</span><span class="n">action_list</span><span class="p">):</span>  
+</code></pre></div>
+
+
+<ul>
+<li>This function removes all the useless characters from solution file.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">get_action_name</span><span class="p">(</span><span class="n">current_step</span><span class="p">):</span>  
+</code></pre></div>
+
+
+<ul>
+<li>This function returns the action name of the current step.</li>
+</ul>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">get_stages</span><span class="p">(</span><span class="n">plan</span><span class="p">,</span> <span class="n">problem_dic</span><span class="p">,</span> <span class="n">problem_file</span><span class="p">,</span> <span class="n">predicates_list</span><span class="p">):</span>
+</code></pre></div>
+
+
+<ul>
+<li>This function gets the predicates for each stage.</li>
+</ul>
+<h4 id="parser-output-predicate-list-of-all-stages">Parser Output: Predicate List of all stages<a class="headerlink" href="#parser-output-predicate-list-of-all-stages" title="Permanent link">Link</a></h4>
+<h5 id="description">Description<a class="headerlink" href="#description" title="Permanent link">Link</a></h5>
+<p>The predicate list is generated by <strong>Parser Component</strong> and feeds <strong>Solver Component</strong>. It includes all the <strong>predicates for each stage</strong> and the <strong>object list</strong> for the problem. Using the result of predicate list and animation profile, the solver can apply the one-way constraint solver to calculate the visualisation result. The object list can be used in the initialisation of the solver.</p>
+<h5 id="format">Format<a class="headerlink" href="#format" title="Permanent link">Link</a></h5>
+<p>The format for predicate list and object list is:</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="nt">&quot;stages&quot;</span><span class="p">:</span> <span class="p">[{</span> <span class="err">--stage</span> <span class="err">list</span>
+<span class="nt">&quot;items&quot;</span><span class="p">:</span> <span class="p">[{</span> <span class="err">--</span> <span class="err">predicate</span> <span class="err">list</span> <span class="err">in</span> <span class="err">each</span> <span class="err">stage</span>
+<span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="p">,</span> <span class="err">--</span> <span class="err">predicate</span> <span class="err">rule</span>
+<span class="nt">&quot;objectNames&quot;</span><span class="p">:</span> <span class="err">--</span> <span class="err">objects</span> <span class="err">to</span> <span class="err">be</span> <span class="err">referenced</span>
+<span class="p">}],</span>
+<span class="nt">&quot;add&quot;</span><span class="p">:</span> <span class="p">,</span> <span class="err">--</span> <span class="err">compared</span> <span class="err">to</span> <span class="err">previous</span> <span class="err">stage,</span> <span class="err">what</span> <span class="err">predicates</span> <span class="err">are</span> <span class="err">added</span>
+<span class="nt">&quot;remove&quot;</span><span class="p">:</span> <span class="p">,</span> <span class="err">--</span> <span class="err">compared</span> <span class="err">to</span> <span class="err">previous</span> <span class="err">stage,</span> <span class="err">what</span> <span class="err">predicates</span> <span class="err">are</span> <span class="err">removed</span>
+<span class="nt">&quot;stageName&quot;</span><span class="p">:</span> <span class="p">,</span> <span class="err">--</span> <span class="err">name</span> <span class="err">of</span> <span class="err">the</span> <span class="err">stage</span>
+<span class="nt">&quot;stageInfo&quot;</span><span class="p">:</span> <span class="err">--</span> <span class="err">stage</span> <span class="err">information</span>
+<span class="p">}</span> <span class="p">],</span>
+<span class="nt">&quot;objects&quot;</span><span class="p">:</span> <span class="err">--</span> <span class="err">object</span> <span class="err">list</span> <span class="err">in</span> <span class="err">the</span> <span class="err">problem</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<h5 id="example">Example<a class="headerlink" href="#example" title="Permanent link">Link</a></h5>
+<p>Here is an example of the predicate list for Blocks domain.</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+<span class="nt">&quot;stages&quot;</span><span class="p">:</span> <span class="p">[{</span>
+<span class="nt">&quot;items&quot;</span><span class="p">:</span> <span class="p">[{</span>
+<span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;on&quot;</span><span class="p">,</span>
+<span class="nt">&quot;objectNames&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">]</span>
+<span class="p">},</span> <span class="p">{</span>
+<span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;on-table&quot;</span><span class="p">,</span>
+<span class="nt">&quot;objectNames&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span>
+<span class="p">},</span> <span class="p">{</span>
+<span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;on-table&quot;</span><span class="p">,</span>
+<span class="nt">&quot;objectNames&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">]</span>
+<span class="p">},</span> <span class="p">{</span>
+<span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;on-table&quot;</span><span class="p">,</span>
+<span class="nt">&quot;objectNames&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;d&quot;</span><span class="p">]</span>
+<span class="p">},</span> <span class="p">{</span>
+<span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;clear&quot;</span><span class="p">,</span>
+<span class="nt">&quot;objectNames&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span>
+<span class="p">},</span> <span class="p">{</span>
+<span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;clear&quot;</span><span class="p">,</span>
+<span class="nt">&quot;objectNames&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">]</span>
+<span class="p">},</span> <span class="p">{</span>
+<span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;clear&quot;</span><span class="p">,</span>
+<span class="nt">&quot;objectNames&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;d&quot;</span><span class="p">]</span>
+<span class="p">},</span> <span class="p">{</span>
+<span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;arm-free&quot;</span><span class="p">,</span>
+<span class="nt">&quot;objectNames&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;No objects&quot;</span><span class="p">]</span>
+<span class="p">}],</span>
+<span class="nt">&quot;add&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="nt">&quot;remove&quot;</span><span class="p">:</span> <span class="s2">&quot;&quot;</span><span class="p">,</span>
+<span class="nt">&quot;stageName&quot;</span><span class="p">:</span> <span class="s2">&quot;Initial Stage&quot;</span><span class="p">,</span>
+<span class="nt">&quot;stageInfo&quot;</span><span class="p">:</span> <span class="s2">&quot;No Step Information&quot;</span>
+<span class="p">},</span> <span class="p">{</span>
+<span class="nt">&quot;items&quot;</span><span class="p">:</span> <span class="p">[{</span>
+<span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;on-table&quot;</span><span class="p">,</span>
+<span class="nt">&quot;objectNames&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span>
+<span class="p">},</span> <span class="p">{</span>
+<span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;on-table&quot;</span><span class="p">,</span>
+<span class="nt">&quot;objectNames&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">]</span>
+<span class="p">},</span> <span class="p">{</span>
+<span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;on-table&quot;</span><span class="p">,</span>
+<span class="nt">&quot;objectNames&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;d&quot;</span><span class="p">]</span>
+<span class="p">},</span> <span class="p">{</span>
+<span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;clear&quot;</span><span class="p">,</span>
+<span class="nt">&quot;objectNames&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">]</span>
+<span class="p">},</span> <span class="p">{</span>
+<span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;clear&quot;</span><span class="p">,</span>
+<span class="nt">&quot;objectNames&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;d&quot;</span><span class="p">]</span>
+<span class="p">},</span> <span class="p">{</span>
+<span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;clear&quot;</span><span class="p">,</span>
+<span class="nt">&quot;objectNames&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">]</span>
+<span class="p">},</span> <span class="p">{</span>
+<span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;holding&quot;</span><span class="p">,</span>
+<span class="nt">&quot;objectNames&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">]</span>
+<span class="p">}],</span>
+<span class="nt">&quot;add&quot;</span><span class="p">:</span> <span class="p">[{</span>
+<span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;clear&quot;</span><span class="p">,</span>
+<span class="nt">&quot;objectNames&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">]</span>
+<span class="p">},</span> <span class="p">{</span>
+<span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;holding&quot;</span><span class="p">,</span>
+<span class="nt">&quot;objectNames&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">]</span>
+<span class="p">}],</span>
+<span class="nt">&quot;remove&quot;</span><span class="p">:</span> <span class="p">[{</span>
+<span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;on&quot;</span><span class="p">,</span>
+<span class="nt">&quot;objectNames&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">]</span>
+<span class="p">},</span> <span class="p">{</span>
+<span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;clear&quot;</span><span class="p">,</span>
+<span class="nt">&quot;objectNames&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">]</span>
+<span class="p">},</span> <span class="p">{</span>
+<span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;arm-free&quot;</span><span class="p">,</span>
+<span class="nt">&quot;objectNames&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;No objects&quot;</span><span class="p">]</span>
+<span class="p">}],</span>
+<span class="nt">&quot;stageName&quot;</span><span class="p">:</span> <span class="s2">&quot;unstack (c b)&quot;</span><span class="p">,</span>
+<span class="nt">&quot;stageInfo&quot;</span><span class="p">:</span> <span class="s2">&quot;(:action unstack\r\n :parameters (c b)\r\n :precondition\r\n (and\r\n (on c b)\r\n (clear c)\r\n (arm-free)\r\n )\r\n :effect\r\n (and\r\n (holding c)\r\n (clear b)\r\n (not\r\n (clear c)\r\n )\r\n (not\r\n (arm-free)\r\n )\r\n (not\r\n (on c b)\r\n )\r\n )\r\n )&quot;</span>
+<span class="p">}],</span>
+<span class="nt">&quot;objects&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;a&quot;</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div>
+
+
+<h3 id="32-solver">3.2 Solver<a class="headerlink" href="#32-solver" title="Permanent link">Link</a></h3>
+<h4 id="overview">Overview<a class="headerlink" href="#overview" title="Permanent link">Link</a></h4>
+<p><img alt="" src="../images/vfg/predicate_solver.png" /></p>
+<p>Here is the code structure of solver. This module will generate the visualisation file by using the predicates of all stages and animation profile.</p>
+<ul>
+<li>custom_function.py:<ul>
+<li>This module contain all the customer function we designed to help position the objects.</li>
+</ul>
+</li>
+<li>initialise.py:<ul>
+<li>This component is used to initialise the environment and objects for Predicate Solver.</li>
+</ul>
+</li>
+<li>random_color.py:<ul>
+<li>This function will provide a randomly selected colour for Initialise to use.</li>
+</ul>
+</li>
+<li>solver.py:<ul>
+<li>This module will compute the visualisation file by using the stages predicates and animation.</li>
+</ul>
+</li>
+</ul>
+<p>This module will generate the visualisation file by using the predicates of all stages and animation profile.</p>
+<p>Here is the algorithm diagram of our constraint solver:</p>
+<p><img alt="" src="../images/vfg/constraint_solver.jpg" /></p>
+<p>Here is the link for this diagram: <a href="https://www.draw.io/#G12sCLukE55c_9VOKCJZqUiMh7OWFeaAXJ">https://www.draw.io/#G12sCLukE55c_9VOKCJZqUiMh7OWFeaAXJ</a></p>
+<p>For instance, here are the predicates that need to be solved:</p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="k">On</span><span class="o">-</span><span class="k">table</span> <span class="n">a</span><span class="p">)</span>
+<span class="p">(</span><span class="k">On</span> <span class="n">b</span> <span class="n">a</span><span class="p">)</span>
+<span class="p">(</span><span class="k">On</span> <span class="k">c</span> <span class="n">b</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>In the predicates, the object ahead is the object to be solved and the object behind is the predefined object. To calculate the position of "c", we must know the position of "b". Similarly, to calculate the position of "b", we must know the position of "a". From (on-table a), we can know the position of a, so "b" is solved and then "c" is solved. The diagram below shows how the objects are referenced.</p>
+<p><img alt="" src="../images/vfg/reference.png" /></p>
+<h4 id="steps">Steps<a class="headerlink" href="#steps" title="Permanent link">Link</a></h4>
+<p>There are 5 main steps in the algorithm of constraint solver:</p>
+<h5 id="create-an-object-table-initialisepy-random_colorpy">Create an Object Table (initialise.py , random_color.py)<a class="headerlink" href="#create-an-object-table-initialisepy-random_colorpy" title="Permanent link">Link</a></h5>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">initialise_objects</span><span class="p">(</span><span class="n">object_list</span><span class="p">,</span> <span class="n">animation_profile</span><span class="p">):</span>  
+</code></pre></div>
+
+
+<p>This function will initialise objects in the animation profile and use a dictionary to store all the objects and their attributes.</p>
+<p>In the dictionary, it will store all objects and their attributes, as shown in the table below:</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th align="center">prefab</th>
+<th align="right">name</th>
+<th align="center">color</th>
+<th align="center">height</th>
+<th align="right">width</th>
+<th align="right">y</th>
+<th>x</th>
+<th align="center">showName</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>a</td>
+<td align="center">Block</td>
+<td align="right">a</td>
+<td align="center">"a": 1, "r": 0.41, "b": 0.41, "g": 0.55</td>
+<td align="center">40</td>
+<td align="right">80</td>
+<td align="right">false</td>
+<td>false</td>
+<td align="center">true</td>
+</tr>
+</tbody>
+</table>
+<p>Here is a simple example of object dict:</p>
+<div class="codehilite"><pre><span></span><code><span class="ss">&quot;a&quot;</span><span class="p">:</span> <span class="err">{</span>
+        <span class="ss">&quot;prefab&quot;</span><span class="p">:</span> <span class="ss">&quot;Block&quot;</span><span class="p">,</span> 
+        <span class="ss">&quot;name&quot;</span><span class="p">:</span> <span class="ss">&quot;a&quot;</span><span class="p">,</span> 
+        <span class="ss">&quot;color&quot;</span><span class="p">:</span> <span class="err">{</span>
+            <span class="ss">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> 
+            <span class="ss">&quot;r&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">.</span><span class="mi">41</span><span class="p">,</span> 
+            <span class="ss">&quot;b&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">.</span><span class="mi">41</span><span class="p">,</span> 
+            <span class="ss">&quot;g&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">.</span><span class="mi">55</span>
+        <span class="err">}</span><span class="p">,</span> 
+        <span class="ss">&quot;height&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span> 
+        <span class="ss">&quot;width&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span> 
+        <span class="ss">&quot;y&quot;</span><span class="p">:</span> <span class="k">false</span><span class="p">,</span> 
+        <span class="ss">&quot;x&quot;</span><span class="p">:</span> <span class="k">false</span><span class="p">,</span> 
+        <span class="ss">&quot;showName&quot;</span><span class="p">:</span> <span class="k">true</span>
+    <span class="err">}</span>
+</code></pre></div>
+
+
+<h5 id="separate-each-stage-customer_functionspy-solverpy">Separate Each Stage (customer_functions.py, solver.py)<a class="headerlink" href="#separate-each-stage-customer_functionspy-solverpy" title="Permanent link">Link</a></h5>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">solve_all_stages</span><span class="p">(</span><span class="n">stages</span><span class="p">,</span> <span class="n">objects_dic</span><span class="p">,</span> <span class="n">predicates_rules</span><span class="p">,</span> <span class="n">space</span><span class="p">):</span>  
+</code></pre></div>
+
+
+<p>This function will seperate each stage in stages list and run through each stage which contains a list of predicates and solve all the predicates.</p>
+<p>The stages list is like:</p>
+<p>Stage1: Predicate1, Predicate2, Predicate3,....
+Stage2: Predicate1, Predicate3, Predicate3,...
+...</p>
+<p>Here is a simple example of one stage:</p>
+<div class="codehilite"><pre><span></span><code><span class="err">{</span>
+    <span class="ss">&quot;items&quot;</span><span class="p">:</span> <span class="p">[</span>
+        <span class="err">{</span>
+            <span class="ss">&quot;objectNames&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="ss">&quot;c&quot;</span>
+            <span class="p">],</span> 
+            <span class="ss">&quot;name&quot;</span><span class="p">:</span> <span class="ss">&quot;on-table&quot;</span>
+        <span class="err">}</span><span class="p">,</span> 
+        <span class="err">{</span>
+            <span class="ss">&quot;objectNames&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="ss">&quot;a&quot;</span>
+            <span class="p">],</span> 
+            <span class="ss">&quot;name&quot;</span><span class="p">:</span> <span class="ss">&quot;clear&quot;</span>
+        <span class="err">}</span><span class="p">,</span> 
+        <span class="err">{</span>
+            <span class="ss">&quot;objectNames&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="ss">&quot;b&quot;</span>
+            <span class="p">],</span> 
+            <span class="ss">&quot;name&quot;</span><span class="p">:</span> <span class="ss">&quot;on-table&quot;</span>
+        <span class="err">}</span><span class="p">,</span> 
+        <span class="err">{</span>
+            <span class="ss">&quot;objectNames&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="ss">&quot;c&quot;</span><span class="p">,</span> 
+                <span class="ss">&quot;a&quot;</span>
+            <span class="p">],</span> 
+            <span class="ss">&quot;name&quot;</span><span class="p">:</span> <span class="ss">&quot;on&quot;</span>
+        <span class="err">}</span>
+    <span class="p">]</span>
+<span class="err">}</span>
+</code></pre></div>
+
+
+<h5 id="create-predicate-query-customer_functionspy-solverpy">Create Predicate Query (customer_functions.py, solver.py)<a class="headerlink" href="#create-predicate-query-customer_functionspy-solverpy" title="Permanent link">Link</a></h5>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">solvepredicates</span><span class="p">(</span><span class="n">predicates</span><span class="p">,</span> <span class="n">objects_dic</span><span class="p">,</span> <span class="n">predicates_rules</span><span class="p">,</span> <span class="n">space</span><span class="p">):</span>  
+</code></pre></div>
+
+
+<p>This function will store all predicates in a query and pop a predicate from predicates list, and try to solve it by calling check_rule_complete and applypredicates function. If it can be solved, then it will be removed from the query, if it can not be solved yet, it will be put back to the predicate list. The function will return true until all predicates are solved.</p>
+<p>The predicate lists will be separated like:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">Predicate1</span><span class="p">,</span> <span class="n">Predicate2</span><span class="p">,</span> <span class="n">Predicate3</span><span class="p">,....</span>
+</code></pre></div>
+
+
+<p>If predicate1 is solved then the predicate list will remove predicate1 and start to solve predicate 2:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">Predicate2</span><span class="p">,</span> <span class="n">Predicate3</span><span class="p">,....</span>
+</code></pre></div>
+
+
+<p>If predicate 1 can't be solved, then it will be put back to the query:</p>
+<div class="codehilite"><pre><span></span><code><span class="n">Predicate2</span><span class="p">,</span> <span class="n">Predicate3</span><span class="p">,....</span><span class="n">Predicate1</span>
+</code></pre></div>
+
+
+<h5 id="check-whether-predicate-can-be-solved-customer_functionspy-solverpy">Check whether predicate can be solved (customer_functions.py, solver.py)<a class="headerlink" href="#check-whether-predicate-can-be-solved-customer_functionspy-solverpy" title="Permanent link">Link</a></h5>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">check_rule_complete</span><span class="p">(</span><span class="n">predicate</span><span class="p">,</span> <span class="n">objects_dic</span><span class="p">,</span> <span class="n">predicates_rules</span><span class="p">):</span>  
+</code></pre></div>
+
+
+<p>This function will check whether this predicate can be solved. </p>
+<p>For example, here is a predicate for object a and c:</p>
+<div class="codehilite"><pre><span></span><code> <span class="err">{</span>
+            <span class="ss">&quot;objectNames&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="ss">&quot;c&quot;</span><span class="p">,</span> 
+                <span class="ss">&quot;a&quot;</span>
+            <span class="p">],</span> 
+            <span class="ss">&quot;name&quot;</span><span class="p">:</span> <span class="ss">&quot;on&quot;</span>
+        <span class="err">}</span>
+</code></pre></div>
+
+
+<p>The predicate rule is "on" and the objects are "a" and "c". In this predicate, "a" is the referenced object, so to define the position of "c", we must know the position of "a". If a's value has not be defined, the function will return false because this predicate can't be solved for now.</p>
+<h5 id="apply-animation-rule-customer_functionspy-solverpy">Apply Animation Rule (customer_functions.py, solver.py)<a class="headerlink" href="#apply-animation-rule-customer_functionspy-solverpy" title="Permanent link">Link</a></h5>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">applypredicates</span><span class="p">(</span><span class="n">predicate</span><span class="p">,</span><span class="n">objects_dic</span><span class="p">,</span><span class="n">predicates_rules</span><span class="p">,</span><span class="n">space</span><span class="p">):</span>
+</code></pre></div>
+
+
+<p>This object will update the value of related object in the object list by applying the animation rule.  </p>
+<p>For example:</p>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="k">on</span><span class="o">-</span><span class="k">table</span> <span class="n">a</span><span class="p">)</span>
+</code></pre></div>
+
+
+<p>Using distributex function in the extensions, a's y value is set to 0.</p>
+<div class="codehilite"><pre><span></span><code><span class="n">a</span><span class="p">.</span><span class="n">y</span> <span class="o">=</span> <span class="mi">0</span>
+</code></pre></div>
+
+
+<h3 id="33-adaptor">3.3 Adaptor<a class="headerlink" href="#33-adaptor" title="Permanent link">Link</a></h3>
+<p><img alt="" src="../images/vfg/adapter.png" /></p>
+<p>Here is the code structure of adapter. This component transfers the result generated by Predicate Solver into the final visualisation file.</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">transfer</span><span class="p">(</span><span class="n">one_stage</span><span class="p">,</span> <span class="n">initialobjects</span><span class="p">,</span> <span class="n">panel_size</span><span class="p">,</span><span class="n">shiftx</span><span class="p">,</span><span class="n">shifty</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">20</span><span class="p">):</span>
+</code></pre></div>
+
+
+<p>This function converts the dictionary into the info needed in visualisation file.</p>
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">get_panel_size</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">20</span><span class="p">):</span>
+</code></pre></div>
+
+
+<p>This function will for loop all the objects in the visualisaiton dictionary, and try to find the max_x and max_y of the panel.</p>
+<p>For example, </p>
+<div class="codehilite"><pre><span></span><code><span class="p">.........</span><span class="n">max_y</span>
+<span class="p">.</span>        <span class="p">.</span>
+<span class="p">.</span>        <span class="p">.</span>
+<span class="p">.</span>        <span class="p">.</span>
+<span class="p">........</span><span class="n">max_x</span>
+</code></pre></div>
+
+
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">generate_visualisation_file</span><span class="p">(</span><span class="n">result</span><span class="p">,</span> <span class="n">object_list</span><span class="p">,</span><span class="n">animation_profile</span><span class="p">):</span>  
+</code></pre></div>
+
+
+<div class="codehilite"><pre><span></span><code><span class="k">def</span> <span class="nf">get_visualisation_json</span><span class="p">(</span><span class="n">predicates</span><span class="p">,</span> <span class="n">animation_profile</span><span class="p">):</span>
+</code></pre></div>
+
+
+<p>These functions are the main functions of this module,they will call the other functions to manipulate the visualisation file for the unity visualiser.</p>
+<div class="codehilite"><pre><span></span><code><span class="ss">&quot;shape&quot;</span><span class="p">:</span> <span class="err">{</span>
+  <span class="ss">&quot;Block&quot;</span><span class="p">:</span> <span class="err">{</span>
+    <span class="ss">&quot;prefab&quot;</span><span class="p">:</span> <span class="ss">&quot;Block&quot;</span><span class="p">,</span>
+    <span class="ss">&quot;showName&quot;</span><span class="p">:</span> <span class="k">true</span><span class="p">,</span>
+    <span class="ss">&quot;x&quot;</span><span class="p">:</span> <span class="k">false</span><span class="p">,</span>
+    <span class="ss">&quot;y&quot;</span><span class="p">:</span> <span class="k">false</span><span class="p">,</span>
+    <span class="ss">&quot;color&quot;</span><span class="p">:</span> <span class="ss">&quot;randomcolor&quot;</span><span class="p">,</span>
+    <span class="ss">&quot;width&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span>
+    <span class="ss">&quot;height&quot;</span><span class="p">:</span> <span class="mi">40</span>
+ <span class="err">}</span><span class="p">,</span>
+  <span class="ss">&quot;Claw&quot;</span><span class="p">:</span> <span class="err">{</span>
+    <span class="ss">&quot;prefab&quot;</span><span class="p">:</span> <span class="ss">&quot;Claw&quot;</span><span class="p">,</span>
+    <span class="ss">&quot;color&quot;</span><span class="p">:</span> <span class="err">{</span>
+      <span class="ss">&quot;r&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="ss">&quot;g&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="ss">&quot;b&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+      <span class="ss">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span>
+ <span class="err">}</span><span class="p">,</span>
+    <span class="ss">&quot;showName&quot;</span><span class="p">:</span> <span class="k">false</span><span class="p">,</span>
+    <span class="ss">&quot;x&quot;</span><span class="p">:</span> <span class="mi">230</span><span class="p">,</span>
+    <span class="ss">&quot;y&quot;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span>
+    <span class="ss">&quot;width&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span>
+    <span class="ss">&quot;height&quot;</span><span class="p">:</span> <span class="mi">40</span>
+ <span class="err">}</span><span class="p">,</span>
+</code></pre></div>
+
+
+<h4 id="visualisation-file-structure">Visualisation File Structure<a class="headerlink" href="#visualisation-file-structure" title="Permanent link">Link</a></h4>
+<p>Visualisation Files are in JSON. </p>
+<p>They contain
+* a list of visual stages, containing
+    * a list of visual sprites. 
+        * Each Visual sprite has a number of properties, outlined below
+    * Stages also contain a name and a list of predicates true at that stage
+* A table of images (base64) for visualisation
+* Subgoal map and pool, for displaying data about subgoals</p>
+<p>An example Visualisation file is shown below. It is for the Blocks domain, and it has only 2 stages.</p>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
+    <span class="nt">&quot;visualStages&quot;</span><span class="p">:</span> <span class="p">[{</span>
+        <span class="nt">&quot;visualSprites&quot;</span><span class="p">:</span> <span class="p">[{</span>
+            <span class="nt">&quot;prefabImage&quot;</span><span class="p">:</span> <span class="s2">&quot;Block&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;showName&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;x&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+            <span class="nt">&quot;y&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;r&quot;</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">,</span>
+                <span class="nt">&quot;g&quot;</span><span class="p">:</span> <span class="mf">0.52</span><span class="p">,</span>
+                <span class="nt">&quot;b&quot;</span><span class="p">:</span> <span class="mf">0.25</span><span class="p">,</span>
+                <span class="nt">&quot;a&quot;</span><span class="p">:</span> <span class="mf">1.0</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;width&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span>
+            <span class="nt">&quot;height&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;minX&quot;</span><span class="p">:</span> <span class="mf">0.207</span><span class="p">,</span>
+            <span class="nt">&quot;maxX&quot;</span><span class="p">:</span> <span class="mf">0.345</span><span class="p">,</span>
+            <span class="nt">&quot;minY&quot;</span><span class="p">:</span> <span class="mf">0.034</span><span class="p">,</span>
+            <span class="nt">&quot;maxY&quot;</span><span class="p">:</span> <span class="mf">0.172</span>
+        <span class="p">},</span> <span class="p">{</span>
+            <span class="nt">&quot;prefabImage&quot;</span><span class="p">:</span> <span class="s2">&quot;Block&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;showName&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;x&quot;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+            <span class="nt">&quot;y&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;r&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+                <span class="nt">&quot;g&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+                <span class="nt">&quot;b&quot;</span><span class="p">:</span> <span class="mf">0.83</span><span class="p">,</span>
+                <span class="nt">&quot;a&quot;</span><span class="p">:</span> <span class="mf">1.0</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;width&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span>
+            <span class="nt">&quot;height&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;minX&quot;</span><span class="p">:</span> <span class="mf">0.379</span><span class="p">,</span>
+            <span class="nt">&quot;maxX&quot;</span><span class="p">:</span> <span class="mf">0.517</span><span class="p">,</span>
+            <span class="nt">&quot;minY&quot;</span><span class="p">:</span> <span class="mf">0.034</span><span class="p">,</span>
+            <span class="nt">&quot;maxY&quot;</span><span class="p">:</span> <span class="mf">0.172</span>
+        <span class="p">},</span> <span class="p">{</span>
+            <span class="nt">&quot;prefabImage&quot;</span><span class="p">:</span> <span class="s2">&quot;Block&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;showName&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;x&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+            <span class="nt">&quot;y&quot;</span><span class="p">:</span> <span class="mi">82</span><span class="p">,</span>
+            <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;r&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+                <span class="nt">&quot;g&quot;</span><span class="p">:</span> <span class="mf">0.76</span><span class="p">,</span>
+                <span class="nt">&quot;b&quot;</span><span class="p">:</span> <span class="mf">0.76</span><span class="p">,</span>
+                <span class="nt">&quot;a&quot;</span><span class="p">:</span> <span class="mf">1.0</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;width&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span>
+            <span class="nt">&quot;height&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;minX&quot;</span><span class="p">:</span> <span class="mf">0.207</span><span class="p">,</span>
+            <span class="nt">&quot;maxX&quot;</span><span class="p">:</span> <span class="mf">0.345</span><span class="p">,</span>
+            <span class="nt">&quot;minY&quot;</span><span class="p">:</span> <span class="mf">0.176</span><span class="p">,</span>
+            <span class="nt">&quot;maxY&quot;</span><span class="p">:</span> <span class="mf">0.314</span>
+        <span class="p">},</span> <span class="p">{</span>
+            <span class="nt">&quot;prefabImage&quot;</span><span class="p">:</span> <span class="s2">&quot;Block&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;showName&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;x&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;y&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;r&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+                <span class="nt">&quot;g&quot;</span><span class="p">:</span> <span class="mf">0.76</span><span class="p">,</span>
+                <span class="nt">&quot;b&quot;</span><span class="p">:</span> <span class="mf">0.76</span><span class="p">,</span>
+                <span class="nt">&quot;a&quot;</span><span class="p">:</span> <span class="mf">1.0</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;width&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span>
+            <span class="nt">&quot;height&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;minX&quot;</span><span class="p">:</span> <span class="mf">0.034</span><span class="p">,</span>
+            <span class="nt">&quot;maxX&quot;</span><span class="p">:</span> <span class="mf">0.172</span><span class="p">,</span>
+            <span class="nt">&quot;minY&quot;</span><span class="p">:</span> <span class="mf">0.034</span><span class="p">,</span>
+            <span class="nt">&quot;maxY&quot;</span><span class="p">:</span> <span class="mf">0.172</span>
+        <span class="p">},</span> <span class="p">{</span>
+            <span class="nt">&quot;prefabImage&quot;</span><span class="p">:</span> <span class="s2">&quot;Claw&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;r&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="nt">&quot;g&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="nt">&quot;b&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="nt">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;showName&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;x&quot;</span><span class="p">:</span> <span class="mi">230</span><span class="p">,</span>
+            <span class="nt">&quot;y&quot;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span>
+            <span class="nt">&quot;width&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span>
+            <span class="nt">&quot;height&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Claw&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;minX&quot;</span><span class="p">:</span> <span class="mf">0.431</span><span class="p">,</span>
+            <span class="nt">&quot;maxX&quot;</span><span class="p">:</span> <span class="mf">0.569</span><span class="p">,</span>
+            <span class="nt">&quot;minY&quot;</span><span class="p">:</span> <span class="mf">0.897</span><span class="p">,</span>
+            <span class="nt">&quot;maxY&quot;</span><span class="p">:</span> <span class="mf">0.966</span>
+        <span class="p">},</span> <span class="p">{</span>
+            <span class="nt">&quot;prefabImage&quot;</span><span class="p">:</span> <span class="s2">&quot;Board&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;r&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="nt">&quot;g&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="nt">&quot;b&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="nt">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;showName&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;x&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;y&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;width&quot;</span><span class="p">:</span> <span class="s2">&quot;panel_size&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;height&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Board&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;minX&quot;</span><span class="p">:</span> <span class="mf">0.034</span><span class="p">,</span>
+            <span class="nt">&quot;maxX&quot;</span><span class="p">:</span> <span class="mf">0.966</span><span class="p">,</span>
+            <span class="nt">&quot;minY&quot;</span><span class="p">:</span> <span class="mf">0.034</span><span class="p">,</span>
+            <span class="nt">&quot;maxY&quot;</span><span class="p">:</span> <span class="mf">0.043</span>
+        <span class="p">}],</span>
+        <span class="nt">&quot;stageName&quot;</span><span class="p">:</span> <span class="s2">&quot;Initial Stage&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;stageInfo&quot;</span><span class="p">:</span> <span class="s2">&quot;No Step Information&quot;</span>
+    <span class="p">},</span> <span class="p">{</span>
+        <span class="nt">&quot;visualSprites&quot;</span><span class="p">:</span> <span class="p">[{</span>
+            <span class="nt">&quot;prefabImage&quot;</span><span class="p">:</span> <span class="s2">&quot;Block&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;showName&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;x&quot;</span><span class="p">:</span> <span class="mi">100</span><span class="p">,</span>
+            <span class="nt">&quot;y&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;r&quot;</span><span class="p">:</span> <span class="mf">0.8</span><span class="p">,</span>
+                <span class="nt">&quot;g&quot;</span><span class="p">:</span> <span class="mf">0.52</span><span class="p">,</span>
+                <span class="nt">&quot;b&quot;</span><span class="p">:</span> <span class="mf">0.25</span><span class="p">,</span>
+                <span class="nt">&quot;a&quot;</span><span class="p">:</span> <span class="mf">1.0</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;width&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span>
+            <span class="nt">&quot;height&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;b&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;minX&quot;</span><span class="p">:</span> <span class="mf">0.207</span><span class="p">,</span>
+            <span class="nt">&quot;maxX&quot;</span><span class="p">:</span> <span class="mf">0.345</span><span class="p">,</span>
+            <span class="nt">&quot;minY&quot;</span><span class="p">:</span> <span class="mf">0.034</span><span class="p">,</span>
+            <span class="nt">&quot;maxY&quot;</span><span class="p">:</span> <span class="mf">0.172</span>
+        <span class="p">},</span> <span class="p">{</span>
+            <span class="nt">&quot;prefabImage&quot;</span><span class="p">:</span> <span class="s2">&quot;Block&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;showName&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;x&quot;</span><span class="p">:</span> <span class="mi">200</span><span class="p">,</span>
+            <span class="nt">&quot;y&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;r&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">,</span>
+                <span class="nt">&quot;g&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+                <span class="nt">&quot;b&quot;</span><span class="p">:</span> <span class="mf">0.83</span><span class="p">,</span>
+                <span class="nt">&quot;a&quot;</span><span class="p">:</span> <span class="mf">1.0</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;width&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span>
+            <span class="nt">&quot;height&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;d&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;minX&quot;</span><span class="p">:</span> <span class="mf">0.379</span><span class="p">,</span>
+            <span class="nt">&quot;maxX&quot;</span><span class="p">:</span> <span class="mf">0.517</span><span class="p">,</span>
+            <span class="nt">&quot;minY&quot;</span><span class="p">:</span> <span class="mf">0.034</span><span class="p">,</span>
+            <span class="nt">&quot;maxY&quot;</span><span class="p">:</span> <span class="mf">0.172</span>
+        <span class="p">},</span> <span class="p">{</span>
+            <span class="nt">&quot;prefabImage&quot;</span><span class="p">:</span> <span class="s2">&quot;Block&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;showName&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;x&quot;</span><span class="p">:</span> <span class="mi">230</span><span class="p">,</span>
+            <span class="nt">&quot;y&quot;</span><span class="p">:</span> <span class="mi">440</span><span class="p">,</span>
+            <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;r&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+                <span class="nt">&quot;g&quot;</span><span class="p">:</span> <span class="mf">0.76</span><span class="p">,</span>
+                <span class="nt">&quot;b&quot;</span><span class="p">:</span> <span class="mf">0.76</span><span class="p">,</span>
+                <span class="nt">&quot;a&quot;</span><span class="p">:</span> <span class="mf">1.0</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;width&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span>
+            <span class="nt">&quot;height&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;c&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;minX&quot;</span><span class="p">:</span> <span class="mf">0.431</span><span class="p">,</span>
+            <span class="nt">&quot;maxX&quot;</span><span class="p">:</span> <span class="mf">0.569</span><span class="p">,</span>
+            <span class="nt">&quot;minY&quot;</span><span class="p">:</span> <span class="mf">0.793</span><span class="p">,</span>
+            <span class="nt">&quot;maxY&quot;</span><span class="p">:</span> <span class="mf">0.931</span>
+        <span class="p">},</span> <span class="p">{</span>
+            <span class="nt">&quot;prefabImage&quot;</span><span class="p">:</span> <span class="s2">&quot;Block&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;showName&quot;</span><span class="p">:</span> <span class="kc">true</span><span class="p">,</span>
+            <span class="nt">&quot;x&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;y&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;r&quot;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">,</span>
+                <span class="nt">&quot;g&quot;</span><span class="p">:</span> <span class="mf">0.76</span><span class="p">,</span>
+                <span class="nt">&quot;b&quot;</span><span class="p">:</span> <span class="mf">0.76</span><span class="p">,</span>
+                <span class="nt">&quot;a&quot;</span><span class="p">:</span> <span class="mf">1.0</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;width&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span>
+            <span class="nt">&quot;height&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;a&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;minX&quot;</span><span class="p">:</span> <span class="mf">0.034</span><span class="p">,</span>
+            <span class="nt">&quot;maxX&quot;</span><span class="p">:</span> <span class="mf">0.172</span><span class="p">,</span>
+            <span class="nt">&quot;minY&quot;</span><span class="p">:</span> <span class="mf">0.034</span><span class="p">,</span>
+            <span class="nt">&quot;maxY&quot;</span><span class="p">:</span> <span class="mf">0.172</span>
+        <span class="p">},</span> <span class="p">{</span>
+            <span class="nt">&quot;prefabImage&quot;</span><span class="p">:</span> <span class="s2">&quot;Claw&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;r&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="nt">&quot;g&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="nt">&quot;b&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="nt">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;showName&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;x&quot;</span><span class="p">:</span> <span class="mi">230</span><span class="p">,</span>
+            <span class="nt">&quot;y&quot;</span><span class="p">:</span> <span class="mi">500</span><span class="p">,</span>
+            <span class="nt">&quot;width&quot;</span><span class="p">:</span> <span class="mi">80</span><span class="p">,</span>
+            <span class="nt">&quot;height&quot;</span><span class="p">:</span> <span class="mi">40</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Claw&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;minX&quot;</span><span class="p">:</span> <span class="mf">0.431</span><span class="p">,</span>
+            <span class="nt">&quot;maxX&quot;</span><span class="p">:</span> <span class="mf">0.569</span><span class="p">,</span>
+            <span class="nt">&quot;minY&quot;</span><span class="p">:</span> <span class="mf">0.897</span><span class="p">,</span>
+            <span class="nt">&quot;maxY&quot;</span><span class="p">:</span> <span class="mf">0.966</span>
+        <span class="p">},</span> <span class="p">{</span>
+            <span class="nt">&quot;prefabImage&quot;</span><span class="p">:</span> <span class="s2">&quot;Board&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;color&quot;</span><span class="p">:</span> <span class="p">{</span>
+                <span class="nt">&quot;r&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="nt">&quot;g&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="nt">&quot;b&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+                <span class="nt">&quot;a&quot;</span><span class="p">:</span> <span class="mi">1</span>
+            <span class="p">},</span>
+            <span class="nt">&quot;showName&quot;</span><span class="p">:</span> <span class="kc">false</span><span class="p">,</span>
+            <span class="nt">&quot;x&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;y&quot;</span><span class="p">:</span> <span class="mi">0</span><span class="p">,</span>
+            <span class="nt">&quot;width&quot;</span><span class="p">:</span> <span class="s2">&quot;panel_size&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;height&quot;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+            <span class="nt">&quot;name&quot;</span><span class="p">:</span> <span class="s2">&quot;Board&quot;</span><span class="p">,</span>
+            <span class="nt">&quot;minX&quot;</span><span class="p">:</span> <span class="mf">0.034</span><span class="p">,</span>
+            <span class="nt">&quot;maxX&quot;</span><span class="p">:</span> <span class="mf">0.966</span><span class="p">,</span>
+            <span class="nt">&quot;minY&quot;</span><span class="p">:</span> <span class="mf">0.034</span><span class="p">,</span>
+            <span class="nt">&quot;maxY&quot;</span><span class="p">:</span> <span class="mf">0.043</span>
+        <span class="p">}],</span>
+        <span class="nt">&quot;stageName&quot;</span><span class="p">:</span> <span class="s2">&quot;unstack  (c b)&quot;</span><span class="p">,</span>
+        <span class="nt">&quot;stageInfo&quot;</span><span class="p">:</span> <span class="s2">&quot;(:action unstack\r\n    :parameters (c b)\r\n    :precondition\r\n      (and\r\n        (on c b)\r\n        (clear c)\r\n        (arm-free)\r\n      )\r\n    :effect\r\n      (and\r\n        (holding c)\r\n        (clear b)\r\n        (not\r\n          (clear c)\r\n        )\r\n        (not\r\n          (arm-free)\r\n        )\r\n        (not\r\n          (on c b)\r\n        )\r\n      )\r\n  )&quot;</span>
+    <span class="p">}],</span>
+    <span class="nt">&quot;subgoalPool&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;m_keys&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;(on c d )&quot;</span><span class="p">,</span> <span class="s2">&quot;(on b c )&quot;</span><span class="p">,</span> <span class="s2">&quot;(on a b )&quot;</span><span class="p">],</span>
+            <span class="nt">&quot;m_values&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">[</span><span class="s2">&quot;c&quot;</span><span class="p">,</span> <span class="s2">&quot;d&quot;</span><span class="p">],</span>
+                <span class="p">[</span><span class="s2">&quot;b&quot;</span><span class="p">,</span> <span class="s2">&quot;c&quot;</span><span class="p">],</span>
+                <span class="p">[</span><span class="s2">&quot;a&quot;</span><span class="p">,</span> <span class="s2">&quot;b&quot;</span><span class="p">]</span>
+            <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;subgoalMap&quot;</span><span class="p">:</span> <span class="p">{</span>
+            <span class="nt">&quot;m_keys&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span>
+            <span class="nt">&quot;m_values&quot;</span><span class="p">:</span> <span class="p">[</span>
+                <span class="p">[</span><span class="s2">&quot;(on c d )&quot;</span><span class="p">],</span>
+                <span class="p">[</span><span class="s2">&quot;(on c d )&quot;</span><span class="p">],</span>
+                <span class="p">[</span><span class="s2">&quot;(on c d )&quot;</span><span class="p">,</span> <span class="s2">&quot;(on b c )&quot;</span><span class="p">],</span>
+                <span class="p">[</span><span class="s2">&quot;(on c d )&quot;</span><span class="p">,</span> <span class="s2">&quot;(on b c )&quot;</span><span class="p">],</span>
+                <span class="p">[</span><span class="s2">&quot;(on c d )&quot;</span><span class="p">,</span> <span class="s2">&quot;(on b c )&quot;</span><span class="p">,</span> <span class="s2">&quot;(on a b )&quot;</span><span class="p">]</span>
+            <span class="p">]</span>
+    <span class="p">},</span>
+    <span class="nt">&quot;transferType&quot;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="nt">&quot;imageTable&quot;</span><span class="p">:</span> <span class="p">{</span>
+        <span class="nt">&quot;m_keys&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Block&quot;</span><span class="p">,</span> <span class="s2">&quot;Board&quot;</span><span class="p">,</span> <span class="s2">&quot;Claw&quot;</span><span class="p">],</span>
+        <span class="nt">&quot;m_values&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;iVB...QmCC&quot;</span><span class="p">,</span> <span class="s2">&quot;iVBORw0...QmCC&quot;</span><span class="p">,</span> <span class="s2">&quot;iVB...CYII=&quot;</span><span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Last update: April 28, 2020
+    
+  </small>
+</div>
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../deployment_guide/" title="Deployment" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Deployment
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../frontend_dev_guide/" title="Frontend" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Frontend
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/vendor.f81b9e8b.min.js"></script>
+      <script src="../assets/javascripts/bundle.23546af0.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.58d22e8e.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+      
+    
+  </body>
+</html>

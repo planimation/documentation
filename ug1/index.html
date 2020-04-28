@@ -1,135 +1,456 @@
-<!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  
-  
-  <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>User Guide - Planimation</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
-  <link rel="stylesheet" href="../css/theme.css" />
-  <link rel="stylesheet" href="../css/theme_extra.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
-  
-  <script>
-    // Current page data
-    var mkdocs_page_name = "User Guide";
-    var mkdocs_page_input_path = "ug1.md";
-    var mkdocs_page_url = null;
-  </script>
-  
-  <script src="../js/jquery-2.1.1.min.js" defer></script>
-  <script src="../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script> 
-  
-</head>
 
-<body class="wy-body-for-nav" role="document">
 
-  <div class="wy-grid-for-nav">
-
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
     
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-    <div class="wy-side-scroll">
-      <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> Planimation</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
-  </form>
-</div>
-      </div>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.3">
+    
+    
+      
+        <title>User Guide - Planimation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.62d34fff.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#planning-visualisation-user-guide" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Planimation" class="md-header-nav__button md-logo" aria-label="Planimation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-                <p class="caption"><span class="caption-text">User Information</span></p>
-                <ul class="current">
-                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
-                    </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">User Guide</a>
-    <ul class="current">
-    </ul>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Developer Information</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../Deployment_guide/">Deployment</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../VFG_guide/">VFG</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Visualiser_guide/">Visualiser</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../ap_guide/">Animation Profile</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Component Information</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../backend/">Backend</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../frontend/">Frontend</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Resources</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../git/">GitHub</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../other/">Other</a>
-                    </li>
-                </ul>
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Planimation
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              User Guide
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
       </div>
     </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">Planimation</a>
-      </nav>
-
-      
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="..">Docs</a> &raquo;</li>
-    
-      
-        
-          <li>User Information &raquo;</li>
-        
-      
-    
-    <li>User Guide</li>
-    <li class="wy-breadcrumbs-aside">
-      
-    </li>
-  </ul>
-  
-  <hr/>
+  </div>
 </div>
-          <div role="main">
-            <div class="section">
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Planimation" class="md-nav__button md-logo" aria-label="Planimation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    Planimation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1" checked>
+    
+    <label class="md-nav__link" for="nav-1">
+      User Information
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="User Information" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        User Information
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+    <a href="./" title="User Guide" class="md-nav__link md-nav__link--active">
+      User Guide
+    </a>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+    <label class="md-nav__link" for="nav-2">
+      Developer Information
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Developer Information" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Developer Information
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../deployment_guide/" title="Deployment" class="md-nav__link">
+      Deployment
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../backend_dev_guide/" title="Backend" class="md-nav__link">
+      Backend
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../frontend_dev_guide/" title="Frontend" class="md-nav__link">
+      Frontend
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ap_guide/" title="Animation Profile" class="md-nav__link">
+      Animation Profile
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Component Information
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Component Information" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Component Information
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../backend/" title="Backend" class="md-nav__link">
+      Backend
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../frontend/" title="Frontend" class="md-nav__link">
+      Frontend
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../plugins/" title="Plugins" class="md-nav__link">
+      Plugins
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Resources
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Resources" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Resources
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://github.com/planimation" title="GitHub" class="md-nav__link">
+      GitHub
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../other/" title="Other" class="md-nav__link">
+      Other
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
               
-                <h1 id="planning-visualisation-user-guide">Planning Visualisation - User Guide</h1>
-<h1 id="1-overview"><span id="1_Overview_0"></span>1. Overview</h1>
+                
+                
+                  
+                
+                
+                <h1 id="planning-visualisation-user-guide">Planning Visualisation - User Guide<a class="headerlink" href="#planning-visualisation-user-guide" title="Permanent link">Link</a></h1>
+<h1 id="1-overview"><span id="1_Overview_0"></span>1. Overview<a class="headerlink" href="#1-overview" title="Permanent link">Link</a></h1>
 <p>This document contains the User Guide for Planning Visualiser.</p>
 <p>The Planning Visualiser is an open-source program which visualises
 solutions to Planning Problems. It is an executable Unity architecture
 in a browser.</p>
-<h2 id="11-planning-problems"><span id="11_Planning_Problems_7"></span>1.1 Planning Problems</h2>
+<h2 id="11-planning-problems"><span id="11_Planning_Problems_7"></span>1.1 Planning Problems<a class="headerlink" href="#11-planning-problems" title="Permanent link">Link</a></h2>
 <p>For information about Planning Problems, see <a href="http://planning.domains/">http://planning.domains/</a></p>
 <p>Our application uses one ‘Animation Profile’ per problem domain. An
 Animation Profile is a user-written PDDL file which tells the Visualiser
 how a Domain is to be visualised. See the developer docs for more
 information.</p>
-<h2 id="12-scope"><span id="12_Scope_15"></span>1.2 Scope</h2>
+<h2 id="12-scope"><span id="12_Scope_15"></span>1.2 Scope<a class="headerlink" href="#12-scope" title="Permanent link">Link</a></h2>
 <p>Planning Visualiser currently has Animation Profiles for four problem
 domains; Blocks, Grid, Towers of Hanoi, and Logistics. Other simple
 problem domains may be added by writing an Animation Profile (see
@@ -138,9 +459,9 @@ section 3.2).</p>
 <a href="http://planning.domains/">http://planning.domains/</a> . Alternatively, the user can provide their
 own solution from any solver, provided it conforms to the correct
 format.</p>
-<h1 id="2-using-the-system"><span id="2_Using_the_system_23"></span>2. Using the system</h1>
-<h2 id="21-visualise-built-in-domains"><span id="21_Visualise_Builtin_Domains_26"></span>2.1 Visualise Built-in Domains</h2>
-<h3 id="211-select-files"><span id="211_Select_Files_28"></span>2.1.1 Select Files</h3>
+<h1 id="2-using-the-system"><span id="2_Using_the_system_23"></span>2. Using the system<a class="headerlink" href="#2-using-the-system" title="Permanent link">Link</a></h1>
+<h2 id="21-visualise-built-in-domains"><span id="21_Visualise_Builtin_Domains_26"></span>2.1 Visualise Built-in Domains<a class="headerlink" href="#21-visualise-built-in-domains" title="Permanent link">Link</a></h2>
+<h3 id="211-select-files"><span id="211_Select_Files_28"></span>2.1.1 Select Files<a class="headerlink" href="#211-select-files" title="Permanent link">Link</a></h3>
 <p>From the home screen, two options are available:</p>
 <p><em>Build visualisation from Problem</em></p>
 <ul>
@@ -161,7 +482,7 @@ format.</p>
 </ul>
 <p>Once the correct files are uplodaded, the user will be taken to the
 Visualiser screen.</p>
-<h3 id="212-visualise-solution"><span id="212_Visualise_Solution_33"></span>2.1.2 Visualise Solution</h3>
+<h3 id="212-visualise-solution"><span id="212_Visualise_Solution_33"></span>2.1.2 Visualise Solution<a class="headerlink" href="#212-visualise-solution" title="Permanent link">Link</a></h3>
 <p>The visualisation page has several parts.</p>
 <ol>
 <li><strong>Steps Panel:</strong> Shows all the steps in the solution. Steps can be
@@ -181,7 +502,7 @@ Visualiser screen.</p>
     download the Visualisation file. This downloaded visualisation file
     can be shared with others or re-watched.</li>
 </ol>
-<h2 id="22-visualise-a-new-domain"><span id="22_Visualise_a_new_Domain_42"></span>2.2 Visualise a new Domain</h2>
+<h2 id="22-visualise-a-new-domain"><span id="22_Visualise_a_new_Domain_42"></span>2.2 Visualise a new Domain<a class="headerlink" href="#22-visualise-a-new-domain" title="Permanent link">Link</a></h2>
 <p>This can be done, for many simple domains, with no modification to the
 system.</p>
 <p>To add a new domain:</p>
@@ -195,12 +516,12 @@ system.</p>
 <li>Follow the steps in 2.1 to view a visualisation with the new
     Animation Profile.</li>
 </ol>
-<h2 id="23-video-record-a-visualisation"><span id="23_Video_Record_a_Visualisation_52"></span>2.3 Video Record a Visualisation</h2>
+<h2 id="23-video-record-a-visualisation"><span id="23_Video_Record_a_Visualisation_52"></span>2.3 Video Record a Visualisation<a class="headerlink" href="#23-video-record-a-visualisation" title="Permanent link">Link</a></h2>
 <p>A video recording of the visualisation can be created so that the final
 animation can be easily shared or re-reviewed independently of the
 system. The below recommendations are one way of recording the
 animation, however many other methods and tools exist to achieve this.</p>
-<h3 id="231-macos-users"><span id="231_MacOS_Users_57"></span>2.3.1 MacOS Users</h3>
+<h3 id="231-macos-users"><span id="231_MacOS_Users_57"></span>2.3.1 MacOS Users<a class="headerlink" href="#231-macos-users" title="Permanent link">Link</a></h3>
 <p>To video record the visualisation, have the animation you wish to record
 on your screen, then complete the following steps:</p>
 <ol>
@@ -225,7 +546,7 @@ on your screen, then complete the following steps:</p>
     <a href="https://www.digitaltrends.com/computing/how-to-record-your-computer-screen/">https://www.digitaltrends.com/computing/how-to-record-your-computer-screen/</a></p>
 </li>
 </ol>
-<h3 id="232-windows-users"><span id="232_Windows_Users_74"></span>2.3.2 Windows Users</h3>
+<h3 id="232-windows-users"><span id="232_Windows_Users_74"></span>2.3.2 Windows Users<a class="headerlink" href="#232-windows-users" title="Permanent link">Link</a></h3>
 <p>To video record the visualisation, have the animation you wish to record
 on your screen, then complete the following steps:</p>
 <ol>
@@ -242,64 +563,105 @@ on your screen, then complete the following steps:</p>
 </ol>
 <p>Instructions adapted from
 <a href="https://www.laptopmag.com/articles/how-to-video-screen-capture-windows-10">https://www.laptopmag.com/articles/how-to-video-screen-capture-windows-10</a></p>
-<h1 id="3-extending-the-system"><span id="3_Extending_the_system_89"></span>3. Extending the system</h1>
+<h1 id="3-extending-the-system"><span id="3_Extending_the_system_89"></span>3. Extending the system<a class="headerlink" href="#3-extending-the-system" title="Permanent link">Link</a></h1>
 <p>Planning Visualiser is modular and can be extended in multiple ways.</p>
 <p>Many simple domains can be captured in the existing Animation Profile
 language. For more complex domains, modifications may need to be made to
 the application.</p>
 <p>Detailed developer documentation is available at the project's
 repository (under /Docs) .</p>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Last update: July 10, 2019
+    
+  </small>
+</div>
+                  
+                
               
-            </div>
+              
+                
+
+
+              
+            </article>
           </div>
-          <footer>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
   
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../Deployment_guide/" class="btn btn-neutral float-right" title="Deployment">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href=".." class="btn btn-neutral" title="Home"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href=".." title="Home" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Home
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../deployment_guide/" title="Deployment" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Deployment
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
+        
+      </nav>
     </div>
   
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-    
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
   </div>
-
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
       
-        </div>
-      </div>
-
-    </section>
-
-  </div>
-
-  <div class="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
+    </div>
+    
+      <script src="../assets/javascripts/vendor.f81b9e8b.min.js"></script>
+      <script src="../assets/javascripts/bundle.23546af0.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.58d22e8e.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
       
-        <span><a href=".." style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../Deployment_guide/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
-</div>
-    <script>var base_url = '..';</script>
-    <script src="../js/theme.js" defer></script>
-      <script src="../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
-            SphinxRtdTheme.Navigation.enable(true);
-        };
-    </script>
-
-</body>
+    
+  </body>
 </html>

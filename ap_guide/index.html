@@ -1,207 +1,1017 @@
-<!DOCTYPE html>
-<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
-<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  
-  
-  <link rel="shortcut icon" href="../img/favicon.ico">
-  <title>Animation Profile - Planimation</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:400,700|Roboto+Slab:400,700|Inconsolata:400,700" />
 
-  <link rel="stylesheet" href="../css/theme.css" />
-  <link rel="stylesheet" href="../css/theme_extra.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/github.min.css" />
-  
-  <script>
-    // Current page data
-    var mkdocs_page_name = "Animation Profile";
-    var mkdocs_page_input_path = "ap_guide.md";
-    var mkdocs_page_url = null;
-  </script>
-  
-  <script src="../js/jquery-2.1.1.min.js" defer></script>
-  <script src="../js/modernizr-2.8.3.min.js" defer></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
-  <script>hljs.initHighlightingOnLoad();</script> 
-  
-</head>
 
-<body class="wy-body-for-nav" role="document">
 
-  <div class="wy-grid-for-nav">
-
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
     
-    <nav data-toggle="wy-nav-shift" class="wy-nav-side stickynav">
-    <div class="wy-side-scroll">
-      <div class="wy-side-nav-search">
-        <a href=".." class="icon icon-home"> Planimation</a>
-        <div role="search">
-  <form id ="rtd-search-form" class="wy-form" action="../search.html" method="get">
-    <input type="text" name="q" placeholder="Search docs" title="Type search term here" />
-  </form>
-</div>
-      </div>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.1, mkdocs-material-5.1.3">
+    
+    
+      
+        <title>Animation Profile - Planimation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.62d34fff.min.css">
+      
+      
+    
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
+      
+    
+    
+    
+    
+      
+    
+    
+  </head>
+  
+  
+    <body dir="ltr">
+  
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#animation-profile" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid" aria-label="Header">
+    <a href=".." title="Planimation" class="md-header-nav__button md-logo" aria-label="Planimation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
 
-      <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
-                <p class="caption"><span class="caption-text">User Information</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="..">Home</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../ug1/">User Guide</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Developer Information</span></p>
-                <ul class="current">
-                    <li class="toctree-l1"><a class="reference internal" href="../Deployment_guide/">Deployment</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../VFG_guide/">VFG</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../Visualiser_guide/">Visualiser</a>
-                    </li>
-                    <li class="toctree-l1 current"><a class="reference internal current" href="./">Animation Profile</a>
-    <ul class="current">
-    <li class="toctree-l2"><a class="reference internal" href="#11-purpose">1.1 Purpose</a>
-    </li>
-    <li class="toctree-l2"><a class="reference internal" href="#12-scope">1.2 Scope</a>
-    </li>
-    </ul>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Component Information</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../backend/">Backend</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../frontend/">Frontend</a>
-                    </li>
-                </ul>
-                <p class="caption"><span class="caption-text">Resources</span></p>
-                <ul>
-                    <li class="toctree-l1"><a class="reference internal" href="../git/">GitHub</a>
-                    </li>
-                    <li class="toctree-l1"><a class="reference internal" href="../other/">Other</a>
-                    </li>
-                </ul>
+    </a>
+    <label class="md-header-nav__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" /></svg>
+    </label>
+    <div class="md-header-nav__title" data-md-component="header-title">
+      
+        <div class="md-header-nav__ellipsis">
+          <span class="md-header-nav__topic md-ellipsis">
+            Planimation
+          </span>
+          <span class="md-header-nav__topic md-ellipsis">
+            
+              Animation Profile
+            
+          </span>
+        </div>
+      
+    </div>
+    
+      <label class="md-header-nav__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+      </label>
+      
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5,3A6.5,6.5 0 0,1 16,9.5C16,11.11 15.41,12.59 14.44,13.73L14.71,14H15.5L20.5,19L19,20.5L14,15.5V14.71L13.73,14.44C12.59,15.41 11.11,16 9.5,16A6.5,6.5 0 0,1 3,9.5A6.5,6.5 0 0,1 9.5,3M9.5,5C7,5 5,7 5,9.5C5,12 7,14 9.5,14C12,14 14,12 14,9.5C14,7 12,5 9.5,5Z" /></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </label>
+      <button type="reset" class="md-search__icon md-icon" aria-label="Clear" data-md-component="search-reset" tabindex="-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" /></svg>
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
       </div>
     </div>
-    </nav>
-
-    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
-
-      
-      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
-        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
-        <a href="..">Planimation</a>
-      </nav>
-
-      
-      <div class="wy-nav-content">
-        <div class="rst-content">
-          <div role="navigation" aria-label="breadcrumbs navigation">
-  <ul class="wy-breadcrumbs">
-    <li><a href="..">Docs</a> &raquo;</li>
-    
-      
-        
-          <li>Developer Information &raquo;</li>
-        
-      
-    
-    <li>Animation Profile</li>
-    <li class="wy-breadcrumbs-aside">
-      
-    </li>
-  </ul>
-  
-  <hr/>
+  </div>
 </div>
-          <div role="main">
-            <div class="section">
+    
+    
+  </nav>
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+        
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Planimation" class="md-nav__button md-logo" aria-label="Planimation">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12,8A3,3 0 0,0 15,5A3,3 0 0,0 12,2A3,3 0 0,0 9,5A3,3 0 0,0 12,8M12,11.54C9.64,9.35 6.5,8 3,8V19C6.5,19 9.64,20.35 12,22.54C14.36,20.35 17.5,19 21,19V8C17.5,8 14.36,9.35 12,11.54Z" /></svg>
+
+    </a>
+    Planimation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-1" type="checkbox" id="nav-1">
+    
+    <label class="md-nav__link" for="nav-1">
+      User Information
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="User Information" data-md-level="1">
+      <label class="md-nav__title" for="nav-1">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        User Information
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Home" class="md-nav__link">
+      Home
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../ug1/" title="User Guide" class="md-nav__link">
+      User Guide
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" checked>
+    
+    <label class="md-nav__link" for="nav-2">
+      Developer Information
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Developer Information" data-md-level="1">
+      <label class="md-nav__title" for="nav-2">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Developer Information
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../deployment_guide/" title="Deployment" class="md-nav__link">
+      Deployment
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../backend_dev_guide/" title="Backend" class="md-nav__link">
+      Backend
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../frontend_dev_guide/" title="Frontend" class="md-nav__link">
+      Frontend
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Animation Profile
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3,9H17V7H3V9M3,13H17V11H3V13M3,17H17V15H3V17M19,17H21V15H19V17M19,7V9H21V7H19M19,13H21V11H19V13Z" /></svg>
+        </span>
+      </label>
+    
+    <a href="./" title="Animation Profile" class="md-nav__link md-nav__link--active">
+      Animation Profile
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#scope" class="md-nav__link">
+    Scope
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-using-the-language" class="md-nav__link">
+    2 Using the Language
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Using the Language">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-key-components" class="md-nav__link">
+    2.1 Key Components
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 Key Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#predicates" class="md-nav__link">
+    Predicates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visual" class="md-nav__link">
+    Visual
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-syntax" class="md-nav__link">
+    2.2 Syntax
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 Syntax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    Resources
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-types" class="md-nav__link">
+    2.3 Types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-object-properties" class="md-nav__link">
+    2.4 Object Properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-functions" class="md-nav__link">
+    2.5 Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5 Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#distribution" class="md-nav__link">
+    Distribution
+  </a>
+  
+    <nav class="md-nav" aria-label="Distribution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#distributex" class="md-nav__link">
+    distributex
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distributey" class="md-nav__link">
+    distributey
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distribute_grid_around_point" class="md-nav__link">
+    distribute_grid_around_point
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distribute_within_objects_vertical" class="md-nav__link">
+    distribute_within_objects_vertical
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distribute_within_objects_horizontal" class="md-nav__link">
+    distribute_within_objects_horizontal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-functions" class="md-nav__link">
+    Other Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Other Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#calculate_label" class="md-nav__link">
+    calculate_label
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#align_middle" class="md-nav__link">
+    align_middle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apply_smaller" class="md-nav__link">
+    apply_smaller
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#draw_line" class="md-nav__link">
+    draw_line
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-worked-example" class="md-nav__link">
+    3 Worked Example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-extending-the-language" class="md-nav__link">
+    4 Extending the Language
+  </a>
+  
+    <nav class="md-nav" aria-label="4 Extending the Language">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-extension-areas" class="md-nav__link">
+    4.1 Extension Areas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-extension-steps" class="md-nav__link">
+    4.2 Extension Steps
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Component Information
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Component Information" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Component Information
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../backend/" title="Backend" class="md-nav__link">
+      Backend
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../frontend/" title="Frontend" class="md-nav__link">
+      Frontend
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../plugins/" title="Plugins" class="md-nav__link">
+      Plugins
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Resources
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59,16.58L13.17,12L8.59,7.41L10,6L16,12L10,18L8.59,16.58Z" /></svg>
+      </span>
+    </label>
+    <nav class="md-nav" aria-label="Resources" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        <span class="md-nav__icon md-icon">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+        </span>
+        Resources
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="https://github.com/planimation" title="GitHub" class="md-nav__link">
+      GitHub
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../other/" title="Other" class="md-nav__link">
+      Other
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+      </span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#scope" class="md-nav__link">
+    Scope
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-using-the-language" class="md-nav__link">
+    2 Using the Language
+  </a>
+  
+    <nav class="md-nav" aria-label="2 Using the Language">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#21-key-components" class="md-nav__link">
+    2.1 Key Components
+  </a>
+  
+    <nav class="md-nav" aria-label="2.1 Key Components">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#predicates" class="md-nav__link">
+    Predicates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#visual" class="md-nav__link">
+    Visual
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#22-syntax" class="md-nav__link">
+    2.2 Syntax
+  </a>
+  
+    <nav class="md-nav" aria-label="2.2 Syntax">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#resources" class="md-nav__link">
+    Resources
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#23-types" class="md-nav__link">
+    2.3 Types
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#24-object-properties" class="md-nav__link">
+    2.4 Object Properties
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#25-functions" class="md-nav__link">
+    2.5 Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="2.5 Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#distribution" class="md-nav__link">
+    Distribution
+  </a>
+  
+    <nav class="md-nav" aria-label="Distribution">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#distributex" class="md-nav__link">
+    distributex
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distributey" class="md-nav__link">
+    distributey
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distribute_grid_around_point" class="md-nav__link">
+    distribute_grid_around_point
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distribute_within_objects_vertical" class="md-nav__link">
+    distribute_within_objects_vertical
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#distribute_within_objects_horizontal" class="md-nav__link">
+    distribute_within_objects_horizontal
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#other-functions" class="md-nav__link">
+    Other Functions
+  </a>
+  
+    <nav class="md-nav" aria-label="Other Functions">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#calculate_label" class="md-nav__link">
+    calculate_label
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#align_middle" class="md-nav__link">
+    align_middle
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#apply_smaller" class="md-nav__link">
+    apply_smaller
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#draw_line" class="md-nav__link">
+    draw_line
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-worked-example" class="md-nav__link">
+    3 Worked Example
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-extending-the-language" class="md-nav__link">
+    4 Extending the Language
+  </a>
+  
+    <nav class="md-nav" aria-label="4 Extending the Language">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-extension-areas" class="md-nav__link">
+    4.1 Extension Areas
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-extension-steps" class="md-nav__link">
+    4.2 Extension Steps
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
               
-                <h1 id="1-introduction">1 Introduction</h1>
-<h2 id="11-purpose">1.1 Purpose</h2>
+                
+                
+                  
+                
+                
+                <h1 id="animation-profile">Animation Profile<a class="headerlink" href="#animation-profile" title="Permanent link">Link</a></h1>
 <p>An Animation Profile (AP) is a user-written PDDL file which tells the Visualiser how a Domain is to be visualised. Each Animation Profile corresponds to one Domain. </p>
 <p>Essentially, the AP provides a set of visual objects ("shapes") within the domain, along with a set of mappings from Predicates to animation behaviours.</p>
-<h2 id="12-scope">1.2 Scope</h2>
-<p>The AP Language is designed to be flexible enough to allow for the animation of many simple PDDL domains, such as those found at https://bitbucket.org/planning-researchers/classical-domains/src/208a850d2ff2a27068329ad578ad99af9ec7e5c5/classical/?at=master. </p>
+<h2 id="scope">Scope<a class="headerlink" href="#scope" title="Permanent link">Link</a></h2>
+<p>The AP Language is designed to be flexible enough to allow for the animation of many simple PDDL domains, such as those found at <a href="https://github.com/planimation/documentation/tree/master/AnimationProfiles">https://github.com/planimation/documentation/tree/master/AnimationProfiles</a> </p>
 <p>Currently, APs have been written for four domains from this repository: Blocks, Towers of Hanoi, Logistics, and Grid.</p>
 <p>Other simple domains can be visualised in the language. For more complicated domains, additional functions or object properties may be added (See section 4).</p>
-<h1 id="2-using-the-language">2 Using the Language</h1>
+<h2 id="2-using-the-language">2 Using the Language<a class="headerlink" href="#2-using-the-language" title="Permanent link">Link</a></h2>
 <p>This section contains complete documentation for the syntax and semantics of the AP language. For a quick starting point to writing your own AP, see section 3.</p>
-<h2 id="21-key-components">2.1 Key Components</h2>
-<h3 id="211-predicates">2.1.1 Predicates</h3>
+<h3 id="21-key-components">2.1 Key Components<a class="headerlink" href="#21-key-components" title="Permanent link">Link</a></h3>
+<h4 id="predicates">Predicates<a class="headerlink" href="#predicates" title="Permanent link">Link</a></h4>
 <p>The first content of the AP should be the Predicate blocks. Here is an example of a Predicate block.</p>
-<pre><code>(:predicate holding
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="ss">:predicate</span> <span class="nv">holding</span>
 
-                 :parameters (?x claw)
-                 :effect (
-                 (equal (?x x y) (claw x y))
-                 )
+                 <span class="ss">:parameters</span> <span class="p">(</span><span class="nv">?x</span> <span class="nv">claw</span><span class="p">)</span>
+                 <span class="ss">:effect</span> <span class="p">(</span>
+                 <span class="p">(</span><span class="nb">equal</span> <span class="p">(</span><span class="nv">?x</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)</span> <span class="p">(</span><span class="nv">claw</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">))</span>
+                 <span class="p">)</span>
 
-  )
-</code></pre>
+  <span class="p">)</span>
+</code></pre></div>
+
 
 <p>There should be one or zero Predicate blocks for each Predicate in the Domain. If there is no Predicate block for a Predicate in the domain, the Predicate is ignored by the solver.</p>
-<p>Predicate Blocks contain:
-* The name of the Predicate, for example <code>holding</code>.
-* The parameters of the Predicate. Parameters are objects to which the Predicate applies. For example, <code>holding(?x)</code> means that the predicate on-table is true for the object ?x.
-* The effect of the Predicate. This is a logical statement concerning object properties which holds true when the predicate holds true. For example, <code>(equal (?x x y) (claw x y))</code> means that the object <code>?x</code> is at the object <code>claw</code>.
-* (Optionally) A Priority:
-    *   Specifies a priority in which predicates are solved
-    *   Example:
-    *   <code>:priority 0</code>
-    *   Higher priority predicates are applied first
-    *   This is required to ensure a limited number of domains (eg Towers of Hanoi) can be solved. Typically it is required when multiple predicates affect the same variables.</p>
-<h3 id="212-visual">2.1.2 Visual</h3>
+<p>Predicate Blocks contain:</p>
+<ul>
+<li>The name of the Predicate, for example <code>holding</code>.</li>
+<li>The parameters of the Predicate. Parameters are objects to which the Predicate applies. For example, <code>holding(?x)</code> means that the predicate on-table is true for the object ?x.</li>
+<li>The effect of the Predicate. This is a logical statement concerning object properties which holds true when the predicate holds true. For example, <code>(equal (?x x y) (claw x y))</code> means that the object <code>?x</code> is at the object <code>claw</code>.</li>
+<li>(Optionally) A Priority:<ul>
+<li>Specifies a priority in which predicates are solved</li>
+<li>Example:</li>
+<li><code>:priority 0</code></li>
+<li>Higher priority predicates are applied first</li>
+<li>This is required to ensure a limited number of domains (eg Towers of Hanoi) can be solved. Typically it is required when multiple predicates affect the same variables.</li>
+</ul>
+</li>
+</ul>
+<h4 id="visual">Visual<a class="headerlink" href="#visual" title="Permanent link">Link</a></h4>
 <p>visual defines the objects represented on the screen.</p>
 <p>An example of a visual block is:</p>
-<pre><code>(:visual block
-              :type default
-              :properties(
-                (showname false)
-                (x NULL)
-                (y NULL)
-                (color (function randomcolor)) 
-                (width 80)
-                (height 80)
-                (base64image iVBORw0KGg...oAA)
-              )
-  )
-</code></pre>
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="ss">:visual</span> <span class="k">block</span>
+              <span class="ss">:type</span> <span class="nv">default</span>
+              <span class="ss">:properties</span><span class="p">(</span>
+                <span class="p">(</span><span class="nv">showname</span> <span class="nv">false</span><span class="p">)</span>
+                <span class="p">(</span><span class="nv">x</span> <span class="nv">NULL</span><span class="p">)</span>
+                <span class="p">(</span><span class="nv">y</span> <span class="nv">NULL</span><span class="p">)</span>
+                <span class="p">(</span><span class="nv">color</span> <span class="p">(</span><span class="k">function</span> <span class="nv">randomcolor</span><span class="p">))</span> 
+                <span class="p">(</span><span class="nv">width</span> <span class="mi">80</span><span class="p">)</span>
+                <span class="p">(</span><span class="nv">height</span> <span class="mi">80</span><span class="p">)</span>
+                <span class="p">(</span><span class="nv">base64image</span> <span class="nv">iVBORw0KGg...oAA</span><span class="p">)</span>
+              <span class="p">)</span>
+  <span class="p">)</span>
+</code></pre></div>
 
-<p>visual blocks contain:
-* The name of the shape, for example <code>block</code>
-* The type of the object. Types can either be <code>default</code>, <code>custom</code>, or <code>predefine</code>. 
-  * <code>default</code> objects apply to any objects mentioned in the problem file. A 'block' in the problem file is an example of a default object. 
-  * <code>custom</code> objects are additional to the problem file, and are created by the user for visual effect. The 'claw' is an example of a custom object - it mainly serves a visual purpose and is not specified in the problem or domain file. The robot in the Grid domain is another example of a custom object - it is not explicitly mentioned in the domain objects, but its behaviour is still fairly dynamic (moving around etc)
-  * <code>predefine</code> These objects are assigned only to domain objects whose name matches any of the names in the :object field. This is used to apply properties to domain objects with specific naming conventions, for example, <code>key1</code>, <code>key2</code>, ... in the Grid domain. Alternatives, you can use <code>%key</code> shortcut to represent all the objects start with "key".
-* Object properties. These properties govern the position and appearance of the object. See section 2.4 for a detailed list of object properties.</p>
-<h2 id="22-syntax">2.2 Syntax</h2>
-<h3 id="221-description">2.2.1 Description</h3>
+
+<p>visual blocks contain:</p>
+<ul>
+<li>The name of the shape, for example <code>block</code></li>
+<li>The type of the object. Types can either be <code>default</code>, <code>custom</code>, or <code>predefine</code>. </li>
+<li><code>default</code> objects apply to any objects mentioned in the problem file. A 'block' in the problem file is an example of a default object. </li>
+<li><code>custom</code> objects are additional to the problem file, and are created by the user for visual effect. The 'claw' is an example of a custom object - it mainly serves a visual purpose and is not specified in the problem or domain file. The robot in the Grid domain is another example of a custom object - it is not explicitly mentioned in the domain objects, but its behaviour is still fairly dynamic (moving around etc)</li>
+<li><code>predefine</code> These objects are assigned only to domain objects whose name matches any of the names in the :object field. This is used to apply properties to domain objects with specific naming conventions, for example, <code>key1</code>, <code>key2</code>, ... in the Grid domain. Alternatives, you can use <code>%key</code> shortcut to represent all the objects start with "key".</li>
+<li>Object properties. These properties govern the position and appearance of the object. See section 2.4 for a detailed list of object properties.</li>
+</ul>
+<h3 id="22-syntax">2.2 Syntax<a class="headerlink" href="#22-syntax" title="Permanent link">Link</a></h3>
+<h4 id="description">Description<a class="headerlink" href="#description" title="Permanent link">Link</a></h4>
 <p>The syntax of the language is based on PDDL syntax, which is itself based on Lisp. See Section 2.2.2 for detailed resources on these languages.</p>
-<h3 id="222-resources">2.2.2 Resources</h3>
+<h4 id="resources">Resources<a class="headerlink" href="#resources" title="Permanent link">Link</a></h4>
 <ul>
 <li>PDDL information: https://en.wikipedia.org/wiki/Planning_Domain_Definition_Language</li>
 <li>PDDL examples, solver: http://planning.domains/</li>
 <li>Lisp information: https://en.wikipedia.org/wiki/Lisp_(programming_language)</li>
 <li>Lisp Tutorial: https://www.tutorialspoint.com/lisp/</li>
 </ul>
-<h2 id="23-types">2.3 Types</h2>
+<h3 id="23-types">2.3 Types<a class="headerlink" href="#23-types" title="Permanent link">Link</a></h3>
 <p>A type is a class of variable to which a property can be assigned. The use of the word 'type' is therefore fairly loose.</p>
-<p>AP supports a number of 'types':
-* Integer
-* Boolean - <code>true</code> or <code>false</code>
-* Function - Allocates a property based on some function, for example, <code>distribute_horizontal</code>
-* Color - either a colour constant, eg <code>BLACK</code>, (see below), the <code>RANDOMCOLOR</code> function (see section 2.5), or an rgb value, for example <code>#FAA2B5</code>
-* Constant - A number of pre-defined constants exist. These should by convention be written in CAPITALS.
-  * Colours: BLACK, RED, BLUE, GREEN, YELLOW
-  * Integer Constants: PANEL_SIZE
-  * <code>NULL</code> - A <code>NULL</code> value means the user is not specifying the property. <code>NULL</code> properties are typically be set by Predicate rules.</p>
+<p>AP supports a number of 'types':</p>
+<ul>
+<li>Integer</li>
+<li>Boolean - <code>true</code> or <code>false</code></li>
+<li>Function - Allocates a property based on some function, for example, <code>distribute_horizontal</code></li>
+<li>Color - either a colour constant, eg <code>BLACK</code>, (see below), the <code>RANDOMCOLOR</code> function (see section 2.5), or an rgb value, for example <code>#FAA2B5</code></li>
+<li>Constant - A number of pre-defined constants exist. These should by convention be written in CAPITALS.</li>
+<li>Colours: BLACK, RED, BLUE, GREEN, YELLOW</li>
+<li>Integer Constants: PANEL_SIZE</li>
+<li><code>NULL</code> - A <code>NULL</code> value means the user is not specifying the property. <code>NULL</code> properties are typically be set by Predicate rules.</li>
+</ul>
 <p>A list of the types to which each property can be assigned is in section 2.4.</p>
-<h2 id="24-object-properties">2.4 Object Properties</h2>
+<h3 id="24-object-properties">2.4 Object Properties<a class="headerlink" href="#24-object-properties" title="Permanent link">Link</a></h3>
 <p>A number of Object Properties can be assigned for each Shape.
 * showname (Boolean): whether to display the shape's name on screen
 * x (Integer): x position of the shape on screen
@@ -212,222 +1022,281 @@
 * base64image: A Base64 string representing the shape's image. Base64 images can be generated at https://www.base64decode.org/
 * depth: Depth of the object on screen. Higher depth objects are drawn behind lower depths.
 * label: Optional attribute specifying a string label to be drawn on the object.</p>
-<h2 id="25-functions">2.5 Functions</h2>
+<h3 id="25-functions">2.5 Functions<a class="headerlink" href="#25-functions" title="Permanent link">Link</a></h3>
 <p>Functions have two uses:
 * In Predicate blocks: here they are 'declarative' in nature and when specified, are true for their parameters
 * In object properties: Here they return a value (eg random_colour).</p>
 <p>List of functions:</p>
-<p><strong>Distribution</strong>
-Distribution functions 'distribute' objects in a certain manner. They are used to lay objects out on the screen. All objects for which the same parameters of 'distribute' are called will be included in the distribution. Distribution works such that objects will be placed in a certain area without overlapping. Between animation frames, objects will not move (unless their positions are reset).</p>
+<h4 id="distribution">Distribution<a class="headerlink" href="#distribution" title="Permanent link">Link</a></h4>
+<p>Distribution functions 'distribute' objects in a certain manner. They are used to lay objects out on the screen. All objects for which the same parameters of 'distribute' are called will be included in the distribution. Distribution works such that objects will be placed in a certain area without overlapping. Between animation frames, objects will not move (unless their positions are reset).</p>
+<h5 id="distributex"><strong>distributex</strong><a class="headerlink" href="#distributex" title="Permanent link">Link</a></h5>
 <ul>
-<li><strong>distributex</strong></li>
 <li>This function distributes objects along a horizontal plane. </li>
 <li>Parameter <code>spacebtwn</code> governs the space between objects</li>
 <li>Example of use:</li>
 <li><code>(assign (?x x) (function distributex (objects ?x) (settings (spacebtwn 40))))</code></li>
-<li><strong>distributey</strong></li>
+</ul>
+<h5 id="distributey"><strong>distributey</strong><a class="headerlink" href="#distributey" title="Permanent link">Link</a></h5>
+<ul>
 <li>This function distributes objects along a vertical plane. </li>
 <li>Parameter <code>spacebtwn</code> governs the space between objects</li>
 <li>Example of use:</li>
 <li><code>(assign (?city y) (function distributey (objects ?city)))</code></li>
-<li><strong>distribute_grid_around_point</strong></li>
+</ul>
+<h5 id="distribute_grid_around_point"><strong>distribute_grid_around_point</strong><a class="headerlink" href="#distribute_grid_around_point" title="Permanent link">Link</a></h5>
+<ul>
 <li>This function distributes objects within a grid-like structure </li>
 <li>Parameter <code>spacebtwn</code> governs the space between objects</li>
 <li>Example of use:</li>
 <li><code>(assign (?p x y) (function distribute_grid_around_point (objects ?p)))</code></li>
-<li><strong>distribute_within_objects_vertical</strong></li>
+</ul>
+<h5 id="distribute_within_objects_vertical"><strong>distribute_within_objects_vertical</strong><a class="headerlink" href="#distribute_within_objects_vertical" title="Permanent link">Link</a></h5>
+<ul>
 <li>This function distributes objects vertically within the bounds of another object. For example, cars can be distributed within a city.</li>
 <li>Parameter <code>spacebtwn</code> governs the space between objects</li>
 <li>Example of use:</li>
 <li><code>(assign (?r x y) (function distribute_within_objects_vertical (objects ?r ?x)(settings (spacebtw 20))))</code></li>
-<li><strong>distribute_within_objects_horizontal</strong></li>
+</ul>
+<h5 id="distribute_within_objects_horizontal"><strong>distribute_within_objects_horizontal</strong><a class="headerlink" href="#distribute_within_objects_horizontal" title="Permanent link">Link</a></h5>
+<ul>
 <li>This function distributes objects horizontally within the bounds of another object. For example, cars can be distributed within a city.</li>
 <li>Example of use:</li>
 <li><code>(assign (?obj x) (function distribute_within_objects_horizontal (objects ?obj ?loc)))</code></li>
 </ul>
-<p><strong>Other Functions</strong>
-* <strong>calculate_label</strong>
-    * <code>calculate_label (objects ?obj1 ?obj2))</code> displays a numeric label for obj1, based on the number of obj2 objects with this function applied to them. For example, if there are 3 instances of calculate label for <code>(a b) (a c) (a d)</code>, then object <code>a</code> will have a label of "3". Useful for displaying how many objects are inside another object
-    * Example of use:
-    * <code>(assign (?obj2 label) (function calculate_label (objects ?obj1 ?obj2)))</code>
-* <strong>align_middle</strong>
-    * <code>align_middle (objects ?x ?y)</code> aligns objects x to the middle of  object y
-    * Example of use:
-    * <code>(assign (?x x) (function align_middle (objects ?x ?y)))</code>
-* <strong>apply_smaller</strong>
-    * apply_smaller (objects ?x ?y) sets ?y to be displayed smaller than ?x. 
-    * the parameter <code>increase_width</code> specifies the extend to which an object is wider
-    * Example of us:
-    * <code>(assign (?x width) (function apply_smaller (objects ?x ?y) (settings (increase_width 6))))</code></p>
+<h4 id="other-functions">Other Functions<a class="headerlink" href="#other-functions" title="Permanent link">Link</a></h4>
+<h5 id="calculate_label"><strong>calculate_label</strong><a class="headerlink" href="#calculate_label" title="Permanent link">Link</a></h5>
+<div class="codehilite"><pre><span></span><code><span class="o">*</span> ```<span class="nv">calculate_label</span> <span class="ss">(</span><span class="nv">objects</span> ?<span class="nv">obj1</span> ?<span class="nv">obj2</span><span class="ss">))</span>``` <span class="nv">displays</span> <span class="nv">a</span> <span class="nv">numeric</span> <span class="nv">label</span> <span class="k">for</span> <span class="nv">obj1</span>, <span class="nv">based</span> <span class="nv">on</span> <span class="nv">the</span> <span class="nv">number</span> <span class="nv">of</span> <span class="nv">obj2</span> <span class="nv">objects</span> <span class="nv">with</span> <span class="nv">this</span> <span class="nv">function</span> <span class="nv">applied</span> <span class="nv">to</span> <span class="nv">them</span>. <span class="k">For</span> <span class="nv">example</span>, <span class="k">if</span> <span class="nv">there</span> <span class="nv">are</span> <span class="mi">3</span> <span class="nv">instances</span> <span class="nv">of</span> <span class="nv">calculate</span> <span class="nv">label</span> <span class="k">for</span> ```<span class="ss">(</span><span class="nv">a</span> <span class="nv">b</span><span class="ss">)</span> <span class="ss">(</span><span class="nv">a</span> <span class="nv">c</span><span class="ss">)</span> <span class="ss">(</span><span class="nv">a</span> <span class="nv">d</span><span class="ss">)</span>```, <span class="k">then</span> <span class="nv">object</span> ```<span class="nv">a</span>``` <span class="nv">will</span> <span class="nv">have</span> <span class="nv">a</span> <span class="nv">label</span> <span class="nv">of</span> <span class="s2">&quot;</span><span class="s">3</span><span class="s2">&quot;</span>. <span class="nv">Useful</span> <span class="k">for</span> <span class="nv">displaying</span> <span class="nv">how</span> <span class="nv">many</span> <span class="nv">objects</span> <span class="nv">are</span> <span class="nv">inside</span> <span class="nv">another</span> <span class="nv">object</span>
+<span class="o">*</span> <span class="nv">Example</span> <span class="nv">of</span> <span class="nv">use</span>:
+<span class="o">*</span> ```                <span class="ss">(</span><span class="nv">assign</span> <span class="ss">(</span>?<span class="nv">obj2</span> <span class="nv">label</span><span class="ss">)</span> <span class="ss">(</span><span class="nv">function</span> <span class="nv">calculate_label</span> <span class="ss">(</span><span class="nv">objects</span> ?<span class="nv">obj1</span> ?<span class="nv">obj2</span><span class="ss">)))</span>```
+</code></pre></div>
+
+
+<h5 id="align_middle"><strong>align_middle</strong><a class="headerlink" href="#align_middle" title="Permanent link">Link</a></h5>
+<div class="codehilite"><pre><span></span><code><span class="o">*</span> <span class="o">```</span><span class="n">align_middle</span> <span class="p">(</span><span class="n">objects</span> <span class="o">?</span><span class="n">x</span> <span class="o">?</span><span class="n">y</span><span class="p">)</span><span class="o">```</span> <span class="n">aligns</span> <span class="n">objects</span> <span class="n">x</span> <span class="k">to</span> <span class="n">the</span> <span class="n">middle</span> <span class="k">of</span>  <span class="k">object</span> <span class="n">y</span>
+<span class="o">*</span> <span class="n">Example</span> <span class="k">of</span> <span class="n">use</span><span class="p">:</span>
+<span class="o">*</span> <span class="o">```</span> <span class="p">(</span><span class="n">assign</span> <span class="p">(</span><span class="o">?</span><span class="n">x</span> <span class="n">x</span><span class="p">)</span> <span class="p">(</span><span class="k">function</span> <span class="n">align_middle</span> <span class="p">(</span><span class="n">objects</span> <span class="o">?</span><span class="n">x</span> <span class="o">?</span><span class="n">y</span><span class="p">)))</span><span class="o">```</span>
+</code></pre></div>
+
+
+<h5 id="apply_smaller"><strong>apply_smaller</strong><a class="headerlink" href="#apply_smaller" title="Permanent link">Link</a></h5>
+<div class="codehilite"><pre><span></span><code><span class="o">*</span> <span class="nf">apply_smaller</span> <span class="p">(</span><span class="n">objects</span> <span class="o">?</span><span class="n">x</span> <span class="o">?</span><span class="n">y</span><span class="p">)</span> <span class="n">sets</span> <span class="o">?</span><span class="n">y</span> <span class="k">to</span> <span class="n">be</span> <span class="n">displayed</span> <span class="n">smaller</span> <span class="n">than</span> <span class="o">?</span><span class="n">x</span><span class="p">.</span> 
+<span class="o">*</span> <span class="n">the</span> <span class="n">parameter</span> <span class="ss">```increase_width```</span> <span class="n">specifies</span> <span class="n">the</span> <span class="n">extend</span> <span class="k">to</span> <span class="n">which</span> <span class="n">an</span> <span class="n">object</span> <span class="k">is</span> <span class="n">wider</span>
+<span class="o">*</span> <span class="n">Example</span> <span class="n">of</span> <span class="n">us</span><span class="p">:</span>
+<span class="o">*</span> <span class="ss">``` (assign (?x width) (function apply_smaller (objects ?x ?y) (settings (increase_width 6))))```</span>
+</code></pre></div>
+
+
+<h5 id="draw_line"><strong>draw_line</strong><a class="headerlink" href="#draw_line" title="Permanent link">Link</a></h5>
 <ul>
-<li><strong>draw_line</strong></li>
 <li>Draws a line between two objects</li>
 <li>Example of use:</li>
 <li><code>(action (function draw_line (objects ?x ?y)))</code></li>
 </ul>
-<h1 id="3-worked-example">3 Worked Example</h1>
+<h2 id="3-worked-example">3 Worked Example<a class="headerlink" href="#3-worked-example" title="Permanent link">Link</a></h2>
 <p>The following example is for the Blocks domain.
 To see the final result for this AP, see the link in section 1.2 for the associated domain and problem files. These can be visualised with this animation profile.</p>
 <p>The following is an example problem visualised with this animation profile:</p>
 <p><img alt="" src="../images/ap/blocks_example.png" /></p>
 <p>The animation profile is as follows (comments  added with a # symbol):</p>
-<pre><code>(define (animation blocksworld)
+<div class="codehilite"><pre><span></span><code><span class="p">(</span><span class="nv">define</span> <span class="p">(</span><span class="nv">animation</span> <span class="nv">blocksworld</span><span class="p">)</span>
 
-  # the 'on' predicate takes two parameters (objects) ?x and ?y
-  (:predicate on
-                 :parameters (?x ?y)
-                 :effect( 
-
-
-        # the effect of the `on` predicate is that ?x's x value is equal to ?y's x value, and that ?x's y value is equal to ?y's ?y value plus its height.
-        # that is, object ?x is on top of object ?y
-                 (equal (?x x y) (?y x (sum y height)) 
-                 )
-  )
-
-  (:predicate on-table
-
-                 :parameters (?x)
-                 :effect(
+  <span class="err">#</span> <span class="k">the</span> <span class="ss">&#39;on</span><span class="o">&#39;</span> <span class="nv">predicate</span> <span class="nv">takes</span> <span class="nv">two</span> <span class="nv">parameters</span> <span class="p">(</span><span class="nv">objects</span><span class="p">)</span> <span class="nv">?x</span> <span class="nb">and</span> <span class="nv">?y</span>
+  <span class="p">(</span><span class="ss">:predicate</span> <span class="nv">on</span>
+                 <span class="ss">:parameters</span> <span class="p">(</span><span class="nv">?x</span> <span class="nv">?y</span><span class="p">)</span>
+                 <span class="ss">:effect</span><span class="p">(</span> 
 
 
-        # the predicate on-table specifies that the object should be distributed horizontally, with a y value of 0
-        # and a margin of 5
-                 (equal (?x x y) (function distribute_horizontal (margin 5)(y 0))
-                 )
+        <span class="err">#</span> <span class="k">the</span> <span class="nv">effect</span> <span class="nv">of</span> <span class="k">the</span> <span class="o">`</span><span class="nv">on</span><span class="o">`</span> <span class="nv">predicate</span> <span class="nv">is</span> <span class="nv">that</span> <span class="nv">?x</span><span class="ss">&#39;s</span> <span class="nv">x</span> <span class="nv">value</span> <span class="nv">is</span> <span class="nb">equal</span> <span class="nv">to</span> <span class="nv">?y</span><span class="ss">&#39;s</span> <span class="nv">x</span> <span class="nv">value,</span> <span class="nb">and</span> <span class="nv">that</span> <span class="nv">?x</span><span class="ss">&#39;s</span> <span class="nv">y</span> <span class="nv">value</span> <span class="nv">is</span> <span class="nb">equal</span> <span class="nv">to</span> <span class="nv">?y</span><span class="ss">&#39;s</span> <span class="nv">?y</span> <span class="nv">value</span> <span class="nv">plus</span> <span class="nv">its</span> <span class="nv">height.</span>
+        <span class="err">#</span> <span class="nv">that</span> <span class="nv">is,</span> <span class="nv">object</span> <span class="nv">?x</span> <span class="nv">is</span> <span class="nv">on</span> <span class="nv">top</span> <span class="nv">of</span> <span class="nv">object</span> <span class="nv">?y</span>
+                 <span class="p">(</span><span class="nb">equal</span> <span class="p">(</span><span class="nv">?x</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)</span> <span class="p">(</span><span class="nv">?y</span> <span class="nv">x</span> <span class="p">(</span><span class="nv">sum</span> <span class="nv">y</span> <span class="nv">height</span><span class="p">))</span> 
+                 <span class="p">)</span>
+  <span class="p">)</span>
 
-  (:predicate holding
+  <span class="p">(</span><span class="ss">:predicate</span> <span class="nv">on-table</span>
 
-                 :parameters (?x claw)
-                 :effect ( 
-                 (equal (?x x y) (claw x y))
-                 )
-
-  )
+                 <span class="ss">:parameters</span> <span class="p">(</span><span class="nv">?x</span><span class="p">)</span>
+                 <span class="ss">:effect</span><span class="p">(</span>
 
 
+        <span class="err">#</span> <span class="k">the</span> <span class="nv">predicate</span> <span class="nv">on-table</span> <span class="nv">specifies</span> <span class="nv">that</span> <span class="k">the</span> <span class="nv">object</span> <span class="nv">should</span> <span class="nv">be</span> <span class="nv">distributed</span> <span class="nv">horizontally,</span> <span class="nv">with</span> <span class="nv">a</span> <span class="nv">y</span> <span class="nv">value</span> <span class="nv">of</span> <span class="mi">0</span>
+        <span class="err">#</span> <span class="nb">and</span> <span class="nv">a</span> <span class="nv">margin</span> <span class="nv">of</span> <span class="mi">5</span>
+                 <span class="p">(</span><span class="nb">equal</span> <span class="p">(</span><span class="nv">?x</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)</span> <span class="p">(</span><span class="k">function</span> <span class="nv">distribute_horizontal</span> <span class="p">(</span><span class="nv">margin</span> <span class="mi">5</span><span class="p">)(</span><span class="nv">y</span> <span class="mi">0</span><span class="p">))</span>
+                 <span class="p">)</span>
 
-  # Below are the list of shapes
+  <span class="p">(</span><span class="ss">:predicate</span> <span class="nv">holding</span>
 
+                 <span class="ss">:parameters</span> <span class="p">(</span><span class="nv">?x</span> <span class="nv">claw</span><span class="p">)</span>
+                 <span class="ss">:effect</span> <span class="p">(</span> 
+                 <span class="p">(</span><span class="nb">equal</span> <span class="p">(</span><span class="nv">?x</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">)</span> <span class="p">(</span><span class="nv">claw</span> <span class="nv">x</span> <span class="nv">y</span><span class="p">))</span>
+                 <span class="p">)</span>
 
-  (:shape block
-        #block shape is the default shape type. All domain objects have this type by default
-        :type default
-
-
-        # all 'shape' objects have the following properties
-              :properties(
-                (showname false)
-                (x false)
-                (y false)
-
-
-        # randomcolor assigns a random color to the object
-                (color (function randomcolor))
-                (width 80)
-                (height 80)
+  <span class="p">)</span>
 
 
-        # this is a base64 string representing the image of the object
-                (base64image iVBORw0KGg...oAA)
-              )
-  )
 
-  (:shape claw
-        #custom object types do not appear in the domain
-        #they are mainly cosmetic. This object represents the claw (the claw does not move)
-              :type custom
-              :properties(
-                (showname false)
-                (x 230)
-                (y 500)
-                (color black)
-                (width 80)
-                (height 40)
-                (base64image iVBORw0KGg...oAA)
-               )
-  )
-  (:shape board
-              :type custom
-              :properties(
-                (showname false)
-                (x 0)
-                (y 0)
-                (color black)
-                (width panel_size)
-                (height 5)
-                (base64image iVBORw0KGg...oAA)
-              )
-  )
+  <span class="err">#</span> <span class="nv">Below</span> <span class="nv">are</span> <span class="k">the</span> <span class="nb">list</span> <span class="nv">of</span> <span class="nv">shapes</span>
 
-)
-</code></pre>
+
+  <span class="p">(</span><span class="ss">:shape</span> <span class="k">block</span>
+        <span class="err">#</span><span class="k">block</span> <span class="nv">shape</span> <span class="nv">is</span> <span class="k">the</span> <span class="nv">default</span> <span class="nv">shape</span> <span class="nv">type.</span> <span class="nv">All</span> <span class="nv">domain</span> <span class="nv">objects</span> <span class="nv">have</span> <span class="nv">this</span> <span class="k">type</span> <span class="nv">by</span> <span class="nv">default</span>
+        <span class="ss">:type</span> <span class="nv">default</span>
+
+
+        <span class="err">#</span> <span class="nv">all</span> <span class="ss">&#39;shape</span><span class="o">&#39;</span> <span class="nv">objects</span> <span class="nv">have</span> <span class="k">the</span> <span class="nv">following</span> <span class="nv">properties</span>
+              <span class="ss">:properties</span><span class="p">(</span>
+                <span class="p">(</span><span class="nv">showname</span> <span class="nv">false</span><span class="p">)</span>
+                <span class="p">(</span><span class="nv">x</span> <span class="nv">false</span><span class="p">)</span>
+                <span class="p">(</span><span class="nv">y</span> <span class="nv">false</span><span class="p">)</span>
+
+
+        <span class="err">#</span> <span class="nv">randomcolor</span> <span class="nv">assigns</span> <span class="nv">a</span> <span class="nb">random</span> <span class="nv">color</span> <span class="nv">to</span> <span class="k">the</span> <span class="nv">object</span>
+                <span class="p">(</span><span class="nv">color</span> <span class="p">(</span><span class="k">function</span> <span class="nv">randomcolor</span><span class="p">))</span>
+                <span class="p">(</span><span class="nv">width</span> <span class="mi">80</span><span class="p">)</span>
+                <span class="p">(</span><span class="nv">height</span> <span class="mi">80</span><span class="p">)</span>
+
+
+        <span class="err">#</span> <span class="nv">this</span> <span class="nv">is</span> <span class="nv">a</span> <span class="nv">base64</span> <span class="nb">string</span> <span class="nv">representing</span> <span class="k">the</span> <span class="nv">image</span> <span class="nv">of</span> <span class="k">the</span> <span class="nv">object</span>
+                <span class="p">(</span><span class="nv">base64image</span> <span class="nv">iVBORw0KGg...oAA</span><span class="p">)</span>
+              <span class="p">)</span>
+  <span class="p">)</span>
+
+  <span class="p">(</span><span class="ss">:shape</span> <span class="nv">claw</span>
+        <span class="err">#</span><span class="nv">custom</span> <span class="nv">object</span> <span class="nv">types</span> <span class="nb">do</span> <span class="nb">not</span> <span class="nv">appear</span> <span class="nv">in</span> <span class="k">the</span> <span class="nv">domain</span>
+        <span class="err">#</span><span class="nv">they</span> <span class="nv">are</span> <span class="nv">mainly</span> <span class="nv">cosmetic.</span> <span class="nv">This</span> <span class="nv">object</span> <span class="nv">represents</span> <span class="k">the</span> <span class="nv">claw</span> <span class="p">(</span><span class="k">the</span> <span class="nv">claw</span> <span class="nv">does</span> <span class="nb">not</span> <span class="nv">move</span><span class="p">)</span>
+              <span class="ss">:type</span> <span class="nv">custom</span>
+              <span class="ss">:properties</span><span class="p">(</span>
+                <span class="p">(</span><span class="nv">showname</span> <span class="nv">false</span><span class="p">)</span>
+                <span class="p">(</span><span class="nv">x</span> <span class="mi">230</span><span class="p">)</span>
+                <span class="p">(</span><span class="nv">y</span> <span class="mi">500</span><span class="p">)</span>
+                <span class="p">(</span><span class="nv">color</span> <span class="nv">black</span><span class="p">)</span>
+                <span class="p">(</span><span class="nv">width</span> <span class="mi">80</span><span class="p">)</span>
+                <span class="p">(</span><span class="nv">height</span> <span class="mi">40</span><span class="p">)</span>
+                <span class="p">(</span><span class="nv">base64image</span> <span class="nv">iVBORw0KGg...oAA</span><span class="p">)</span>
+               <span class="p">)</span>
+  <span class="p">)</span>
+  <span class="p">(</span><span class="ss">:shape</span> <span class="nv">board</span>
+              <span class="ss">:type</span> <span class="nv">custom</span>
+              <span class="ss">:properties</span><span class="p">(</span>
+                <span class="p">(</span><span class="nv">showname</span> <span class="nv">false</span><span class="p">)</span>
+                <span class="p">(</span><span class="nv">x</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="p">(</span><span class="nv">y</span> <span class="mi">0</span><span class="p">)</span>
+                <span class="p">(</span><span class="nv">color</span> <span class="nv">black</span><span class="p">)</span>
+                <span class="p">(</span><span class="nv">width</span> <span class="nv">panel_size</span><span class="p">)</span>
+                <span class="p">(</span><span class="nv">height</span> <span class="mi">5</span><span class="p">)</span>
+                <span class="p">(</span><span class="nv">base64image</span> <span class="nv">iVBORw0KGg...oAA</span><span class="p">)</span>
+              <span class="p">)</span>
+  <span class="p">)</span>
+
+<span class="p">)</span>
+</code></pre></div>
+
 
 <p>Three other Animation Profiles are provided in the source code under Test/Sample Files. Each of these is commented for readability.</p>
-<h1 id="4-extending-the-language">4 Extending the Language</h1>
-<h2 id="41-extension-areas">4.1 Extension Areas</h2>
+<h2 id="4-extending-the-language">4 Extending the Language<a class="headerlink" href="#4-extending-the-language" title="Permanent link">Link</a></h2>
+<h3 id="41-extension-areas">4.1 Extension Areas<a class="headerlink" href="#41-extension-areas" title="Permanent link">Link</a></h3>
 <p>There are two primary methods of extending the AP language: 
 1. Object properties (section 2.4)
   * This is for simple ways of extending the appearance of objects, eg adding rotation or the font of 'showname'
 2. Adding functions (section 2.5)
   * This is for more complex ways of describing object behaviours and interactions, eg adding new object layout options</p>
-<h2 id="42-extension-steps">4.2 Extension Steps</h2>
+<h3 id="42-extension-steps">4.2 Extension Steps<a class="headerlink" href="#42-extension-steps" title="Permanent link">Link</a></h3>
 <ol>
 <li>Modify the extensions.py file in the directory to add any functions or properties. See the document 'VFG Documentation.md' for more information.</li>
 <li>In limited advanced cases, exta functions may need to be written for Visualiser (Unity)</li>
 <li>Add the necessary documentation in this .md file.</li>
 </ol>
+                
+                  
+                    
+
+<hr>
+<div class="md-source-date">
+  <small>
+    
+      Last update: April 28, 2020
+    
+  </small>
+</div>
+                  
+                
               
-            </div>
+              
+                
+
+
+              
+            </article>
           </div>
-          <footer>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
   
-    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
-      
-        <a href="../backend/" class="btn btn-neutral float-right" title="Backend">Next <span class="icon icon-circle-arrow-right"></span></a>
-      
-      
-        <a href="../Visualiser_guide/" class="btn btn-neutral" title="Visualiser"><span class="icon icon-circle-arrow-left"></span> Previous</a>
-      
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
+        
+          <a href="../frontend_dev_guide/" title="Frontend" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20,11V13H8L13.5,18.5L12.08,19.92L4.16,12L12.08,4.08L13.5,5.5L8,11H20Z" /></svg>
+            </div>
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Frontend
+              </div>
+            </div>
+          </a>
+        
+        
+          <a href="../backend/" title="Backend" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-footer-nav__title">
+              <div class="md-ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                Backend
+              </div>
+            </div>
+            <div class="md-footer-nav__button md-icon">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4,11V13H16L10.5,18.5L11.92,19.92L19.84,12L11.92,4.08L10.5,5.5L16,11H4Z" /></svg>
+            </div>
+          </a>
+        
+      </nav>
     </div>
   
-
-  <hr/>
-
-  <div role="contentinfo">
-    <!-- Copyright etc -->
-    
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        Made with
+        <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+          Material for MkDocs
+        </a>
+      </div>
+      
+    </div>
   </div>
-
-  Built with <a href="https://www.mkdocs.org/">MkDocs</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>.
 </footer>
       
-        </div>
-      </div>
-
-    </section>
-
-  </div>
-
-  <div class="rst-versions" role="note" aria-label="versions">
-    <span class="rst-current-version" data-toggle="rst-current-version">
+    </div>
+    
+      <script src="../assets/javascripts/vendor.f81b9e8b.min.js"></script>
+      <script src="../assets/javascripts/bundle.23546af0.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
+      <script>
+        app = initialize({
+          base: "..",
+          features: [],
+          search: Object.assign({
+            worker: "../assets/javascripts/worker/search.58d22e8e.min.js"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
       
-        <span><a href="../Visualiser_guide/" style="color: #fcfcfc;">&laquo; Previous</a></span>
-      
-      
-        <span style="margin-left: 15px"><a href="../backend/" style="color: #fcfcfc">Next &raquo;</a></span>
-      
-    </span>
-</div>
-    <script>var base_url = '..';</script>
-    <script src="../js/theme.js" defer></script>
-      <script src="../search/main.js" defer></script>
-    <script defer>
-        window.onload = function () {
-            SphinxRtdTheme.Navigation.enable(true);
-        };
-    </script>
-
-</body>
+    
+  </body>
 </html>
