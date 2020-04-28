@@ -1,8 +1,4 @@
-# 1 Introduction
-
-
-## 1.1 Purpose
-
+# Animation Profile
 
 An Animation Profile (AP) is a user-written PDDL file which tells the Visualiser how a Domain is to be visualised. Each Animation Profile corresponds to one Domain. 
 
@@ -10,10 +6,10 @@ An Animation Profile (AP) is a user-written PDDL file which tells the Visualiser
 Essentially, the AP provides a set of visual objects ("shapes") within the domain, along with a set of mappings from Predicates to animation behaviours.
 
 
-## 1.2 Scope
+## Scope
 
 
-The AP Language is designed to be flexible enough to allow for the animation of many simple PDDL domains, such as those found at https://bitbucket.org/planning-researchers/classical-domains/src/208a850d2ff2a27068329ad578ad99af9ec7e5c5/classical/?at=master. 
+The AP Language is designed to be flexible enough to allow for the animation of many simple PDDL domains, such as those found at [https://github.com/planimation/documentation/tree/master/AnimationProfiles](https://github.com/planimation/documentation/tree/master/AnimationProfiles) 
 
 
 Currently, APs have been written for four domains from this repository: Blocks, Towers of Hanoi, Logistics, and Grid.
@@ -22,21 +18,22 @@ Currently, APs have been written for four domains from this repository: Blocks, 
 Other simple domains can be visualised in the language. For more complicated domains, additional functions or object properties may be added (See section 4).
 
 
-# 2 Using the Language
+## 2 Using the Language
 
 
 
 This section contains complete documentation for the syntax and semantics of the AP language. For a quick starting point to writing your own AP, see section 3.
 
 
-## 2.1 Key Components
+### 2.1 Key Components
 
 
-### 2.1.1 Predicates
+####  Predicates
 
 
 The first content of the AP should be the Predicate blocks. Here is an example of a Predicate block.
-```
+
+``` lisp
 (:predicate holding
  
                  :parameters (?x claw)
@@ -50,7 +47,8 @@ There should be one or zero Predicate blocks for each Predicate in the Domain. I
 
 
 Predicate Blocks contain:
-* The name of the Predicate, for example ```holding```.
+
+* The name of the Predicate, for example `holding`.
 * The parameters of the Predicate. Parameters are objects to which the Predicate applies. For example, ```holding(?x)``` means that the predicate on-table is true for the object ?x.
 * The effect of the Predicate. This is a logical statement concerning object properties which holds true when the predicate holds true. For example, ```(equal (?x x y) (claw x y))``` means that the object ```?x``` is at the object ```claw```.
 * (Optionally) A Priority:
@@ -61,7 +59,7 @@ Predicate Blocks contain:
     *   This is required to ensure a limited number of domains (eg Towers of Hanoi) can be solved. Typically it is required when multiple predicates affect the same variables.
 
 
-### 2.1.2 Visual
+####  Visual
 
 visual defines the objects represented on the screen.
 
@@ -69,7 +67,7 @@ visual defines the objects represented on the screen.
 An example of a visual block is:
 
 
-```
+```  lisp
 (:visual block
               :type default
               :properties(
@@ -86,6 +84,7 @@ An example of a visual block is:
 
 
 visual blocks contain:
+
 * The name of the shape, for example ```block```
 * The type of the object. Types can either be ```default```, ```custom```, or ```predefine```. 
   * ```default``` objects apply to any objects mentioned in the problem file. A 'block' in the problem file is an example of a default object. 
@@ -93,17 +92,17 @@ visual blocks contain:
   * ```predefine``` These objects are assigned only to domain objects whose name matches any of the names in the :object field. This is used to apply properties to domain objects with specific naming conventions, for example, `key1`, `key2`, ... in the Grid domain. Alternatives, you can use ```%key``` shortcut to represent all the objects start with "key".
 * Object properties. These properties govern the position and appearance of the object. See section 2.4 for a detailed list of object properties.
 
-## 2.2 Syntax
+### 2.2 Syntax
 
 
-### 2.2.1 Description
+####  Description
 
 
 The syntax of the language is based on PDDL syntax, which is itself based on Lisp. See Section 2.2.2 for detailed resources on these languages.
 
 
 
-### 2.2.2 Resources
+#### Resources
 
 
 * PDDL information: https://en.wikipedia.org/wiki/Planning_Domain_Definition_Language
@@ -112,13 +111,14 @@ The syntax of the language is based on PDDL syntax, which is itself based on Lis
 * Lisp Tutorial: https://www.tutorialspoint.com/lisp/
 
 
-## 2.3 Types
+### 2.3 Types
 
 
 A type is a class of variable to which a property can be assigned. The use of the word 'type' is therefore fairly loose.
 
 
 AP supports a number of 'types':
+
 * Integer
 * Boolean - ```true``` or ```false```
 * Function - Allocates a property based on some function, for example, ```distribute_horizontal```
@@ -134,7 +134,7 @@ A list of the types to which each property can be assigned is in section 2.4.
 
 
 
-## 2.4 Object Properties
+### 2.4 Object Properties
 
 
 A number of Object Properties can be assigned for each Shape.
@@ -150,7 +150,7 @@ A number of Object Properties can be assigned for each Shape.
 
 
 
-## 2.5 Functions
+### 2.5 Functions
 
 Functions have two uses:
 * In Predicate blocks: here they are 'declarative' in nature and when specified, are true for their parameters
@@ -160,57 +160,57 @@ Functions have two uses:
 List of functions:
 
 
-**Distribution**
+#### Distribution
 Distribution functions 'distribute' objects in a certain manner. They are used to lay objects out on the screen. All objects for which the same parameters of 'distribute' are called will be included in the distribution. Distribution works such that objects will be placed in a certain area without overlapping. Between animation frames, objects will not move (unless their positions are reset).
 
-* **distributex**
+##### **distributex**
   * This function distributes objects along a horizontal plane. 
   * Parameter ```spacebtwn``` governs the space between objects
   * Example of use:
   * ``` (assign (?x x) (function distributex (objects ?x) (settings (spacebtwn 40)))) ```
-* **distributey**
+##### **distributey**
   * This function distributes objects along a vertical plane. 
   * Parameter ```spacebtwn``` governs the space between objects
   * Example of use:
   * ```               (assign (?city y) (function distributey (objects ?city)))```
-* **distribute_grid_around_point**
+##### **distribute_grid_around_point**
   * This function distributes objects within a grid-like structure 
   *  Parameter ```spacebtwn``` governs the space between objects
   * Example of use:
   * ```  (assign (?p x y) (function distribute_grid_around_point (objects ?p)))```
-* **distribute_within_objects_vertical**
+##### **distribute_within_objects_vertical**
   * This function distributes objects vertically within the bounds of another object. For example, cars can be distributed within a city.
   *   Parameter ```spacebtwn``` governs the space between objects
   * Example of use:
   * ```(assign (?r x y) (function distribute_within_objects_vertical (objects ?r ?x)(settings (spacebtw 20))))```
-* **distribute_within_objects_horizontal**
+##### **distribute_within_objects_horizontal**
   * This function distributes objects horizontally within the bounds of another object. For example, cars can be distributed within a city.
   * Example of use:
   * ``` (assign (?obj x) (function distribute_within_objects_horizontal (objects ?obj ?loc)))```
 
 
-**Other Functions**
-* **calculate_label**
+#### Other Functions
+##### **calculate_label**
     * ```calculate_label (objects ?obj1 ?obj2))``` displays a numeric label for obj1, based on the number of obj2 objects with this function applied to them. For example, if there are 3 instances of calculate label for ```(a b) (a c) (a d)```, then object ```a``` will have a label of "3". Useful for displaying how many objects are inside another object
     * Example of use:
     * ```                (assign (?obj2 label) (function calculate_label (objects ?obj1 ?obj2)))```
-* **align_middle**
+##### **align_middle**
     * ```align_middle (objects ?x ?y)``` aligns objects x to the middle of  object y
     * Example of use:
     * ``` (assign (?x x) (function align_middle (objects ?x ?y)))```
-* **apply_smaller**
+##### **apply_smaller**
     * apply_smaller (objects ?x ?y) sets ?y to be displayed smaller than ?x. 
     * the parameter ```increase_width``` specifies the extend to which an object is wider
     * Example of us:
     * ``` (assign (?x width) (function apply_smaller (objects ?x ?y) (settings (increase_width 6))))```
 
-* **draw_line**
+##### **draw_line**
   * Draws a line between two objects
   * Example of use:
   * ```(action (function draw_line (objects ?x ?y)))```
 
 
-# 3 Worked Example
+## 3 Worked Example
 
 The following example is for the Blocks domain.
 To see the final result for this AP, see the link in section 1.2 for the associated domain and problem files. These can be visualised with this animation profile.
@@ -224,7 +224,7 @@ The following is an example problem visualised with this animation profile:
 The animation profile is as follows (comments  added with a # symbol):
 
 
-```
+``` lisp
 (define (animation blocksworld)
 
   # the 'on' predicate takes two parameters (objects) ?x and ?y
@@ -320,10 +320,10 @@ The animation profile is as follows (comments  added with a # symbol):
 
 Three other Animation Profiles are provided in the source code under Test/Sample Files. Each of these is commented for readability.
 
-# 4 Extending the Language
+## 4 Extending the Language
 
 
-## 4.1 Extension Areas
+### 4.1 Extension Areas
 
 There are two primary methods of extending the AP language: 
 1. Object properties (section 2.4)
@@ -332,7 +332,7 @@ There are two primary methods of extending the AP language:
   * This is for more complex ways of describing object behaviours and interactions, eg adding new object layout options
 
 
-## 4.2 Extension Steps
+### 4.2 Extension Steps
 
 
 1. Modify the extensions.py file in the directory to add any functions or properties. See the document 'VFG Documentation.md' for more information.

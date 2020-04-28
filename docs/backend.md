@@ -54,7 +54,7 @@ Before pushing the code to repo please make sure to:
     git config user.name "Your GitHut email"
     git config commit.template .gitmessage
     ```
-- Commit message should be of the following format `[ISSUE_NO] COMMIT_MESSAGE`. Refer [`.gitmessage`](.gitmessage). Example:
+- Commit message should be of the following format `[ISSUE_NO] COMMIT_MESSAGE`. Refer [`.gitmessage`](https://github.com/planimation/backend/blob/develop/.gitmessage). Example:
     ```
     [10] Fix security issue related with form
     

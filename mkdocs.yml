@@ -4,17 +4,26 @@ nav:
         - Home: README.md
         - User Guide: ug1.md
     - Developer Information:
-        - Deployment: Deployment_guide.md
-        - VFG: VFG_guide.md
-        - Visualiser: Visualiser_guide.md
+        - Deployment: deployment_guide.md
+        - Backend: backend_dev_guide.md
+        - Frontend: frontend_dev_guide.md
         - Animation Profile: ap_guide.md
     - Component Information:
           - Backend: backend.md
           - Frontend: frontend.md
-
+          - Plugins: plugins.md
     - Resources:
-          - GitHub: git.md
+          - GitHub: https://github.com/planimation
           - Other: other.md
 
 
-theme: readthedocs
+theme:
+    name: material
+plugins:
+    - search
+    - git-revision-date-localized:
+        type: date
+markdown_extensions: 
+    - toc:
+        permalink: Link
+    - codehilite

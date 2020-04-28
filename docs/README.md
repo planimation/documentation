@@ -1,10 +1,17 @@
-# 1. Overview 
+# Planimation
 
-This document contains an overview of Planimation.
+Planimation is a modular and extensible open source framework to visualise sequential solutions of planning problems specified in PDDL. We introduce a preliminary  declarative PDDL-like animation profile specification, expressive enough to synthesise animations of arbitrary initial states and goals of a benchmark with just a single profile.
 
-The Planimation is an open-source program which visualises solutions to Planning Problems. It is an executable Unity architecture in a browser.
+## 1 Overview 
 
-## Here is short video about Planimation
+Planimation was developed as a final year project by students at the Univeristy of Melbourne. Here's a promotional video explaining the motivation behind planimation.
+
+[![Youtube](images/readme/promo.png)](https://youtu.be/FEm5ZQM-b3Y)
+
+Planimation is an open-source program which visualises solutions to Planning Problems. It is an executable Unity architecture in a browser.
+
+Watch the video below for a 2 minutes introduction about Planimation.
+
 [![Youtube](images/readme/youtube.png)](https://youtu.be/Cj2rWdt1YQU)
 
 
@@ -12,29 +19,80 @@ For developer documentation, see
 
 1. [Animation Profile Guide](https://planimation.github.io/documentation/ap_guide/)
     * Contains a guide to Animation Profiles and the Animation Profile Language
-2. [VFG Guide](https://planimation.github.io/documentation/VFG_guide/)
+2. [Backend Dev. Guide](https://planimation.github.io/documentation/VFG_guide/)
     * Contains a guide to the Visualisation File Generator Component
-3. [Visualiser Guide](https://planimation.github.io/documentation/Visualiser_guide/)
+3. [Frontend Dev. Guide](https://planimation.github.io/documentation/Visualiser_guide/)
     * Contains a guide to the VisualiserComponent 
 	
 
-## 1.1 Planning Problems
+### 1.1 Planning Problems
 
-For information about Planning Problems, see http://planning.domains/
+For information about Planning Problems, see [http://planning.domains/](http://planning.domains/)
 
 
 Our application uses one 'Animation Profile' per problem domain. An Animation Profile is a user-written PDDL file which tells the Visualiser how a Domain is to be visualised. See section 3.2 for more information on Animation Profiles.
 
 
-## 1.2 Scope
+### 1.2 Scope
 Planning Visualiser currently has Animation Profiles for four problem domains; Blocks, Grid, Towers of Hanoi, and Logistics. Other simple problem domains may be added by writing an Animation Profile (see section 3.2).
 
 
-Planning visualiser can generate a solution using the solver on http://planning.domains/ . Alternatively, the user can provide their own solution from any solver, provided it conforms to the correct format.
+Planning visualiser can generate a solution using the solver on [http://editor.planning.domains](http://editor.planning.domains). Alternatively, the user can provide their own solution from any solver, provided it conforms to the correct format.
 
 
 
-# 2. Getting Started
+## 2 Getting Started
 
-1. Try planimation at http://editor.planning.domains. Install planimation from the plugin menu.
-2. or Visit our stand alone application at http://planimation.planning.domains
+1. Try planimation within the [online PDDL editor](https://tinyurl.com/yxlt96fp). Comes preloaded with files to planimat Blocks. Planimation is installable from the plugin menu.
+2. or Visit our stand alone application at [http://planimation.planning.domains](http://planimation.planning.domains)
+
+## 3 Papers
+
+- [ICAPS 2019 System Demonstrations](https://icaps19.icaps-conference.org/files/pdfs/planimation_icaps19_sysdemo.pdf)
+
+- [KEPS book: Plannimg.domains](https://link.springer.com/chapter/10.1007/978-3-030-38561-3_5#readcube-epdf)
+
+## 5 Awards
+
+### 5.1 ICAPS 2019 Best System Demonstration
+
+This document contains an overview of Planimation, recipient of the [ICAPS 2019 Best system Demo Award](https://icaps19.icaps-conference.org/awards).
+![image](images/readme/icapsAward1.jpg)
+![image](images/readme/icapsAward.jpg)
+![image](images/readme/icapsAward2.jpg)
+
+### 5.2 Melbourne School of Engineering - Endeavour 2018
+
+[Endeavour Exhibition](https://endeavour.unimelb.edu.au/past/2018-endeavour-exhibition) discovers final-year industry, design and research projects developed by our engineering and IT masters students.
+
+
+
+![image](https://endeavour.unimelb.edu.au/__data/assets/image/0007/2914621/endeavour-2018-11.jpg)
+![image](https://endeavour.unimelb.edu.au/__data/assets/image/0005/2914691/endeavour-2018-36.jpg)
+
+## 6 Citing Planimation
+
+Please cite Planimation using
+``` latex
+@misc{chen_gan_2020_3773027,
+  author       = {Chen, Gan and
+                  Ding, Yi and
+                  Edwards, Hugo and
+                  Chau, Chong Hin and
+                  Hou, Sai and
+                  Johnson, Grace and
+                  Sharukh Syed, Mohammed and
+                  Tang, Haoyuan and
+                  Wu, Yue and
+                  Yan, Ye and
+                  Tidhar Gil and
+                  Lipovetzky Nir},
+  title        = {Planimation},
+  month        = apr,
+  year         = 2020,
+  publisher    = {Zenodo},
+  version      = {ICAPS-2019},
+  doi          = {10.5281/zenodo.3773027},
+  url          = {https://doi.org/10.5281/zenodo.3773027}
+}
+```
