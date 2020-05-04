@@ -1006,7 +1006,7 @@ git clone https://github.com/planimation/frontend.git planimation-frontend
 <h4 id="321-building-from-command-line">3.2.1 Building from command line<a class="headerlink" href="#321-building-from-command-line" title="Permanent link">Link</a></h4>
 <p>To build from the command line, enter the following command. We illustrate the idea with Ubuntu build agent. However, the idea can apply to any OS.</p>
 <p>Move to the <strong><em>/PlanningVisualise</em></strong>  directory in the repository that you’ve just checked out from Section 1 and from there type, at the command prompt:</p>
-<div class="codehilite"><pre><span></span><code>/home/<span class="nv">$USER</span>/Editor/Unity -batchmode -quit -projectPath “ProjectPath” -executeMethod buildscript.build -logFile stdout.log
+<div class="codehilite"><pre><span></span><code>/home/<span class="nv">$USER</span>/Editor/Unity -batchmode -quit -projectPath “ProjectPath” -executeMethod Buildscript.Build -logFile stdout.log
 </code></pre></div>
 
 
@@ -1022,7 +1022,7 @@ git clone https://github.com/planimation/frontend.git planimation-frontend
 </code></pre></div>
 
 
-<p>With having the command executed, a folder called <strong><em>“buildweb”</em></strong> should appear under the <strong><em>/planimation-frontend</em></strong>  directory and this will be the final animation contents for the deployment process in Section 4.</p>
+<p>With having the command executed, a folder called <strong><em>“build”</em></strong> should appear under the <strong><em>/planimation-frontend</em></strong>  directory and this will be the final animation contents for the deployment process in Section 4.</p>
 <h4 id="321-building-from-unity-gui">3.2.1 Building from Unity GUI<a class="headerlink" href="#321-building-from-unity-gui" title="Permanent link">Link</a></h4>
 <ul>
 <li>Open Unity</li>
@@ -1030,10 +1030,11 @@ git clone https://github.com/planimation/frontend.git planimation-frontend
 <li>Choose 'WebGL'</li>
 <li>Make sure all the selected scenes are those under the 'Visualisation' folder</li>
 <li>Click 'Player Settings'</li>
-<li>Click 'Publishing Settings'</li>
-<li>Enter 512 for 'WebGL Memory Size'</li>
-<li>Tick 'WebAssembly'</li>
+<li>Click 'Publishing Settings'
+  <!---* Enter 512 for 'WebGL Memory Size'--></li>
+<li>Tick 'WebAssembly' checkbox</li>
 <li>Click 'Build'</li>
+<li>Create 'buildweb' folder</li>
 </ul>
 <h4 id="33-install-python3-dependencies-for-the-backend">3.3 Install Python3 Dependencies for the Backend<a class="headerlink" href="#33-install-python3-dependencies-for-the-backend" title="Permanent link">Link</a></h4>
 <p>Should you wish to change the server side of the repository, you will need to install the following libraries in order to compile the python files with Python3 Interpreter, Python3 Interpreter can be downloaded with :</p>
@@ -1065,21 +1066,24 @@ sudo apt-get install apache2 apache2-doc apache2-utils
 <h3 id="42-apache-web-server-deployment">4.2 Apache Web Server Deployment<a class="headerlink" href="#42-apache-web-server-deployment" title="Permanent link">Link</a></h3>
 <p>With the command provided in section 2, you should be able to get a folder called “buildweb” under “../planimation-frontend/”. The remaining is easy: drop the distribution directory to the designated Apache source folder and restart your apache server:</p>
 <ul>
-<li>Move all the files and subdirectories under “buildweb” to “/var/www/html/“</li>
+<li>Move all the files and subdirectories under “build” to “/var/www/html/“</li>
 <li>Restart the apache server with 
     <code>“sudo service apache2 restart”</code></li>
 </ul>
 <h3 id="43-django-server-installation">4.3 Django Server Installation<a class="headerlink" href="#43-django-server-installation" title="Permanent link">Link</a></h3>
 <p>For Ubuntu server, run the following commands to install Django server:</p>
+<!--sudo pip3 install --no-cache-dir -r planimation-backend/requirements.txt-->
+
 <div class="codehilite"><pre><span></span><code>sudo apt install python3-pip
-pip3 install djangorestframework
+pip3 install djangorestframework django-cors-headers colour
+pip3 install --upgrade django
 sudo apt-get install python3-django
 sudo apt-get install gunicorn3
 </code></pre></div>
 
 
 <h3 id="44-django-server-deployment">4.4 Django Server Deployment<a class="headerlink" href="#44-django-server-deployment" title="Permanent link">Link</a></h3>
-<p>Once the installation is done and the Django server is ready, move to the <strong><em>/server</em></strong>  directory and from there type, at the command prompt:</p>
+<p>Once the installation is done and the Django server is ready, move to the <strong><em>/planimation-backend/server</em></strong>  directory and from there type, at the command prompt:</p>
 <div class="codehilite"><pre><span></span><code>sudo gunicorn3 -b <span class="m">0</span>.0.0.0:8000 server.wsgi —reload
 </code></pre></div>
 
@@ -1143,7 +1147,7 @@ sudo apt-get install gunicorn3
 <div class="md-source-date">
   <small>
     
-      Last update: April 27, 2020
+      Last update: May 3, 2020
     
   </small>
 </div>
