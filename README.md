@@ -10,6 +10,14 @@ Watch the video below for a 2 minutes introduction about Planimation.
 [![Youtube](docs/images/readme/youtube.png)](https://youtu.be/Cj2rWdt1YQU)
 
 
+## Getting Started
+
+1. Try planimation within the [online PDDL editor](https://tinyurl.com/yxlt96fp). Comes preloaded with files to planimat Blocks. Planimation is installable from the plugin menu.
+
+    ![image](docs/images/readme/demo.gif)
+2. Alternatively, visit our stand alone application at [http://planimation.planning.domains](http://planimation.planning.domains)
+
+
 For developer documentation, see
 
 1. [Animation Profile Guide](https://planimation.github.io/documentation/ap_guide/)
@@ -18,7 +26,6 @@ For developer documentation, see
     * Contains a guide to the Visualisation File Generator Component
 3. [Frontend Dev. Guide](https://planimation.github.io/documentation/Visualiser_guide/)
     * Contains a guide to the VisualiserComponent 
-
 
 ## Papers
 

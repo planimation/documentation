@@ -119,7 +119,7 @@ To build from the command line, enter the following command. We illustrate the i
 Move to the **_/PlanningVisualise_**  directory in the repository that you’ve just checked out from Section 1 and from there type, at the command prompt:
 
 ``` bash
-/home/$USER/Editor/Unity -batchmode -quit -projectPath “ProjectPath” -executeMethod buildscript.build -logFile stdout.log
+/home/$USER/Editor/Unity -batchmode -quit -projectPath “ProjectPath” -executeMethod Buildscript.Build -logFile stdout.log
 ```
 
 *   _You will need to replace the “ProjectPath” with the absolute path of your cloned copy of the repository. E.g. “/home/$USER_**_/planimation-frontend_**_”_
@@ -139,7 +139,7 @@ Should you wish to update the User Interface of this application, you need to in
 ```
 
 
-With having the command executed, a folder called **_“buildweb”_** should appear under the **_/planimation-frontend_**  directory and this will be the final animation contents for the deployment process in Section 4.
+With having the command executed, a folder called **_“build”_** should appear under the **_/planimation-frontend_**  directory and this will be the final animation contents for the deployment process in Section 4.
 
 #### 3.2.1 Building from Unity GUI
   
@@ -149,9 +149,10 @@ With having the command executed, a folder called **_“buildweb”_** should ap
   * Make sure all the selected scenes are those under the 'Visualisation' folder
   * Click 'Player Settings'
   * Click 'Publishing Settings'
-  * Enter 512 for 'WebGL Memory Size'
-  * Tick 'WebAssembly'
+  <!---* Enter 512 for 'WebGL Memory Size'-->
+  * Tick 'WebAssembly' checkbox
   * Click 'Build'
+  * Create 'buildweb' folder
 
 
 #### 3.3 Install Python3 Dependencies for the Backend
@@ -195,7 +196,7 @@ sudo service apache2 start
 
 With the command provided in section 2, you should be able to get a folder called “buildweb” under “../planimation-frontend/”. The remaining is easy: drop the distribution directory to the designated Apache source folder and restart your apache server:
 
-*   Move all the files and subdirectories under “buildweb” to “/var/www/html/“
+*   Move all the files and subdirectories under “build” to “/var/www/html/“
 *   Restart the apache server with 
     ```“sudo service apache2 restart”```
 
@@ -204,9 +205,11 @@ With the command provided in section 2, you should be able to get a folder calle
 
 For Ubuntu server, run the following commands to install Django server:
 
+<!--sudo pip3 install --no-cache-dir -r planimation-backend/requirements.txt-->
 ``` bash
 sudo apt install python3-pip
-pip3 install djangorestframework
+pip3 install djangorestframework django-cors-headers colour
+pip3 install --upgrade django
 sudo apt-get install python3-django
 sudo apt-get install gunicorn3
 ```
@@ -215,7 +218,7 @@ sudo apt-get install gunicorn3
 ### 4.4 Django Server Deployment
 
   
-Once the installation is done and the Django server is ready, move to the **_/server_**  directory and from there type, at the command prompt:
+Once the installation is done and the Django server is ready, move to the **_/planimation-backend/server_**  directory and from there type, at the command prompt:
 
 ``` bash
 sudo gunicorn3 -b 0.0.0.0:8000 server.wsgi —reload
