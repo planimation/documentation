@@ -12,11 +12,11 @@ Watch the video below for a 2 minutes introduction about Planimation.
 
 ## Getting Started
 
-1. Try planimation within the [online PDDL editor](https://tinyurl.com/yxlt96fp). Comes preloaded with files to planimat Blocks. Planimation is installable from the plugin menu.
+1. Try planimation within the [online PDDL editor](https://tinyurl.com/yxlt96fp). Comes preloaded with files to planimat Blocks. Planimation is installable from the plugin menu. 
 
-    ![image](docs/images/readme/demo.gif)
 2. Alternatively, visit our stand alone application at [http://planimation.planning.domains](http://planimation.planning.domains)
 
+![image](docs/images/readme/demo.gif)
 
 For developer documentation, see
 
