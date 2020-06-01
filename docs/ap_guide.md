@@ -137,7 +137,8 @@ A list of the types to which each property can be assigned is in section 2.4.
 ### 2.4 Object Properties
 
 
-A number of Object Properties can be assigned for each Shape.
+A number of Object Properties can be assigned for each Shape:
+
 * showname (Boolean): whether to display the shape's name on screen
 * x (Integer): x position of the shape on screen
 * y (Integer): y position of the shape on screen
