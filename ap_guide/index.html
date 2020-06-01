@@ -924,7 +924,7 @@
                 
                 <h1 id="animation-profile">Animation Profile<a class="headerlink" href="#animation-profile" title="Permanent link">Link</a></h1>
 <p>An Animation Profile (AP) is a user-written PDDL file which tells the Visualiser how a Domain is to be visualised. Each Animation Profile corresponds to one Domain. </p>
-<p>Essentially, the AP provides a set of visual objects ("shapes") within the domain, along with a set of mappings from Predicates to animation behaviours.</p>
+<p>Essentially, the AP provides a set of visual objects ("visual") within the domain, along with a set of mappings from Predicates to animation behaviours.</p>
 <h2 id="scope">Scope<a class="headerlink" href="#scope" title="Permanent link">Link</a></h2>
 <p>The AP Language is designed to be flexible enough to allow for the animation of many simple PDDL domains, such as those found at <a href="https://github.com/planimation/documentation/tree/master/AnimationProfiles">https://github.com/planimation/documentation/tree/master/AnimationProfiles</a> </p>
 <p>Currently, APs have been written for four domains from this repository: Blocks, Towers of Hanoi, Logistics, and Grid.</p>
@@ -980,7 +980,7 @@
 
 <p>visual blocks contain:</p>
 <ul>
-<li>The name of the shape, for example <code>block</code></li>
+<li>The name of the visual object, for example <code>block</code></li>
 <li>The type of the object. Types can either be <code>default</code>, <code>custom</code>, or <code>predefine</code>. </li>
 <li><code>default</code> objects apply to any objects mentioned in the problem file. A 'block' in the problem file is an example of a default object. </li>
 <li><code>custom</code> objects are additional to the problem file, and are created by the user for visual effect. The 'claw' is an example of a custom object - it mainly serves a visual purpose and is not specified in the problem or domain file. The robot in the Grid domain is another example of a custom object - it is not explicitly mentioned in the domain objects, but its behaviour is still fairly dynamic (moving around etc)</li>
@@ -1012,20 +1012,24 @@
 </ul>
 <p>A list of the types to which each property can be assigned is in section 2.4.</p>
 <h3 id="24-object-properties">2.4 Object Properties<a class="headerlink" href="#24-object-properties" title="Permanent link">Link</a></h3>
-<p>A number of Object Properties can be assigned for each Shape.
-* showname (Boolean): whether to display the shape's name on screen
-* x (Integer): x position of the shape on screen
-* y (Integer): y position of the shape on screen
-* colour (Colour): Colour of the shape. Can be a constant (eg <code>BLACK</code>), an RGB value (eg <code>#FAA2B5</code>), or the custom value <code>RANDOMCOLOR</code> which picks a random RGB value.
-* width (Integer): Width of the object on screen
-* height: Height of the object on screen
-* base64image: A Base64 string representing the shape's image. Base64 images can be generated at https://www.base64decode.org/
-* depth: Depth of the object on screen. Higher depth objects are drawn behind lower depths.
-* label: Optional attribute specifying a string label to be drawn on the object.</p>
+<p>A number of Object Properties can be assigned for each Visual object:</p>
+<ul>
+<li>showname (Boolean): whether to display the object's name on screen</li>
+<li>x (Integer): x position of the object on screen</li>
+<li>y (Integer): y position of the object on screen</li>
+<li>colour (Colour): Colour of the object. Can be a constant (eg <code>BLACK</code>), an RGB value (eg <code>#FAA2B5</code>), or the custom value <code>RANDOMCOLOR</code> which picks a random RGB value.</li>
+<li>width (Integer): Width of the object on screen</li>
+<li>height: Height of the object on screen</li>
+<li>base64image: A Base64 string representing the object's image. Base64 images can be generated at https://www.base64decode.org/</li>
+<li>depth: Depth of the object on screen. Higher depth objects are drawn behind lower depths.</li>
+<li>label: Optional attribute specifying a string label to be drawn on the object.</li>
+</ul>
 <h3 id="25-functions">2.5 Functions<a class="headerlink" href="#25-functions" title="Permanent link">Link</a></h3>
-<p>Functions have two uses:
-* In Predicate blocks: here they are 'declarative' in nature and when specified, are true for their parameters
-* In object properties: Here they return a value (eg random_colour).</p>
+<p>Functions have two uses:</p>
+<ul>
+<li>In Predicate blocks: here they are 'declarative' in nature and when specified, are true for their parameters</li>
+<li>In object properties: Here they return a value (eg random_colour).</li>
+</ul>
 <p>List of functions:</p>
 <h4 id="distribution">Distribution<a class="headerlink" href="#distribution" title="Permanent link">Link</a></h4>
 <p>Distribution functions 'distribute' objects in a certain manner. They are used to lay objects out on the screen. All objects for which the same parameters of 'distribute' are called will be included in the distribution. Distribution works such that objects will be placed in a certain area without overlapping. Between animation frames, objects will not move (unless their positions are reset).</p>
@@ -1134,35 +1138,35 @@ To see the final result for this AP, see the link in section 1.2 for the associa
 
 
 
-  <span class="err">#</span> <span class="nv">Below</span> <span class="nv">are</span> <span class="k">the</span> <span class="nb">list</span> <span class="nv">of</span> <span class="nv">shapes</span>
+  <span class="err">#</span> <span class="nv">Below</span> <span class="nv">are</span> <span class="k">the</span> <span class="nb">list</span> <span class="nv">of</span> <span class="nv">visual</span> <span class="nv">objects</span>
 
 
-  <span class="p">(</span><span class="ss">:shape</span> <span class="k">block</span>
-        <span class="err">#</span><span class="k">block</span> <span class="nv">shape</span> <span class="nv">is</span> <span class="k">the</span> <span class="nv">default</span> <span class="nv">shape</span> <span class="nv">type.</span> <span class="nv">All</span> <span class="nv">domain</span> <span class="nv">objects</span> <span class="nv">have</span> <span class="nv">this</span> <span class="k">type</span> <span class="nv">by</span> <span class="nv">default</span>
+  <span class="p">(</span><span class="ss">:visual</span> <span class="k">block</span>
+        <span class="c1">; block visual is the default visual type. All domain objects have this type by default</span>
         <span class="ss">:type</span> <span class="nv">default</span>
 
 
-        <span class="err">#</span> <span class="nv">all</span> <span class="ss">&#39;shape</span><span class="o">&#39;</span> <span class="nv">objects</span> <span class="nv">have</span> <span class="k">the</span> <span class="nv">following</span> <span class="nv">properties</span>
+        <span class="c1">; all &#39;visual&#39; objects have the following properties</span>
               <span class="ss">:properties</span><span class="p">(</span>
                 <span class="p">(</span><span class="nv">showname</span> <span class="nv">false</span><span class="p">)</span>
                 <span class="p">(</span><span class="nv">x</span> <span class="nv">false</span><span class="p">)</span>
                 <span class="p">(</span><span class="nv">y</span> <span class="nv">false</span><span class="p">)</span>
 
 
-        <span class="err">#</span> <span class="nv">randomcolor</span> <span class="nv">assigns</span> <span class="nv">a</span> <span class="nb">random</span> <span class="nv">color</span> <span class="nv">to</span> <span class="k">the</span> <span class="nv">object</span>
+        <span class="c1">; randomcolor assigns a random color to the object</span>
                 <span class="p">(</span><span class="nv">color</span> <span class="p">(</span><span class="k">function</span> <span class="nv">randomcolor</span><span class="p">))</span>
                 <span class="p">(</span><span class="nv">width</span> <span class="mi">80</span><span class="p">)</span>
                 <span class="p">(</span><span class="nv">height</span> <span class="mi">80</span><span class="p">)</span>
 
 
-        <span class="err">#</span> <span class="nv">this</span> <span class="nv">is</span> <span class="nv">a</span> <span class="nv">base64</span> <span class="nb">string</span> <span class="nv">representing</span> <span class="k">the</span> <span class="nv">image</span> <span class="nv">of</span> <span class="k">the</span> <span class="nv">object</span>
+        <span class="c1">; this is a base64 string representing the image of the object</span>
                 <span class="p">(</span><span class="nv">base64image</span> <span class="nv">iVBORw0KGg...oAA</span><span class="p">)</span>
               <span class="p">)</span>
   <span class="p">)</span>
 
-  <span class="p">(</span><span class="ss">:shape</span> <span class="nv">claw</span>
-        <span class="err">#</span><span class="nv">custom</span> <span class="nv">object</span> <span class="nv">types</span> <span class="nb">do</span> <span class="nb">not</span> <span class="nv">appear</span> <span class="nv">in</span> <span class="k">the</span> <span class="nv">domain</span>
-        <span class="err">#</span><span class="nv">they</span> <span class="nv">are</span> <span class="nv">mainly</span> <span class="nv">cosmetic.</span> <span class="nv">This</span> <span class="nv">object</span> <span class="nv">represents</span> <span class="k">the</span> <span class="nv">claw</span> <span class="p">(</span><span class="k">the</span> <span class="nv">claw</span> <span class="nv">does</span> <span class="nb">not</span> <span class="nv">move</span><span class="p">)</span>
+  <span class="p">(</span><span class="ss">:visual</span> <span class="nv">claw</span>
+        <span class="c1">; custom object types do not appear in the domain</span>
+        <span class="c1">; they are mainly cosmetic. This object represents the claw (the claw does not move)</span>
               <span class="ss">:type</span> <span class="nv">custom</span>
               <span class="ss">:properties</span><span class="p">(</span>
                 <span class="p">(</span><span class="nv">showname</span> <span class="nv">false</span><span class="p">)</span>
@@ -1174,7 +1178,7 @@ To see the final result for this AP, see the link in section 1.2 for the associa
                 <span class="p">(</span><span class="nv">base64image</span> <span class="nv">iVBORw0KGg...oAA</span><span class="p">)</span>
                <span class="p">)</span>
   <span class="p">)</span>
-  <span class="p">(</span><span class="ss">:shape</span> <span class="nv">board</span>
+  <span class="p">(</span><span class="ss">:visual</span> <span class="nv">board</span>
               <span class="ss">:type</span> <span class="nv">custom</span>
               <span class="ss">:properties</span><span class="p">(</span>
                 <span class="p">(</span><span class="nv">showname</span> <span class="nv">false</span><span class="p">)</span>
@@ -1194,11 +1198,21 @@ To see the final result for this AP, see the link in section 1.2 for the associa
 <p>Three other Animation Profiles are provided in the source code under Test/Sample Files. Each of these is commented for readability.</p>
 <h2 id="4-extending-the-language">4 Extending the Language<a class="headerlink" href="#4-extending-the-language" title="Permanent link">Link</a></h2>
 <h3 id="41-extension-areas">4.1 Extension Areas<a class="headerlink" href="#41-extension-areas" title="Permanent link">Link</a></h3>
-<p>There are two primary methods of extending the AP language: 
-1. Object properties (section 2.4)
-  * This is for simple ways of extending the appearance of objects, eg adding rotation or the font of 'showname'
-2. Adding functions (section 2.5)
-  * This is for more complex ways of describing object behaviours and interactions, eg adding new object layout options</p>
+<p>There are two primary methods of extending the AP language: </p>
+<ol>
+<li>
+<p>Object properties (section 2.4)</p>
+<ul>
+<li>This is for simple ways of extending the appearance of objects, eg adding rotation or the font of 'showname'</li>
+</ul>
+</li>
+<li>
+<p>Adding functions (section 2.5)</p>
+<ul>
+<li>This is for more complex ways of describing object behaviours and interactions, eg adding new object layout options</li>
+</ul>
+</li>
+</ol>
 <h3 id="42-extension-steps">4.2 Extension Steps<a class="headerlink" href="#42-extension-steps" title="Permanent link">Link</a></h3>
 <ol>
 <li>Modify the extensions.py file in the directory to add any functions or properties. See the document 'VFG Documentation.md' for more information.</li>
@@ -1213,7 +1227,7 @@ To see the final result for this AP, see the link in section 1.2 for the associa
 <div class="md-source-date">
   <small>
     
-      Last update: April 28, 2020
+      Last update: June 1, 2020
     
   </small>
 </div>
