@@ -3,7 +3,7 @@
 An Animation Profile (AP) is a user-written PDDL file which tells the Visualiser how a Domain is to be visualised. Each Animation Profile corresponds to one Domain. 
 
 
-Essentially, the AP provides a set of visual objects ("shapes") within the domain, along with a set of mappings from Predicates to animation behaviours.
+Essentially, the AP provides a set of visual objects ("visual") within the domain, along with a set of mappings from Predicates to animation behaviours.
 
 
 ## Scope
@@ -85,7 +85,7 @@ An example of a visual block is:
 
 visual blocks contain:
 
-* The name of the shape, for example ```block```
+* The name of the visual object, for example ```block```
 * The type of the object. Types can either be ```default```, ```custom```, or ```predefine```. 
   * ```default``` objects apply to any objects mentioned in the problem file. A 'block' in the problem file is an example of a default object. 
   * ```custom``` objects are additional to the problem file, and are created by the user for visual effect. The 'claw' is an example of a custom object - it mainly serves a visual purpose and is not specified in the problem or domain file. The robot in the Grid domain is another example of a custom object - it is not explicitly mentioned in the domain objects, but its behaviour is still fairly dynamic (moving around etc)
@@ -137,15 +137,15 @@ A list of the types to which each property can be assigned is in section 2.4.
 ### 2.4 Object Properties
 
 
-A number of Object Properties can be assigned for each Shape:
+A number of Object Properties can be assigned for each Visual object:
 
-* showname (Boolean): whether to display the shape's name on screen
-* x (Integer): x position of the shape on screen
-* y (Integer): y position of the shape on screen
-* colour (Colour): Colour of the shape. Can be a constant (eg ```BLACK```), an RGB value (eg ```#FAA2B5```), or the custom value ```RANDOMCOLOR``` which picks a random RGB value.
+* showname (Boolean): whether to display the object's name on screen
+* x (Integer): x position of the object on screen
+* y (Integer): y position of the object on screen
+* colour (Colour): Colour of the object. Can be a constant (eg ```BLACK```), an RGB value (eg ```#FAA2B5```), or the custom value ```RANDOMCOLOR``` which picks a random RGB value.
 * width (Integer): Width of the object on screen
 * height: Height of the object on screen
-* base64image: A Base64 string representing the shape's image. Base64 images can be generated at https://www.base64decode.org/
+* base64image: A Base64 string representing the object's image. Base64 images can be generated at https://www.base64decode.org/
 * depth: Depth of the object on screen. Higher depth objects are drawn behind lower depths.
 * label: Optional attribute specifying a string label to be drawn on the object.
 
@@ -154,6 +154,7 @@ A number of Object Properties can be assigned for each Shape:
 ### 2.5 Functions
 
 Functions have two uses:
+
 * In Predicate blocks: here they are 'declarative' in nature and when specified, are true for their parameters
 * In object properties: Here they return a value (eg random_colour).
 
@@ -262,35 +263,35 @@ The animation profile is as follows (comments  added with a # symbol):
 
 
 
-  # Below are the list of shapes
+  # Below are the list of visual objects
 
 
-  (:shape block
-        #block shape is the default shape type. All domain objects have this type by default
+  (:visual block
+        ; block visual is the default visual type. All domain objects have this type by default
         :type default
 
 
-        # all 'shape' objects have the following properties
+        ; all 'visual' objects have the following properties
               :properties(
                 (showname false)
                 (x false)
                 (y false)
 
 
-        # randomcolor assigns a random color to the object
+        ; randomcolor assigns a random color to the object
                 (color (function randomcolor))
                 (width 80)
                 (height 80)
 
 
-        # this is a base64 string representing the image of the object
+        ; this is a base64 string representing the image of the object
                 (base64image iVBORw0KGg...oAA)
               )
   )
 
-  (:shape claw
-        #custom object types do not appear in the domain
-        #they are mainly cosmetic. This object represents the claw (the claw does not move)
+  (:visual claw
+        ; custom object types do not appear in the domain
+        ; they are mainly cosmetic. This object represents the claw (the claw does not move)
               :type custom
               :properties(
                 (showname false)
@@ -302,7 +303,7 @@ The animation profile is as follows (comments  added with a # symbol):
                 (base64image iVBORw0KGg...oAA)
                )
   )
-  (:shape board
+  (:visual board
               :type custom
               :properties(
                 (showname false)
@@ -327,10 +328,14 @@ Three other Animation Profiles are provided in the source code under Test/Sample
 ### 4.1 Extension Areas
 
 There are two primary methods of extending the AP language: 
+
 1. Object properties (section 2.4)
-  * This is for simple ways of extending the appearance of objects, eg adding rotation or the font of 'showname'
+
+    * This is for simple ways of extending the appearance of objects, eg adding rotation or the font of 'showname'
+
 2. Adding functions (section 2.5)
-  * This is for more complex ways of describing object behaviours and interactions, eg adding new object layout options
+
+    * This is for more complex ways of describing object behaviours and interactions, eg adding new object layout options
 
 
 ### 4.2 Extension Steps
