@@ -7,7 +7,7 @@ Full documentation available here: [http://planimation.github.io/documentation](
 
 Watch the video below for a 2 minutes introduction about Planimation.
 
-[![Youtube](docs/images/readme/youtube.png)](https://youtu.be/Cj2rWdt1YQU)
+[![Youtube](./docs/images/readme/youtube.png)](https://youtu.be/Cj2rWdt1YQU)
 
 
 ## Getting Started
@@ -16,7 +16,7 @@ Watch the video below for a 2 minutes introduction about Planimation.
 
 2. Alternatively, visit our stand alone application at [http://planimation.planning.domains](http://planimation.planning.domains)
 
-![image](docs/images/readme/demo.gif)
+![image](./docs/images/readme/demo.gif)
 
 For developer documentation, see
 
