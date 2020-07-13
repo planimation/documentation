@@ -15,7 +15,7 @@ nav:
     - Resources:
           - GitHub: https://github.com/planimation
           - Other: other.md
-
+    - Contributors: contributors.md
 
 theme:
     name: material
