@@ -12,9 +12,7 @@ nav:
           - Backend: backend.md
           - Frontend: frontend.md
           - Plugins: plugins.md
-    - Resources:
-          - GitHub: https://github.com/planimation
-          - Other: other.md
+    - GitHub Code: https://github.com/planimation        
     - Contributors: contributors.md
 
 theme:
