@@ -29,7 +29,7 @@ For developer documentation, see
 
 ## Papers
 
-- [ICAPS 2019 System Demonstrations](https://icaps19.icaps-conference.org/files/pdfs/planimation_icaps19_sysdemo.pdf)
+- [ICAPS 2019 System Demonstrations](https://arxiv.org/pdf/2008.04600.pdf)
 
 - [KEPS book: Plannimg.domains](https://link.springer.com/chapter/10.1007/978-3-030-38561-3_5#readcube-epdf)
 

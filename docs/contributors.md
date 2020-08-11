@@ -11,8 +11,9 @@ List of all the individuals who have contributed to build Planimation so far.
 | 5 | 2018 | Grace Johnson | grace.johnson13@gmail.com |
 | 6 | 2018 | Haoyuan Tang | haoyuant94718@gmail.com|
 | 7 | 2018 - 2019 | Yi Ding | yidingcoder@gmail.com - [linkedin/in/yiding-coder/](https://www.linkedin.com/in/yiding-coder) |
-| 8 | 2020 | Jayan De Silva | [linkedin/in/jayandesilva](https://www.linkedin.com/in/jayandesilva/) |
-| 9 | 2020 | Miley Li | mileylihanbin@hotmail.com |
-| 10 | 2020 | Qian Zhang | nick.zhangq@gmail.com |
-| 11 | 2020 | Naoki Yoshikawa | nyoshikawa0914@gmail.com |
-| 12 | 2020 | Chengwei Zhang | tarajanzhang@gmail.com  |
+| 8 | 2018 | Gang Chen | gche8512@gmail.com |
+| 9 | 2020 | Jayan De Silva | [linkedin/in/jayandesilva](https://www.linkedin.com/in/jayandesilva/) |
+| 10 | 2020 | Miley Li | mileylihanbin@hotmail.com |
+| 11 | 2020 | Qian Zhang | nick.zhangq@gmail.com |
+| 12 | 2020 | Naoki Yoshikawa | nyoshikawa0914@gmail.com |
+| 13 | 2020 | Chengwei Zhang | tarajanzhang@gmail.com  |
