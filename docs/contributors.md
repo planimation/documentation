@@ -17,3 +17,6 @@ List of all the individuals who have contributed to build Planimation so far.
 | 11 | 2020 | Qian Zhang | nick.zhangq@gmail.com |
 | 12 | 2020 | Naoki Yoshikawa | nyoshikawa0914@gmail.com |
 | 13 | 2020 | Chengwei Zhang | tarajanzhang@gmail.com  |
+| 14 | 2020 | Jiazheng Yu | jiazhengyu428@gmail.com |
+| 15 | 2020 | Xuanhao Hu | xuanhaoh129@gmail.com |
+| 16 | 2020 | Zhichao Zhong | franciszzc.au@gmail.com |

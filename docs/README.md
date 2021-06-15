@@ -78,7 +78,7 @@ This document contains an overview of Planimation, recipient of the [ICAPS 2019 
 
 Please cite Planimation using
 ``` latex
-@misc{chen_gan_2020_3773027,
+@article{chen2020planimation,
   author       = {Chen, Gan and
                   Ding, Yi and
                   Edwards, Hugo and
@@ -92,11 +92,7 @@ Please cite Planimation using
                   Tidhar Gil and
                   Lipovetzky Nir},
   title        = {Planimation},
-  month        = apr,
-  year         = 2020,
-  publisher    = {Zenodo},
-  version      = {ICAPS-2019},
-  doi          = {10.5281/zenodo.3773027},
-  url          = {https://doi.org/10.5281/zenodo.3773027}
+  journal      = {arXiv preprint arXiv:2008.04600},
+  year         = {2020}
 }
 ```
