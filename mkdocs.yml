@@ -12,7 +12,8 @@ nav:
           - Backend: backend.md
           - Frontend: frontend.md
           - Plugins: plugins.md
-    - GitHub Code: https://github.com/planimation        
+    - Animated Domains: https://github.com/planimation/documentation/tree/master/AnimationProfiles        
+    - GitHub Code: https://github.com/planimation  
     - Contributors: contributors.md
 
 theme:
