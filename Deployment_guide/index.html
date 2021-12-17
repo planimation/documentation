@@ -1,0 +1,986 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.2.3, mkdocs-material-8.1.2">
+    
+    
+      
+        <title>Software Build and Deployment Document - Planimation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.f7951f6f.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.e6a45f82.min.css">
+        
+      
+    
+    
+    
+      
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="none" data-md-color-accent="none">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#software-build-and-deployment-document" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="Planimation" class="md-header__button md-logo" aria-label="Planimation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Planimation
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Software Build and Deployment Document
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="Planimation" class="md-nav__button md-logo" aria-label="Planimation" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54z"/></svg>
+
+    </a>
+    Planimation
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          User Information
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="User Information" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          User Information
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ug1/" class="md-nav__link">
+        User Guide
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Developer Information
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Developer Information" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Developer Information
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../deployment_guide.md" class="md-nav__link">
+        Deployment
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend_dev_guide/" class="md-nav__link">
+        Backend
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend_dev_guide/" class="md-nav__link">
+        Frontend
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../ap_guide/" class="md-nav__link">
+        Animation Profile
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Component Information
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Component Information" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Component Information
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../backend/" class="md-nav__link">
+        Backend
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../frontend/" class="md-nav__link">
+        Frontend
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../plugins/" class="md-nav__link">
+        Plugins
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/planimation/documentation/tree/master/AnimationProfiles" class="md-nav__link">
+        Animated Domains
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="https://github.com/planimation" class="md-nav__link">
+        GitHub Code
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../contributors/" class="md-nav__link">
+        Contributors
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    Purpose
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#document-overview" class="md-nav__link">
+    Document Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-requirements" class="md-nav__link">
+    1. Requirements
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#build-agent-requirement" class="md-nav__link">
+    Build Agent Requirement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment-server-requirement" class="md-nav__link">
+    Deployment Server Requirement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu-desktop-edition" class="md-nav__link">
+    Ubuntu Desktop Edition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu-server-edition" class="md-nav__link">
+    Ubuntu Server Edition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-get-sources" class="md-nav__link">
+    2 Get Sources
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-pre-deployment-process" class="md-nav__link">
+    3 Pre-deployment Process
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Pre-deployment Process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-install-unity-dependencies" class="md-nav__link">
+    3.1 Install Unity Dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-build-unity-project" class="md-nav__link">
+    3.2 Build Unity Project
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 Build Unity Project">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321-building-from-command-line" class="md-nav__link">
+    3.2.1 Building from command line
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#321-building-from-unity-gui" class="md-nav__link">
+    3.2.1 Building from Unity GUI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-install-python3-dependencies-for-the-backend" class="md-nav__link">
+    3.3 Install Python3 Dependencies for the Backend
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-ubuntu-deployment-process" class="md-nav__link">
+    4 Ubuntu Deployment Process
+  </a>
+  
+    <nav class="md-nav" aria-label="4 Ubuntu Deployment Process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-apache-web-server-installation" class="md-nav__link">
+    4.1 Apache Web Server Installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-apache-web-server-deployment" class="md-nav__link">
+    4.2 Apache Web Server Deployment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-django-server-installation" class="md-nav__link">
+    4.3 Django Server Installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-django-server-deployment" class="md-nav__link">
+    4.4 Django Server Deployment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-post-deployment" class="md-nav__link">
+    5 Post-deployment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-heroku-deployment" class="md-nav__link">
+    6 Heroku Deployment
+  </a>
+  
+    <nav class="md-nav" aria-label="6 Heroku Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-pre-deployment-process" class="md-nav__link">
+    6.1 Pre-deployment Process
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-deployment-process" class="md-nav__link">
+    6.2 Deployment Process
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-unity-with-heroku-deployment" class="md-nav__link">
+    6.3 Unity with Heroku Deployment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+<h1 id="software-build-and-deployment-document">Software Build and Deployment Document<a class="headerlink" href="#software-build-and-deployment-document" title="Permanent link">Link</a></h1>
+<table>
+<thead>
+<tr>
+<th>Version</th>
+<th align="center">Author</th>
+<th align="right">Date</th>
+<th align="right">Comment</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.1</td>
+<td align="center">Gang Chen</td>
+<td align="right">18/09/2018</td>
+<td align="right">Deployment process for Ubuntu server. Ubuntu is one major OS that unimelb uses.</td>
+</tr>
+<tr>
+<td>0.2</td>
+<td align="center">Gang Chen</td>
+<td align="right">24/09/2018</td>
+<td align="right">The next release of this document will cover Heroku server.</td>
+</tr>
+<tr>
+<td>0.3</td>
+<td align="center">Hugh Edwards</td>
+<td align="right">7/10/2018</td>
+<td align="right">Convert to Markdown, editing</td>
+</tr>
+<tr>
+<td>0.4</td>
+<td align="center">Nir Lipovetzky</td>
+<td align="right">1/5/2020</td>
+<td align="right">editing, github and server migrated</td>
+</tr>
+</tbody>
+</table>
+<h2 id="purpose">Purpose<a class="headerlink" href="#purpose" title="Permanent link">Link</a></h2>
+<p>This document describes how to build and deploy the Planning Visualisation standalone software.</p>
+<h2 id="document-overview">Document Overview<a class="headerlink" href="#document-overview" title="Permanent link">Link</a></h2>
+<p>This document is organised in the following sections:</p>
+<ol>
+<li><strong>Requirements</strong>: Requirements for deployment</li>
+<li><strong>Project Repository</strong>: Contains  information on how the repository is organised.</li>
+<li><strong>Pre-deployment Process</strong>: Details how to build the software from the source code and how to build the other project artefacts. Additional information on the various steps of the build process is also provided as well as a list of all required libraries.</li>
+<li><strong>Deployment</strong>: How to install and run the software, and the system requirements.</li>
+<li><strong>Post-deployment</strong>: Details how to display the final product.  </li>
+<li><strong>Heroku-deployment</strong>: Details how to deploy the final product on Heroku.  </li>
+</ol>
+<h2 id="1-requirements">1. Requirements<a class="headerlink" href="#1-requirements" title="Permanent link">Link</a></h2>
+<h3 id="build-agent-requirement">Build Agent Requirement<a class="headerlink" href="#build-agent-requirement" title="Permanent link">Link</a></h3>
+<p>Your build agent will need to meeting the following minimum requirements. GPU is a must as you will need a valid graphic card and graphic card drive to activate Unity:</p>
+<table>
+<thead>
+<tr>
+<th>Components</th>
+<th align="center">Minimum Requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Operating System</td>
+<td align="center">OS: Windows 7 SP1+, 8, 10, 64-bit versions only; macOS 10.11+. Server versions of Windows &amp; OS X are not tested.</td>
+</tr>
+<tr>
+<td>CPU</td>
+<td align="center">CPU: SSE2 instruction set support.</td>
+</tr>
+<tr>
+<td>GPU</td>
+<td align="center">GPU: Graphics card with DX10 (shader model 4.0) capabilities.</td>
+</tr>
+<tr>
+<td>Aditional Platform Development Requirements</td>
+<td align="center"><strong>iOS:</strong> Mac computer running minimum macOS 10.12.6 and Xcode 9.0 or higher. <strong>Android:</strong> Android SDK and Java Development Kit (JDK); IL2CPP scripting backend requires Android NDK. <strong>Universal Windows Platform:</strong> Windows 10 (64-bit), Visual Studio 2015 with C++ Tools component or later and Windows 10 SDK</td>
+</tr>
+</tbody>
+</table>
+<h3 id="deployment-server-requirement">Deployment Server Requirement<a class="headerlink" href="#deployment-server-requirement" title="Permanent link">Link</a></h3>
+<p>The deployment server used in developnet is a Linux OS family member - Ubuntu. This section covers the minimum hardware requirements for these deployment servers.</p>
+<h3 id="ubuntu-desktop-edition">Ubuntu Desktop Edition<a class="headerlink" href="#ubuntu-desktop-edition" title="Permanent link">Link</a></h3>
+<p>Processor: 2 GHz dual core processor
+RAM: 2 GiB RAM (system memory)
+Storage: 25 GB of hard-drive space (or USB stick, memory card or external drive but see LiveCD for an alternative approach)
+Display: VGA capable of 1024x768 screen resolution (Optional)
+Accessories: <a href="https://help.ubuntu.com/community/Synaptic/PackageDownloadScript">Internet access</a>
+Port Selection: </p>
+<ul>
+<li>22/tcp  open ssh</li>
+<li>80/tcp  open http</li>
+<li>631/tcp open ipp</li>
+<li>3306/tcp open mysql</li>
+<li>8000/tcp open http-alt</li>
+</ul>
+<h3 id="ubuntu-server-edition">Ubuntu Server Edition<a class="headerlink" href="#ubuntu-server-edition" title="Permanent link">Link</a></h3>
+<p>Processor: 300 MHz x86 processor
+RAM: 256 MiB of system memory (RAM)
+Storage: 1.5 GB of disk space
+Display: Graphics card and monitor capable of 640x480 (Optional)
+Accessories: <a href="https://help.ubuntu.com/community/Synaptic/PackageDownloadScript">Internet access</a>
+Port Selection: </p>
+<ul>
+<li>22/tcp  open ssh</li>
+<li>80/tcp  open http</li>
+<li>631/tcp open ipp</li>
+<li>3306/tcp open mysql</li>
+<li>8000/tcp open http-alt</li>
+</ul>
+<h2 id="2-get-sources">2 Get Sources<a class="headerlink" href="#2-get-sources" title="Permanent link">Link</a></h2>
+<p>The source code and related artefacts are hosted in Github, the backend and frontend repositories can be cloned through the following command:</p>
+<div class="codehilite"><pre><span></span><code>git clone https://github.com/planimation/backend.git planimation-backend
+
+git clone https://github.com/planimation/frontend.git planimation-frontend
+</code></pre></div>
+
+<p>All the code is available in <a href="https://github.com/planimation/">https://github.com/planimation/</a></p>
+<h2 id="3-pre-deployment-process">3 Pre-deployment Process<a class="headerlink" href="#3-pre-deployment-process" title="Permanent link">Link</a></h2>
+<p>Planning Visualisation’s presentation layer is based on WebGL and Unity, the contents of which can be generated from the Unity part of the repository. This section covers how and what to generate:</p>
+<h3 id="31-install-unity-dependencies">3.1 Install Unity Dependencies<a class="headerlink" href="#31-install-unity-dependencies" title="Permanent link">Link</a></h3>
+<p>Install the Version 2018.2.1f1 from <a href="https://unity3d.com/">https://unity3d.com/</a>, when installing, select "Include WebGL”.</p>
+<p>Additionally, download the followings for building Unity files (This requires roughly 50MB storage space).</p>
+<div class="codehilite"><pre><span></span><code>sudo apt-get install -y libgconf-2-4
+</code></pre></div>
+
+<div class="codehilite"><pre><span></span><code>sudo apt install libcanberrra-gtk<span class="se">\*</span>
+</code></pre></div>
+
+<h3 id="32-build-unity-project">3.2 Build Unity Project<a class="headerlink" href="#32-build-unity-project" title="Permanent link">Link</a></h3>
+<p>The build process is designed to be cross-platform and self-contained. What all this means is that you can run the various build tasks on any machine where a validated Unity is available, without having to worry about resolving other library dependencies.</p>
+<p>The Unity project can either be built from the Unity command line, or from the Unity GUI.</p>
+<h4 id="321-building-from-command-line">3.2.1 Building from command line<a class="headerlink" href="#321-building-from-command-line" title="Permanent link">Link</a></h4>
+<p>To build from the command line, enter the following command. We illustrate the idea with Ubuntu build agent. However, the idea can apply to any OS.</p>
+<p>Move to the <strong><em>/PlanningVisualise</em></strong>  directory in the repository that you’ve just checked out from Section 1 and from there type, at the command prompt:</p>
+<div class="codehilite"><pre><span></span><code>/home/<span class="nv">$USER</span>/Editor/Unity -batchmode -quit -projectPath “ProjectPath” -executeMethod Buildscript.Build -logFile stdout.log
+</code></pre></div>
+
+<ul>
+<li><em>You will need to replace the “ProjectPath” with the absolute path of your cloned copy of the repository. E.g. “/home/$USER</em><strong><em>/planimation-frontend</em></strong><em>”</em></li>
+<li><em>You will need to replace “/home/$USER/Editor/Unity” with the absolute path of Unity executable on your build agent.</em></li>
+<li><em>Compilation progress can be found in “stdout.log”.</em></li>
+</ul>
+<p>For more information on each of the components in the command, please visit
+<a href="https://docs.unity3d.com/Manual/CommandLineArguments.html">https://docs.unity3d.com/Manual/CommandLineArguments.html</a></p>
+<p>Should you wish to update the User Interface of this application, you need to include all your customised Unity scenes in the buildscript prior to compilation, buildscript can be found:</p>
+<div class="codehilite"><pre><span></span><code>../planimation-frontend/Assets/Editor/buildscript.cs
+</code></pre></div>
+
+<p>With having the command executed, a folder called <strong><em>“build”</em></strong> should appear under the <strong><em>/planimation-frontend</em></strong>  directory and this will be the final animation contents for the deployment process in Section 4.</p>
+<h4 id="321-building-from-unity-gui">3.2.1 Building from Unity GUI<a class="headerlink" href="#321-building-from-unity-gui" title="Permanent link">Link</a></h4>
+<ul>
+<li>Open Unity</li>
+<li>Click File -&gt; Build Settings</li>
+<li>Choose 'WebGL'</li>
+<li>Make sure all the selected scenes are those under the 'Visualisation' folder</li>
+<li>Click 'Player Settings'</li>
+<li>
+<p>Click 'Publishing Settings'
+  <!---* Enter 512 for 'WebGL Memory Size'--></p>
+</li>
+<li>
+<p>Tick 'WebAssembly' checkbox</p>
+</li>
+<li>Click 'Build'</li>
+<li>Create 'buildweb' folder</li>
+</ul>
+<h4 id="33-install-python3-dependencies-for-the-backend">3.3 Install Python3 Dependencies for the Backend<a class="headerlink" href="#33-install-python3-dependencies-for-the-backend" title="Permanent link">Link</a></h4>
+<p>Should you wish to change the server side of the repository, you will need to install the following libraries in order to compile the python files with Python3 Interpreter, Python3 Interpreter can be downloaded with :</p>
+<div class="codehilite"><pre><span></span><code>sudo apt-get update
+sudo apt-get install python3.6
+</code></pre></div>
+
+<p>Addition libraries include:</p>
+<div class="codehilite"><pre><span></span><code>sudo apt-get install python-pip 
+sudo pip install numpy scipy
+</code></pre></div>
+
+<h2 id="4-ubuntu-deployment-process">4 Ubuntu Deployment Process<a class="headerlink" href="#4-ubuntu-deployment-process" title="Permanent link">Link</a></h2>
+<p>Installing and running Planning Visualisation is very easy: drop the distribution directory somewhere on your filesystem and run your servers! This section details all this more precisely. An obvious set of pre-requisites is Apache server and Django Server.</p>
+<h3 id="41-apache-web-server-installation">4.1 Apache Web Server Installation<a class="headerlink" href="#41-apache-web-server-installation" title="Permanent link">Link</a></h3>
+<p>For Ubuntu server, run the following commands to install Apache server:</p>
+<div class="codehilite"><pre><span></span><code>sudo apt-get update <span class="o">&amp;&amp;</span> sudo apt-get upgrade  
+sudo apt-get install apache2 apache2-doc apache2-utils
+</code></pre></div>
+
+<p>After having successfully installed the Apache server, you can run the server with the following command:</p>
+<div class="codehilite"><pre><span></span><code>sudo service apache2 start
+</code></pre></div>
+
+<h3 id="42-apache-web-server-deployment">4.2 Apache Web Server Deployment<a class="headerlink" href="#42-apache-web-server-deployment" title="Permanent link">Link</a></h3>
+<p>With the command provided in section 2, you should be able to get a folder called “buildweb” under “../planimation-frontend/”. The remaining is easy: drop the distribution directory to the designated Apache source folder and restart your apache server:</p>
+<ul>
+<li>Move all the files and subdirectories under “build” to “/var/www/html/“</li>
+<li>Restart the apache server with 
+    <code>“sudo service apache2 restart”</code></li>
+</ul>
+<h3 id="43-django-server-installation">4.3 Django Server Installation<a class="headerlink" href="#43-django-server-installation" title="Permanent link">Link</a></h3>
+<p>For Ubuntu server, run the following commands to install Django server:</p>
+<!--sudo pip3 install --no-cache-dir -r planimation-backend/requirements.txt-->
+
+<div class="codehilite"><pre><span></span><code>sudo apt install python3-pip
+pip3 install djangorestframework django-cors-headers colour
+pip3 install --upgrade django
+sudo apt-get install python3-django
+sudo apt-get install gunicorn3
+</code></pre></div>
+
+<h3 id="44-django-server-deployment">4.4 Django Server Deployment<a class="headerlink" href="#44-django-server-deployment" title="Permanent link">Link</a></h3>
+<p>Once the installation is done and the Django server is ready, move to the <strong><em>/planimation-backend/server</em></strong>  directory and from there type, at the command prompt:</p>
+<div class="codehilite"><pre><span></span><code>sudo gunicorn3 -b <span class="m">0</span>.0.0.0:8000 server.wsgi —reload
+</code></pre></div>
+
+<p>After all, the server should be reachable from external network and your project should be ready.</p>
+<h2 id="5-post-deployment">5 Post-deployment<a class="headerlink" href="#5-post-deployment" title="Permanent link">Link</a></h2>
+<p>Planning Visualisation can then be accessed within any web browser that is compatible with WebGL by typing the IP address of you deployment server.</p>
+<h2 id="6-heroku-deployment">6 Heroku Deployment<a class="headerlink" href="#6-heroku-deployment" title="Permanent link">Link</a></h2>
+<h3 id="61-pre-deployment-process">6.1 Pre-deployment Process<a class="headerlink" href="#61-pre-deployment-process" title="Permanent link">Link</a></h3>
+<p>Please make sure your setup has met the following conditions:</p>
+<ul>
+<li>a free <a href="https://signup.heroku.com/signup/dc">Heroku account</a>.</li>
+<li>Python version 3.6 installed locally - see the installation guides for <a href="http://docs.python-guide.org/en/latest/starting/install3/osx/">OS X</a>, <a href="http://docs.python-guide.org/en/latest/starting/install3/win/">Windows</a>, and <a href="http://docs.python-guide.org/en/latest/starting/install3/linux/">Linux</a>.</li>
+<li><a href="http://docs.python-guide.org/en/latest/dev/virtualenvs/">Pipenv installed</a> locally. Accomplish this by running pip install pipenv.</li>
+<li><a href="https://devcenter.heroku.com/articles/heroku-postgresql#local-setup">Postgres installed</a> locally, if running the app locally.</li>
+</ul>
+<h3 id="62-deployment-process">6.2 Deployment Process<a class="headerlink" href="#62-deployment-process" title="Permanent link">Link</a></h3>
+<p>Heroku Command Line Interface (CLI) - Once installed, you can use the HEROKU command from your command shell. To log in with your Heroku account:</p>
+<div class="codehilite"><pre><span></span><code>heroku login
+</code></pre></div>
+
+<p>Enter your Heroku credentials.</p>
+<div class="codehilite"><pre><span></span><code>//Email: <span class="o">[</span>user@example.com<span class="o">](</span>mailto:user@example.com<span class="o">)</span>
+//Password:
+</code></pre></div>
+
+<p>To clone your project with:</p>
+<div class="codehilite"><pre><span></span><code>git clone <span class="o">[</span>https://github.com/heroku/python-getting-started.git<span class="o">](</span>https://github.com/heroku/python-getting-started.git<span class="o">)</span>
+<span class="nb">cd</span> python-getting-started
+</code></pre></div>
+
+<p>Next, create an app on Heroku, which prepares Heroku to receive your source code:</p>
+<div class="codehilite"><pre><span></span><code>heroku create
+</code></pre></div>
+
+<p>When you create an app, a git remote (called heroku) is also created and associated with your local git repository. Heroku generates a random name (in this case lit-bastion-5032) for your app, or you can pass a parameter to specify your own app name. Now deploy your code:</p>
+<div class="codehilite"><pre><span></span><code>git push heroku master
+</code></pre></div>
+
+<p>Use a <a href="https://devcenter.heroku.com/articles/procfile">Procfile</a> to explicitly declare what command should be executed to start your app.</p>
+<p>The Procfile in the example app you deployed looks like this:</p>
+<div class="codehilite"><pre><span></span><code>web: gunicorn gettingstarted.wsgi --log-file -
+</code></pre></div>
+
+<p>This declares a single process type, web, and the command needed to run it. The name web is important here. It declares that this process type will be attached to the <a href="https://devcenter.heroku.com/articles/http-routing">HTTP routing</a> stack of Heroku, and receive web traffic when deployed. Procfiles can contain additional process types. For example, you might declare one for a background worker process that processes items off of a queue.</p>
+<h3 id="63-unity-with-heroku-deployment">6.3 Unity with Heroku Deployment<a class="headerlink" href="#63-unity-with-heroku-deployment" title="Permanent link">Link</a></h3>
+<p>When deploying the Django server with Heroku, you will also need to make sure to redirect the traffic for your local server to Heroku within Unity, this can be done by simply enabling and changing the settings in <strong><em>ScenesCoordinator.cs:</em></strong></p>
+<p><img alt="" src="../images/deployment/build_screenshot.png" /></p>
+<p>As shown above in the picture, the current setting is pointing to local machine. Enabling the line below will redirect the data stream to your Heroku server. You should replace “<a href="https://immense-bastion-42146.herokuapp.com/upload/pddl">https://immense-bastion-42146.herokuapp.com/upload/pddl</a>” with your Heroku application.</p>
+
+  <hr>
+<div class="md-source-file">
+  <small>
+    
+      Last update:
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 4, 2020</span>
+      
+    
+  </small>
+</div>
+
+              
+            </article>
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "..", "features": [], "translations": {"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing", "select.version.title": "Select version"}, "search": "../assets/javascripts/workers/search.0bbba5b5.min.js"}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.649a939e.min.js"></script>
+      
+    
+  </body>
+</html>
