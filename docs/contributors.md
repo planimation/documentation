@@ -20,3 +20,8 @@ List of all the individuals who have contributed to build Planimation so far.
 | 14 | 2020 | Jiazheng Yu | jiazhengyu428@gmail.com |
 | 15 | 2020 | Xuanhao Hu | xuanhaoh129@gmail.com |
 | 16 | 2020 | Zhichao Zhong | franciszzc.au@gmail.com |
+| 17 | 2021 | Bojing Zhou | bojing.zh@gmail.com |
+| 18 | 2021 | Felipe Ramos Morales | framos.cnca@gmail.com |
+| 19 | 2021 | Shiqi Zhang | moomin2333@163.com |
+| 20 | 2021 | Xiaoyu Zhang | 15906360368@163.com |
+| 21 | 2021 | Ziqi Meng | mengzq1994@163.com |
