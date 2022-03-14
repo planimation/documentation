@@ -13,7 +13,7 @@
     
     
       
-        <title>Software Build and Deployment Document - Planimation</title>
+        <title>Deployment - Planimation</title>
       
     
     
@@ -91,7 +91,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Software Build and Deployment Document
+              Deployment
             
           </span>
         </div>
@@ -237,12 +237,14 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
-        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" >
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
       
       
       
@@ -263,11 +265,243 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../deployment_guide.md" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Deployment
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Deployment
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#purpose" class="md-nav__link">
+    Purpose
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#document-overview" class="md-nav__link">
+    Document Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#1-requirements" class="md-nav__link">
+    1. Requirements
+  </a>
+  
+    <nav class="md-nav" aria-label="1. Requirements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#build-agent-requirement" class="md-nav__link">
+    Build Agent Requirement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#deployment-server-requirement" class="md-nav__link">
+    Deployment Server Requirement
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu-desktop-edition" class="md-nav__link">
+    Ubuntu Desktop Edition
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#ubuntu-server-edition" class="md-nav__link">
+    Ubuntu Server Edition
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-get-sources" class="md-nav__link">
+    2 Get Sources
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-pre-deployment-process" class="md-nav__link">
+    3 Pre-deployment Process
+  </a>
+  
+    <nav class="md-nav" aria-label="3 Pre-deployment Process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#31-install-unity-dependencies" class="md-nav__link">
+    3.1 Install Unity Dependencies
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#32-build-unity-project" class="md-nav__link">
+    3.2 Build Unity Project
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 Build Unity Project">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321-building-from-command-line" class="md-nav__link">
+    3.2.1 Building from command line
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#321-building-from-unity-gui" class="md-nav__link">
+    3.2.1 Building from Unity GUI
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#33-install-python3-dependencies-for-the-backend" class="md-nav__link">
+    3.3 Install Python3 Dependencies for the Backend
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-ubuntu-deployment-process" class="md-nav__link">
+    4 Ubuntu Deployment Process
+  </a>
+  
+    <nav class="md-nav" aria-label="4 Ubuntu Deployment Process">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#41-apache-web-server-installation" class="md-nav__link">
+    4.1 Apache Web Server Installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#42-apache-web-server-deployment" class="md-nav__link">
+    4.2 Apache Web Server Deployment
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#43-django-server-installation" class="md-nav__link">
+    4.3 Django Server Installation
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#44-django-server-deployment" class="md-nav__link">
+    4.4 Django Server Deployment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5-post-deployment" class="md-nav__link">
+    5 Post-deployment
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-heroku-deployment" class="md-nav__link">
+    6 Heroku Deployment
+  </a>
+  
+    <nav class="md-nav" aria-label="6 Heroku Deployment">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#61-pre-deployment-process" class="md-nav__link">
+    6.1 Pre-deployment Process
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#62-deployment-process" class="md-nav__link">
+    6.2 Deployment Process
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#63-unity-with-heroku-deployment" class="md-nav__link">
+    6.3 Unity with Heroku Deployment
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -941,7 +1175,7 @@ sudo apt-get install gunicorn3
   <small>
     
       Last update:
-      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">May 4, 2020</span>
+      <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">March 14, 2022</span>
       
     
   </small>
@@ -955,6 +1189,41 @@ sudo apt-get install gunicorn3
       </main>
       
         <footer class="md-footer">
+  
+    <nav class="md-footer__inner md-grid" aria-label="Footer">
+      
+        
+        <a href="../ug1/" class="md-footer__link md-footer__link--prev" aria-label="Previous: User Guide" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              User Guide
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../backend_dev_guide/" class="md-footer__link md-footer__link--next" aria-label="Next: Backend" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              Backend
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
   
   <div class="md-footer-meta md-typeset">
     <div class="md-footer-meta__inner md-grid">
