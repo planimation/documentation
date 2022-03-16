@@ -2,7 +2,7 @@
 
 Each folder contains the **animation profiles** along with domain and problem files in pddl. You can interact or render the animations by opening the [editor.planning.domains](http://editor.planning.domains/#read_session=LwNY8sppTZ), loading the planimation plugin if it's not loaded, and drag & droping the files in the folders. Alternatively, below there is a short link to the editor preloading the files for each domain:
 
-1. [15-Puzzle](http://editor.planning.domains/#read_session=kx7ElSn3Lv)
+1. [15-Puzzle](http://editor.planning.domains/#read_session=opu31yHZOi)
 2. [BlocksWorld](http://editor.planning.domains/#read_session=0NKmKNlPZV)
 3. [Family-and-fisherman](http://editor.planning.domains/#read_session=GrXosSLise)
 4. [Farmer-crosses-River](http://editor.planning.domains/#read_session=rYeAF8SAUh)
