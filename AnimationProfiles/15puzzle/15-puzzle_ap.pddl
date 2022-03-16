@@ -36,6 +36,7 @@
                  (showName FALSE)
                  (x NULL)
                  (y NULL)
+                 (color black)
                  (width 100)
                  (height 100)
                  (depth 1)
