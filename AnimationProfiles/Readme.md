@@ -11,3 +11,6 @@ Each folder contains the **animation profiles** along with domain and problem fi
 7. [Switching-soldier](http://editor.planning.domains/#read_session=Ma7fRrgzMv)
 8. [Towers of Hanoi](http://editor.planning.domains/#read_session=7doJXh2b8N)
 9. [Visitall](http://editor.planning.domains/#read_session=yApCBegR7j)
+10. [Elevators](http://editor.planning.domains/#read_session=dlgnCMwcwC)
+11. [Freecell](http://editor.planning.domains/#read_session=q8Rh3Y7sSE)
+12. [Depot](http://editor.planning.domains/#read_session=MFmtS8g0ar)
