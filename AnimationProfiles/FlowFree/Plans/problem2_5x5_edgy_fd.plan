@@ -1,0 +1,30 @@
+;;!domain: FlowFree
+;;!problem: problem2_5x5_edgy_fd
+
+0.00100: (select-colour dummy r)
+0.00200: (moveNextToEdge node1-5 node1-4 r)
+0.00300: (moveNextToEdge node1-4 node1-3 r)
+0.00400: (moveNextToEdge node1-3 node1-2 r)
+0.00500: (moveNextToEdge node1-2 node1-1 r)
+0.00600: (finishPath node1-1 node2-1 r)
+0.00700: (select-colour r g)
+0.00800: (moveNextToEdge node2-2 node2-3 g)
+0.00900: (moveNextToEdge node2-3 node2-4 g)
+0.01000: (moveNextToEdge node2-4 node2-5 g)
+0.01100: (finishPath node2-5 node3-5 g)
+0.01200: (select-colour g b)
+0.01300: (moveNextToEdge node3-4 node3-3 b)
+0.01400: (moveNextToEdge node3-3 node3-2 b)
+0.01500: (finishPath node3-2 node3-1 b)
+0.01600: (select-colour b y)
+0.01700: (moveNextToEdge node4-2 node4-3 y)
+0.01800: (moveNextToEdge node4-3 node4-4 y)
+0.01900: (moveNextToEdge node4-4 node4-5 y)
+0.02000: (finishPath node4-5 node5-5 y)
+0.02100: (select-colour y o)
+0.02200: (moveNextToEdge node4-1 node5-1 o)
+0.02300: (moveNextToEdge node5-1 node5-2 o)
+0.02400: (moveNextToEdge node5-2 node5-3 o)
+0.02500: (finishPath node5-3 node5-4 o)
+
+; Cost: 5
