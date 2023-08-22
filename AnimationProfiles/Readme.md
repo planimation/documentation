@@ -14,3 +14,5 @@ Each folder contains the **animation profiles** along with domain and problem fi
 10. [Elevators](http://editor.planning.domains/#read_session=dlgnCMwcwC)
 11. [Freecell](http://editor.planning.domains/#read_session=q8Rh3Y7sSE)
 12. [Depot](http://editor.planning.domains/#read_session=MFmtS8g0ar)
+13. [TPP] (http://editor.planning.domains/#read_session=mz2BJxLOb5)
+14. [Gripper] (http://editor.planning.domains/#read_session=jKknyAIR29)
