@@ -1,0 +1,53 @@
+name: Feature Request
+description: Suggest an idea for Planimation
+title: "[Feature]: "
+labels: ["enhancement"]
+projects: ["Planimation Project Board"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this feature request form!
+  - type: input
+    id: contact
+    attributes:
+      label: Contact Details
+      description: How can we get in touch with you if we need more info?
+      placeholder: ex. email@example.com
+    validations:
+      required: false
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: Is your feature request related to a problem? If applicable, add screenshots to help explain your problem.
+      placeholder: ex. I was unable to [...] / It is inconvenient to [...]
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes: 
+      label: Solution
+      description: How would you like the problem to be solved?
+      placeholder: Please describe what you want to happen.
+    validations: 
+      required: true
+  
+  - type: textarea
+    id: alternative
+    attributes: 
+      label: Alternatives
+      description: Share with us any alternative solutions/features you have considered!
+      placeholder: An alternative is [...]
+    validations: 
+      required: false
+
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output
+      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      render: shell
