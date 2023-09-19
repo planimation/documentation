@@ -27,6 +27,17 @@ body:
     validations:
       required: true
 
+  - type: input
+    id: session
+    attributes: 
+      label: Session
+      description: |
+        If applicable, please provide the editor.planning.domains session ID or link (read only) that has the files to replicate the issue.
+        To retrieve the session ID/link, click "Session" at the banner, "Save" if not already, and the session ID/link would be at "Details". 
+      placeholder: ex. https://editor.planning.domains/#read_session=exampleSessionID
+    validations: 
+      required: false
+
   - type: textarea
     id: improvement
     attributes: 
