@@ -1,0 +1,56 @@
+name: Documentation
+description: Suggest an improvment for documentation on Planimation
+title: "[Documentation]: "
+labels: ["documentation"]
+projects: ["Planimation Project Board"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to fill out this documentation form!
+  - type: input
+    id: contact
+    attributes:
+      label: Contact Details
+      description: How can we get in touch with you if we need more info?
+      placeholder: ex. email@example.com
+    validations:
+      required: false
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem
+      description: Is your improvement proposal related to a problem? If applicable, add screenshots to help explain your problem.
+      placeholder: ex. There is ambiguity in [...] / There is a mismatch between the documentation and the project where [...]
+    validations:
+      required: true
+
+  - type: input
+    id: session
+    attributes: 
+      label: Session
+      description: |
+        If applicable, please provide the editor.planning.domains session ID or link (read only) that has the files to replicate the issue.
+        To retrieve the session ID/link, click "Session" at the banner, "Save" if not already, and the session ID/link would be at "Details". 
+      placeholder: ex. https://editor.planning.domains/#read_session=exampleSessionID
+    validations: 
+      required: false
+
+  - type: textarea
+    id: improvement
+    attributes: 
+      label: Improvement
+      description: How would you like the documentation to be improved?
+      placeholder: ex. The correct/improved documentation may be [...]
+    validations: 
+      required: true
+
+
+  - type: textarea
+    id: logs
+    attributes:
+      label: Relevant log output
+      description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+      render: shell
