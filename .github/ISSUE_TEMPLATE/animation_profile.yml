@@ -1,0 +1,65 @@
+name: Animation Profile
+description: Add a new animation profile.
+title: "[Animation Profile]: "
+labels: ["enhancement"]
+projects: ["Planimation Project Board"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to write an animation profile and fill out this form!
+  
+  - type: input
+    id: contact
+    attributes:
+      label: Contact Details
+      description: How can we get in touch with you if we need more info?
+      placeholder: ex. email@example.com
+    validations:
+      required: false
+
+  - type: input
+    id: domain
+    attributes:
+      label: Domain
+      description: What's the name of the domain?
+      placeholder: ex. BlocksWorld
+    validations:
+      required: true
+
+  - type: input
+    id: session
+    attributes: 
+      label: Session Link
+      description: |
+        Please provide the editor.planning.domains session link (read only) that contains the domain, problem, and AP files.
+        To retrieve the session link, click "Session" at the banner, "Save" if not already, and the session link would be at "Details". 
+      placeholder: ex. https://editor.planning.domains/#read_session=exampleSessionID
+    validations: 
+      required: true
+
+  - type: textarea
+    id: description
+    attributes: 
+      label: Description
+      description: Please provide a brief description of the planning problem.
+      placeholder: ex. what are the settings and goals of the planning problem?
+    validations: 
+      required: true
+
+  - type: textarea
+    id: thumbnail
+    attributes: 
+      label: Thumbnail
+      description: Please upload a thumbnail of the animation to be displayed in the gallery.
+      placeholder: Please attach a PNG file.
+    validations: 
+      required: true
+
+  - type: textarea
+    id: comment
+    attributes: 
+      label: Comments
+      description: Feel free to add any relevant comments!
+    validations: 
+      required: false
