@@ -15,3 +15,5 @@ Each folder contains the **animation profiles** along with domain and problem fi
 11. [Freecell](http://editor.planning.domains/#read_session=q8Rh3Y7sSE)
 12. [Depot](http://editor.planning.domains/#read_session=MFmtS8g0ar)
 13. [FlowFree](http://editor.planning.domains/#read_session=dbnH15yyMF)
+14. [TPP] (http://editor.planning.domains/#read_session=mz2BJxLOb5)
+15. [Gripper] (http://editor.planning.domains/#read_session=jKknyAIR29)
