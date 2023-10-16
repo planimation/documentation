@@ -25,3 +25,8 @@ List of all the individuals who have contributed to build Planimation so far.
 | 19 | 2021 | Shiqi Zhang | moomin2333@163.com |
 | 20 | 2021 | Xiaoyu Zhang | 15906360368@163.com |
 | 21 | 2021 | Ziqi Meng | mengzq1994@163.com |
+| 22 | 2023 | Angel He | angel.heyongxi.2004@gmail.com |
+| 23 | 2023 | Tony He | tony.yong.he@gmail.com |
+| 24 | 2023 | Shu Tong Luo | shutong.luo.03@gmail.com |
+| 25 | 2023 | Angela Yuan | angelay789.aa@gmail.com |
+| 26 | 2023 | Yezihan Zhou | alanzhou1314@gmail.com |
