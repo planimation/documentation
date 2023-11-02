@@ -134,82 +134,9 @@ A list of the types to which each property can be assigned is in section 2.4.
 
 
 
-### 2.4 Object Properties
+### 2.4 Functions and Object Properties
 
-
-A number of Object Properties can be assigned for each Visual object:
-
-* showname (Boolean): whether to display the object's name on screen
-* x (Integer): x position of the object on screen
-* y (Integer): y position of the object on screen
-* colour (Colour): Colour of the object. Can be a constant (eg ```BLACK```), an RGB value (eg ```#FAA2B5```), or the custom value ```RANDOMCOLOR``` which picks a random RGB value.
-* width (Integer): Width of the object on screen
-* height: Height of the object on screen
-* base64image: A Base64 string representing the object's image. Base64 images can be generated at https://www.base64decode.org/
-* depth: Depth of the object on screen. Higher depth objects are drawn behind lower depths.
-* label: Optional attribute specifying a string label to be drawn on the object.
-
-
-
-### 2.5 Functions
-
-Functions have two uses:
-
-* In Predicate blocks: here they are 'declarative' in nature and when specified, are true for their parameters
-* In object properties: Here they return a value (eg random_colour).
-
-
-List of functions:
-
-
-#### Distribution
-Distribution functions 'distribute' objects in a certain manner. They are used to lay objects out on the screen. All objects for which the same parameters of 'distribute' are called will be included in the distribution. Distribution works such that objects will be placed in a certain area without overlapping. Between animation frames, objects will not move (unless their positions are reset).
-
-##### **distributex**
-  * This function distributes objects along a horizontal plane. 
-  * Parameter ```spacebtwn``` governs the space between objects
-  * Example of use:
-  * ``` (assign (?x x) (function distributex (objects ?x) (settings (spacebtwn 40)))) ```
-##### **distributey**
-  * This function distributes objects along a vertical plane. 
-  * Parameter ```spacebtwn``` governs the space between objects
-  * Example of use:
-  * ```               (assign (?city y) (function distributey (objects ?city)))```
-##### **distribute_grid_around_point**
-  * This function distributes objects within a grid-like structure 
-  *  Parameter ```spacebtwn``` governs the space between objects
-  * Example of use:
-  * ```  (assign (?p x y) (function distribute_grid_around_point (objects ?p)))```
-##### **distribute_within_objects_vertical**
-  * This function distributes objects vertically within the bounds of another object. For example, cars can be distributed within a city.
-  *   Parameter ```spacebtwn``` governs the space between objects
-  * Example of use:
-  * ```(assign (?r x y) (function distribute_within_objects_vertical (objects ?r ?x)(settings (spacebtw 20))))```
-##### **distribute_within_objects_horizontal**
-  * This function distributes objects horizontally within the bounds of another object. For example, cars can be distributed within a city.
-  * Example of use:
-  * ``` (assign (?obj x) (function distribute_within_objects_horizontal (objects ?obj ?loc)))```
-
-
-#### Other Functions
-##### **calculate_label**
-    * ```calculate_label (objects ?obj1 ?obj2))``` displays a numeric label for obj1, based on the number of obj2 objects with this function applied to them. For example, if there are 3 instances of calculate label for ```(a b) (a c) (a d)```, then object ```a``` will have a label of "3". Useful for displaying how many objects are inside another object
-    * Example of use:
-    * ```                (assign (?obj2 label) (function calculate_label (objects ?obj1 ?obj2)))```
-##### **align_middle**
-    * ```align_middle (objects ?x ?y)``` aligns objects x to the middle of  object y
-    * Example of use:
-    * ``` (assign (?x x) (function align_middle (objects ?x ?y)))```
-##### **apply_smaller**
-    * apply_smaller (objects ?x ?y) sets ?y to be displayed smaller than ?x. 
-    * the parameter ```increase_width``` specifies the extend to which an object is wider
-    * Example of us:
-    * ``` (assign (?x width) (function apply_smaller (objects ?x ?y) (settings (increase_width 6))))```
-
-##### **draw_line**
-  * Draws a line between two objects
-  * Example of use:
-  * ```(action (function draw_line (objects ?x ?y)))```
+Documentations on functions and object properties are presented at: https://planimation-staging-181bc.web.app/documentation
 
 
 ## 3 Worked Example
