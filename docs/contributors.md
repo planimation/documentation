@@ -30,3 +30,8 @@ List of all the individuals who have contributed to build Planimation so far.
 | 24 | 2023 | Shu Tong Luo | shutong.luo.03@gmail.com |
 | 25 | 2023 | Angela Yuan | angelay789.aa@gmail.com |
 | 26 | 2023 | Yezihan Zhou | alanzhou1314@gmail.com |
+| 27 | 2023 | Li Ching Tan | crossdisp@gmail.com |
+| 28 | 2023 | Tim Bunnage | tim10@bunnage.com.au |
+| 29 | 2023 | Xiaoyinzheng Ji | jacobji168@gmail.com |
+| 30 | 2023 | Junqi Ning| junqining443@gmail.com |
+| 31 | 2023 | Wenxuan Zhang | jyz1924@gmail.com |
