@@ -20,3 +20,4 @@ Each folder contains the **animation profiles** along with domain and problem fi
 16. [Driverlog](https://editor.planning.domains/#read_session=fu1QYGDLiZ)
 17. [Storage](https://editor.planning.domains/#read_session=D4QocB96ka)
 18. [Ferry](https://editor.planning.domains/#read_session=2EbNy1HGQU)
+19. [Snake](https://editor.planning.domains/#read_session=ANFZ0djty7)
