@@ -21,3 +21,4 @@ Each folder contains the **animation profiles** along with domain and problem fi
 17. [Storage](https://editor.planning.domains/#read_session=D4QocB96ka)
 18. [Ferry](https://editor.planning.domains/#read_session=2EbNy1HGQU)
 19. [Snake](https://editor.planning.domains/#read_session=ANFZ0djty7)
+20. [Block3op](https://editor.planning.domains/#read_session=XmsVLWAkpF)
