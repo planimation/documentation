@@ -109,4 +109,4 @@ Frontend-JS/
 
 ## 3. Extensions
 
-The animation samples gallery are connect to Github. Thus if you want to your animation profile can show your file correctly, you should follow following rules under [Animation profiles](../AnimationProfiles/README.md)
+The animation samples gallery are connect to Github. Thus if you want to your animation profile can show your file correctly, you should follow following rules under [Animation profiles](../AnimationProfiles/Readme.md)
