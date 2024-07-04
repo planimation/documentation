@@ -4,20 +4,44 @@ Latest Development Build Status
 
 [![Build Status](https://travis-ci.org/planimation/backend.svg?branch=develop)](https://travis-ci.org/planimation/frontend)
 
+## Local Dev 
+
+- Required Node 18+
+
+- Open to package.json
+
+    - For Window system, change the scripts content of package.json
+    
+        ```
+          "scripts": {
+            "start": "set NODE_OPTIONS=--openssl-legacy-provider&& node scripts/start.js",
+            "build": "set NODE_OPTIONS=--openssl-legacy-provider&& node scripts/build.js",
+            "test": "jest"
+          }
+        ```
+    
+    - For Linux/ubuntu system, change the scripts content of package.json
+    
+        ```
+          "scripts": {
+            "start": "NODE_OPTIONS=--openssl-legacy-provider node scripts/start.js ",
+            "build": "NODE_OPTIONS=--openssl-legacy-provider node scripts/build.js",
+            "test": "jest"
+          }
+        ```
+    
 
 ## Docker Build
 
 - Install Docker
-- Copy license file to the root of frontend directory
+- Make sure the scripts in package.json are correct with different system(See **Local Dev Item 2**).
+- Go to the frontend folder
 
 	```
-	export IMAGE_TAG=planimation-frontend:latest
-	export UNITY_LICENSE=LICENSE_FILE=Unity_lic.ulf
-	docker build --no-cache -t ${IMAGE_TAG} --build-arg LICENSE_FILE=${LICENSE_FILE} -f docker/release/Dockerfile .
-	docker run -d -p 8080:80 ${IMAGE_TAG}
-	docker ps
+	docker build -t planimation-frontend:latest -f ./Dockerfile ./
+	docker run -d -p 8080:8080 planimation-frontend:latest 
 	```
-
+	
 - Test the web server is running by visiting `localhost:8080` in the browser.
 
 ## Contribution
