@@ -1,0 +1,1 @@
+In this elevator system game, the goal is to transport passengers between floors using multiple elevators. Each elevator must follow specific constraints and schedules to ensure all passengers reach their destinations efficiently.

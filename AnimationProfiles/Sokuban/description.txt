@@ -1,0 +1,1 @@
+This domain models the Sokoban game. (http://en.wikipedia.org/wiki/Sokoban)

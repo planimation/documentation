@@ -38,8 +38,7 @@
    (:predicate in
                :parameters (?obj1 ?obj2)
                :effect(
-               (equal (?obj1 y) (add (?obj2 y) -50 ))
-               (equal (?obj1 x) (?obj2 x))
+               (assign (?obj1 x y) (function distribute_next_objects (objects ?obj1 ?obj2)))
                (assign (?obj2 label) (function calculate_label (objects ?obj1 ?obj2)))
                )
   )

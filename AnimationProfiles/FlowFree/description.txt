@@ -1,0 +1,1 @@
+In this FlowFree game, players must connect pairs of colored dots on a grid by drawing continuous paths. The paths must fill all the cells on the grid without crossing each other. The goal is to minimize the total number of moves required to complete the connections. The challenge includes ensuring nodes are next to the edges and forming current paths as per the game rules.

@@ -1,0 +1,1 @@
+Within a square grid consisting of N nodes, there are N-1 tiles, each numbered from 1 to N, and one node remains vacant. Any tile positioned adjacent to the empty node can be shifted into the empty node. The goal is to arrange all the tiles into their designated positions on the grid.
