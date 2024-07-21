@@ -1,0 +1,2 @@
+
+In this ferry transport simulation, the objective is to manage the movement of cars across various locations using a ferry. The system must adhere to defined actions such as sailing, boarding, and debarking to ensure all cars are transported to their designated locations efficiently.
