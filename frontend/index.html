@@ -505,6 +505,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#local-dev" class="md-nav__link">
+    <span class="md-ellipsis">
+      Local Dev
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#docker-build" class="md-nav__link">
     <span class="md-ellipsis">
       Docker Build
@@ -688,6 +697,15 @@
     <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
       
         <li class="md-nav__item">
+  <a href="#local-dev" class="md-nav__link">
+    <span class="md-ellipsis">
+      Local Dev
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#docker-build" class="md-nav__link">
     <span class="md-ellipsis">
       Docker Build
@@ -765,16 +783,41 @@
 <h1 id="planimation-frontend">Planimation Frontend<a class="headerlink" href="#planimation-frontend" title="Permanent link">Link</a></h1>
 <p>Latest Development Build Status</p>
 <p><a href="https://travis-ci.org/planimation/frontend"><img alt="Build Status" src="https://travis-ci.org/planimation/backend.svg?branch=develop" /></a></p>
+<h2 id="local-dev">Local Dev<a class="headerlink" href="#local-dev" title="Permanent link">Link</a></h2>
+<ul>
+<li>
+<p>Required Node 18+</p>
+</li>
+<li>
+<p>Open to package.json</p>
+<ul>
+<li>
+<p>For Window system, change the scripts content of package.json</p>
+<p><code>"scripts": {
+    "start": "set NODE_OPTIONS=--openssl-legacy-provider&amp;&amp; node scripts/start.js",
+    "build": "set NODE_OPTIONS=--openssl-legacy-provider&amp;&amp; node scripts/build.js",
+    "test": "jest"
+  }</code></p>
+</li>
+<li>
+<p>For Linux/ubuntu system, change the scripts content of package.json</p>
+<p><code>"scripts": {
+    "start": "NODE_OPTIONS=--openssl-legacy-provider node scripts/start.js ",
+    "build": "NODE_OPTIONS=--openssl-legacy-provider node scripts/build.js",
+    "test": "jest"
+  }</code></p>
+</li>
+</ul>
+</li>
+</ul>
 <h2 id="docker-build">Docker Build<a class="headerlink" href="#docker-build" title="Permanent link">Link</a></h2>
 <ul>
 <li>Install Docker</li>
+<li>Make sure the scripts in package.json are correct with different system(See <strong>Local Dev Item 2</strong>).</li>
 <li>
-<p>Copy license file to the root of frontend directory</p>
-<p><code>export IMAGE_TAG=planimation-frontend:latest
-export UNITY_LICENSE=LICENSE_FILE=Unity_lic.ulf
-docker build --no-cache -t ${IMAGE_TAG} --build-arg LICENSE_FILE=${LICENSE_FILE} -f docker/release/Dockerfile .
-docker run -d -p 8080:80 ${IMAGE_TAG}
-docker ps</code></p>
+<p>Go to the frontend folder</p>
+<p><code>docker build -t planimation-frontend:latest -f ./Dockerfile ./
+docker run -d -p 8080:8080 planimation-frontend:latest</code></p>
 </li>
 <li>
 <p>Test the web server is running by visiting <code>localhost:8080</code> in the browser.</p>
@@ -842,7 +885,7 @@ docker ps</code></p>
     <span class="md-icon" title="Last update">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 13.1c-.1 0-.3.1-.4.2l-1 1 2.1 2.1 1-1c.2-.2.2-.6 0-.8l-1.3-1.3c-.1-.1-.2-.2-.4-.2m-1.9 1.8-6.1 6V23h2.1l6.1-6.1-2.1-2M12.5 7v5.2l4 2.4-1 1L11 13V7h1.5M11 21.9c-5.1-.5-9-4.8-9-9.9C2 6.5 6.5 2 12 2c5.3 0 9.6 4.1 10 9.3-.3-.1-.6-.2-1-.2s-.7.1-1 .2C19.6 7.2 16.2 4 12 4c-4.4 0-8 3.6-8 8 0 4.1 3.1 7.5 7.1 7.9l-.1.2v1.8Z"/></svg>
     </span>
-    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">April 28, 2020</span>
+    <span class="git-revision-date-localized-plugin git-revision-date-localized-plugin-date">July 4, 2024</span>
   </span>
 
     
