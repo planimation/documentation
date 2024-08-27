@@ -23,7 +23,12 @@ Each folder contains the **animation profiles** along with domain and problem fi
 20. [Nurikabe](https://editor.planning.domains/#read_session=iKykgU5Ozm)
 21. [Peg](https://editor.planning.domains/#read_session=9xfAMlLMDg)
 22. [Snake](https://editor.planning.domains/#read_session=T683ydMmDw)
-
+23.  [TPP](http://editor.planning.domains/#read_session=mz2BJxLOb5)
+24. [Driverlog](https://editor.planning.domains/#read_session=fu1QYGDLiZ)
+25. [Storage](https://editor.planning.domains/#read_session=D4QocB96ka)
+26. [Ferry](https://editor.planning.domains/#read_session=2EbNy1HGQU)
+27. [Snake](https://editor.planning.domains/#read_session=ANFZ0djty7)
+28. [Block3op](https://editor.planning.domains/#read_session=XmsVLWAkpF)
 
 
 ## Quick load samples
@@ -43,3 +48,4 @@ As stated in Quick load samples part, To make sure all your uploads will be show
 - You can upload a picture to show it in gallery feature of  [Planimation Visualisation](http://47.236.182.248:8080/problem)
 - You can upload a txt file named `description.txt`to show the description in gallery feature of  [Planimation Visualisation](http://47.236.182.248:8080/problem)
 - **If you don't have the description and image in your directory, the gallery feature will show a placeholder for your demo.**
+
