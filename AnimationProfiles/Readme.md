@@ -49,3 +49,6 @@ As stated in Quick load samples part, To make sure all your uploads will be show
 - You can upload a txt file named `description.txt`to show the description in gallery feature of  [Planimation Visualisation](http://47.236.182.248:8080/problem)
 - **If you don't have the description and image in your directory, the gallery feature will show a placeholder for your demo.**
 
+28. [Bloxorz](https://editor.planning.domains/#read_session=TGIjNkoTZQ)
+29. [Lights Out](http://editor.planning.domains/#read_session=BUOU9QrGLE)
+30. [Traffic Rush](http://editor.planning.domains/#read_session=PIsMje4Ago)

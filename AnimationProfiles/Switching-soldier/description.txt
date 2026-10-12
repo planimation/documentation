@@ -1,0 +1,1 @@
+In this switching soldiers puzzle, two groups of soldiers face each other on a row of ground cells with one gap between them. Soldiers only move forward, either stepping into the empty cell or jumping over a single opposing soldier. The goal is for the two groups to swap sides. Problems range from 2 against 2 up to 10 against 10.

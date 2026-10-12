@@ -1,0 +1,1 @@
+In this Bloxorz simulation, a rectangular block rolls across a grid of tiles, standing upright or lying on its side. Each roll changes how much floor the block covers, and it must never hang over the edge. The goal is to stand the block upright in the hole at the end of the level.

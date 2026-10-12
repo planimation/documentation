@@ -1,0 +1,1 @@
+In this Flow Free puzzle, pairs of coloured dots sit on a grid and must be joined by pipes that never cross. This version uses an edgy strategy: paths are drawn hugging the edges of the board first, with action costs that favour edge moves. The goal is to connect every pair and fill the whole grid.

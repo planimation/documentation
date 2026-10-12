@@ -1,0 +1,1 @@
+In this Traffic Rush sliding-block puzzle, cars and trucks fill a grid and can only slide along their own direction. The goal is to clear a path and drive the red car out through the exit.

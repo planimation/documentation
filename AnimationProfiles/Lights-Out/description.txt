@@ -1,0 +1,1 @@
+In this Lights Out puzzle, a grid of lights starts with some switched on. Pressing a light toggles it and its neighbours, so lights cannot be switched off one at a time. The goal is to turn every light off.

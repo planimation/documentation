@@ -1,0 +1,1 @@
+In this Sokoban simulation, a warehouse keeper pushes boxes around a grid of floor and walls. Boxes can be pushed but never pulled, so a careless push can leave the puzzle unsolvable. The goal is to push every box onto a storage location.
