@@ -1,0 +1,1 @@
+In this sliding puzzle simulation, fifteen numbered tiles sit on a 4x4 board with one empty space. The goal is to slide tiles left, right, up or down into the empty space until every tile reaches its target position.

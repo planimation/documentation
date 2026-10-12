@@ -1,0 +1,1 @@
+In this Visitall simulation, a robot moves through a grid of cells, one adjacent step at a time. The goal is to visit every cell of the grid at least once.

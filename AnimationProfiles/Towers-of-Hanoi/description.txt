@@ -1,0 +1,1 @@
+In this Towers of Hanoi simulation, a stack of discs of decreasing size sits on the first of three pegs. Discs move one at a time, and a larger disc can never be placed on a smaller one. The goal is to move the whole stack to the target peg.

@@ -1,0 +1,1 @@
+In this elevator simulation, lifts move up and down between floors to carry passengers. Each passenger boards at their entry floor and departs at their destination floor. The goal is to deliver everyone to the right floor.

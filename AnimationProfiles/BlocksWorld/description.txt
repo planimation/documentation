@@ -1,0 +1,1 @@
+In this Blocksworld simulation, a robot arm rearranges a set of labelled blocks on a table. It can pick up, put down, stack and unstack one block at a time, and a block can only be moved when nothing is on top of it. The goal is to build the target towers.

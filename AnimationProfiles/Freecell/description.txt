@@ -1,0 +1,1 @@
+In this Freecell solitaire simulation, cards are dealt into columns and can be moved between columns, into free cells, or onto the home piles. Column moves must alternate colours in descending order. The goal is to move every card to its home pile in suit order.

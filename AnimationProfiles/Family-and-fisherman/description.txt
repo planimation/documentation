@@ -1,0 +1,1 @@
+In this river-crossing puzzle, a family and a fisherman must all reach the far bank using one small boat. The boat can carry one adult or up to two children, and someone must row it back each time. The goal is to find the sequence of crossings that brings everyone across.

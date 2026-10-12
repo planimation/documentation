@@ -1,0 +1,1 @@
+In this grid navigation simulation, a robot moves between connected cells, some of them locked. It must pick up keys of the right shape to unlock cells, carrying one key at a time. The goal is to deliver the required keys to their target cells.

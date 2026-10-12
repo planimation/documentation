@@ -1,0 +1,1 @@
+In this Gripper simulation, a robot with two grippers moves balls between two rooms. It can pick up a ball in each hand, move to the other room and drop them. The goal is to transport all the balls to the target room in as few moves as possible.

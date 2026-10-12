@@ -1,0 +1,1 @@
+In this classic river-crossing puzzle, a farmer must ferry a wolf, a goat and a cabbage across a river in a boat that holds the farmer and one passenger. The wolf cannot be left alone with the goat, nor the goat with the cabbage. The goal is to get everything safely to the other side.
