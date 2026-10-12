@@ -15,10 +15,10 @@ We use [editor.planning.domains](http://editor.planning.domains/) as our PDDL ed
 
 ### Quick links:
 
-- [Bloxorz](examples/bloxorz)
-- [Lights Out](examples/lights-out)
-- [Sokoban](examples/sokoban)
-- [Traffic Rush](examples/traffic-rush)
+- [Bloxorz](../Bloxorz)
+- [Lights Out](../Lights-Out)
+- [Sokoban](../Sokoban)
+- [Traffic Rush](../Traffic-Rush)
 
 ## Helper Scripts
 

@@ -1,0 +1,1 @@
+In this Flow Free puzzle, pairs of coloured dots sit on a grid and must be joined by pipes that never cross. This is the basic version without a solving strategy: the planner selects a colour and extends its path one cell at a time. The goal is to connect every pair and fill the whole grid.

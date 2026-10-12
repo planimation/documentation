@@ -1,4 +1,4 @@
-﻿(define (problem prob_2plus2_with_3_clear)
+﻿(define (problem prob_3plus3_with_4_clear)
     (:domain soldier_move)
     
     (:objects 
