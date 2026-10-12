@@ -1,0 +1,1 @@
+In this depot logistics simulation, trucks drive crates between depots and distributors while hoists lift, drop, load and unload them. The goal is to stack every crate on its target pallet or crate, coordinating hoists and trucks along the way.

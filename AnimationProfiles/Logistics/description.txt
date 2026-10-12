@@ -1,0 +1,1 @@
+In this logistics simulation, packages are moved between locations in different cities. Trucks carry packages within a city and airplanes fly them between airports. The goal is to load, transport and unload every package to its destination.
